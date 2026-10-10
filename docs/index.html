@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="color-scheme" content="light dark">
+<title>AI ニュース朝刊</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#latest">AI ニュース<span>朝刊</span></a>
+    <nav class="nav" aria-label="ページ">
+      <a href="#latest" data-v="issue">ダッシュボード</a>
+      <a href="#archive" data-v="archive">アーカイブ</a>
+      <a href="#topics" data-v="topics">トピック</a>
+      <a href="#search" data-v="search">検索<kbd>/</kbd></a>
+      <button class="theme" id="theme" type="button" aria-label="表示テーマを切り替え">自動</button>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><main class="view" id="view"><p class="empty">読み込み中…</p></main></div>
+<noscript><p style="padding:16px">このページの表示には JavaScript が必要です。</p></noscript>
+</body>
+</html>
