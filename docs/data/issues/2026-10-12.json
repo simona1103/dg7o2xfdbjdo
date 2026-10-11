@@ -1,0 +1,112 @@
+{
+ "date": "2026-10-12",
+ "weekday": "月",
+ "headline": "Copilot for JetBrains に企業向け既定モデル設定など追加",
+ "generatedAt": "06:50",
+ "keyPoints": [
+  [
+   "GitHub Copilot for JetBrains が、管理者による既定モデル指定と MCP サーバー自動起動の無効化に対応した。",
+   "copilot-jetbrains-controls-2026-10-10"
+  ]
+ ],
+ "news": [
+  {
+   "id": "copilot-jetbrains-controls-2026-10-10",
+   "lead": true,
+   "topic": "dev",
+   "story": "copilot-jetbrains",
+   "storyTitle": "Copilot for JetBrains の更新",
+   "title": "Copilot for JetBrains に管理・チャット機能を追加",
+   "source": "GitHub Changelog",
+   "date": "10/10",
+   "points": [
+    "Enterprise 管理者が管理設定で、利用可能な Copilot エージェントモデルを新規会話の既定にできる。",
+    "MCP サーバーの自動起動を Copilot と Claude の両方で無効にする設定を追加。診断の Fix アクションも入った。"
+   ],
+   "impact": "JetBrains 系 IDE で Copilot を配布している場合、管理設定で既定モデルを統一でき、MCP の起動タイミングも制御できる。",
+   "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-new-releases.jpg",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "Skill",
+   "title": "オブジェクト指向UIデザインを Agent Skill にして Claude の UI 生成を比較",
+   "where": "Zenn",
+   "date": "10/05",
+   "heat": "♡ 42",
+   "summary": "書籍の UI 設計原則を Claude Code の Skill にまとめ、Skill あり・なしで生成される画面構造がどう変わるかを比べた報告。Skill の原則はレビューの評価軸にも使えるという。",
+   "code": "",
+   "url": "https://zenn.dev/emuni/articles/ooui-agent-skill"
+  },
+  {
+   "kind": "使い方",
+   "title": "Mods で Claude Code のセッションごとにメモ帳を作る",
+   "where": "Zenn",
+   "date": "10/06",
+   "heat": "♡ 33",
+   "summary": "Claude Code の Mods で、セッション単位の TODO とメモを Markdown で残す mod を作った報告。mod 作成用スキルが組み込まれており、プロンプトだけでほぼ形になったという。",
+   "code": "セッションごとに Markdown のメモを残せるようにしたいです。\nClaude Code の Mods で作ってください。",
+   "url": "https://zenn.dev/yesodco/articles/da634d752874b2"
+  },
+  {
+   "kind": "使い方",
+   "title": "AI エージェントに API キーを渡す 6 つの方法を公式文書で比較",
+   "where": "Qiita",
+   "date": "10/05",
+   "heat": "LGTM 26",
+   "summary": "対話文・.env・環境変数・MCP・OAuth など渡し方ごとに、Claude Code・Codex・Copilot 等で鍵がどう扱われるかを公式文書から整理。鍵の文字列を AI に渡さない OAuth が最も安全と結論づけている。",
+   "code": "",
+   "url": "https://qiita.com/songchong/items/873b4f14d26296176cfd"
+  },
+  {
+   "kind": "使い方",
+   "title": "Terse：Claude Code の返答の冗長さを削るプラグイン",
+   "where": "Hacker News",
+   "date": "10/08",
+   "heat": "▲ 25",
+   "summary": "フィラー表現を削って返答の長さを半分程度にするという Claude Code プラグインの Show HN。作者はコメントで、Opus 5.5 の標準設定で出力が 5 割以上減ったと報告している。",
+   "code": "",
+   "url": "https://news.ycombinator.com/item?id=49995809"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "Claude Code の deny に `../` を書くと隣のフォルダへの書き込みが止まらなかった（2.1.296 で実測）",
+   "where": "Zenn",
+   "date": "10/11",
+   "desc": "筆者の Windows 環境では、`Edit(../...)` の deny は書き込みを止めず、絶対パス（`//c/...`）なら Write・Edit・Bash の echo は止まった。Bash 自動許可下の node では書けたという。ダミーファイルで確かめる手順つき。",
+   "url": "https://zenn.dev/emilk1225/articles/73356c9b0e156d",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--467iO_Rm--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25AE%2520deny%2520%25E3%2581%25AB%2520%2560..%252F%2560%2520%25E3%2582%2592%25E6%259B%25B8%25E3%2581%2584%25E3%2581%259F%25E3%2582%2589%25E3%2580%2581%25E9%259A%25A3%25E3%2581%25AE%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25AB%25E3%2583%2580%25E3%2581%25B8%25E3%2581%25AE%25E6%259B%25B8%25E3%2581%258D%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%258C%25E6%25AD%25A2%25E3%2581%25BE%25E3%2582%2589%25E3%2581%25AA%25E3%2581%258B%25E3%2581%25A3%25E3%2581%259F%25EF%25BC%25882.1...%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2583%2587%25E3%2582%25B8%25E3%2582%25BF%25E3%2583%25AB%25E5%25B7%25A5%25E6%2588%25BF%25E3%2582%25A8%25E3%2583%259F%25E3%2583%25AB%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2YyMDBjNDA3NjkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  },
+  {
+   "title": "Claude Motion を使ってみた（Team / Enterprise ベータ）",
+   "where": "Zenn",
+   "date": "10/10",
+   "desc": "10/8 にベータ公開された Claude Motion の使用記。動画生成モデルではなくコードで素材を動かし MP4 に書き出す方式で、部分修正が崩れにくいと筆者は報告している。",
+   "url": "https://zenn.dev/branbran/articles/047821d64590f0",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--BtfM6RvA--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2580%2590%25E9%2580%259F%25E5%25A0%25B1%25E3%2580%2591Claude%2520%25E3%2581%25AE%25E6%2596%25B0%25E6%25A9%259F%25E8%2583%25BD%2520Claude%2520Motion%2520%25E6%2597%25A9%25E9%2580%259F%25E4%25BD%25BF%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Atsuki02%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzYxZjg2ZTA4ZDIuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
