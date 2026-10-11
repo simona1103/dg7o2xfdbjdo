@@ -227,7 +227,7 @@ function viewDash(iss) {
   <header class="dhead">
     <div class="dhead-top"><span class="issue-no"><b>${y}.${m}.${d}（${iss.weekday}）</b>号</span>
       <span class="pills">${prev ? `<a class="pill" href="#d${prev}">← ${md(prev)}</a>` : '<span class="pill off">←</span>'}${next ? `<a class="pill" href="#d${next}">${md(next)} →</a>` : '<span class="pill off">→</span>'}
-        <span class="pill">${esc(iss.generatedAt)} 生成 · ${(iss.durationSec / 60).toFixed(1)} 分 · $${iss.costUsd.toFixed(2)}</span></span></div>
+        <span class="pill">${[esc(iss.generatedAt) + " 生成", iss.durationSec ? (iss.durationSec / 60).toFixed(1) + " 分" : "", iss.costUsd ? "$" + iss.costUsd.toFixed(2) : ""].filter(Boolean).join(" · ")}</span></span></div>
     <h1>${esc(iss.headline)}</h1>
   </header>
 
@@ -305,7 +305,7 @@ function viewDash(iss) {
       <div class="legend">${Object.keys(TOPICS).map((t) => `<span style="--c:${tColor(t)}"><i></i>${esc(tName(t))}</span>`).join("")}</div>
       ${sampleDays ? `<p class="note" style="margin:8px 0 0">${win.length} 日のうち ${sampleDays} 日は見本の件数（薄い色）。棒を押すとその号を開きます（本文があるのは ${win.filter((e) => e.full).length} 号）。</p>` : ""}</div></section>
   </div>
-  <footer><span>Claude Managed Agents が ${esc(iss.generatedAt)} に生成 · 一次情報で確認できた内容だけを掲載</span><span class="mono">今月の費用 $${INDEX.filter((e) => e.date.slice(0, 7) === iss.date.slice(0, 7) && e.date <= iss.date).reduce((a, e) => a + e.cost, 0).toFixed(2)}</span></footer>`;
+  <footer><span>Claude Managed Agents が ${esc(iss.generatedAt)} に生成 · 一次情報で確認できた内容だけを掲載</span>${(() => { const c = INDEX.filter((e) => e.date.slice(0, 7) === iss.date.slice(0, 7) && e.date <= iss.date).reduce((a, e) => a + e.cost, 0); return c ? `<span class="mono">今月の費用 $${c.toFixed(2)}</span>` : ""; })()}</footer>`;
 }
 function drawTrend() { const box = $(".trend-box"); if (box && trendArgs && box.clientWidth) box.innerHTML = trend(trendArgs[0], trendArgs[1], box.clientWidth); }
 let resizeTimer = 0;

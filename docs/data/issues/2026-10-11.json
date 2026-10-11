@@ -66,7 +66,8 @@
    },
    "url": "https://platform.claude.com/docs/en/release-notes/overview",
    "reactions": [],
-   "image": ""
+   "image": "",
+   "storyTitle": "Claude Managed Agents"
   },
   {
    "id": "usage-policy-2026",
@@ -122,7 +123,8 @@
    "reactions": [
     "ITmedia AI+ が国内向けに報じている"
    ],
-   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2af4f6715cbe9766a47430a24420cfca0a2c588-1200x630.jpg"
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2af4f6715cbe9766a47430a24420cfca0a2c588-1200x630.jpg",
+   "storyTitle": "Anthropic のサイバー防御"
   },
   {
    "id": "cc-2-1-296",
@@ -153,7 +155,8 @@
    },
    "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
    "reactions": [],
-   "image": ""
+   "image": "",
+   "storyTitle": "Claude Code の更新"
   },
   {
    "id": "copilot-review-billing",
