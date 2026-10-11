@@ -290,7 +290,7 @@ function viewDash(iss) {
         <div class="uptime">${spark(win.map((e) => e.ok / e.total), "var(--ok)")}<span>直近 ${win.length} 日の取得率 ${(win.reduce((a, e) => a + e.ok, 0) / win.reduce((a, e) => a + e.total, 0) * 100).toFixed(0)}%</span></div></div></section>
     </div>
 
-    <section class="panel c12 o6" id="tips"><div class="ph"><h2>SNS で話題の使い方・Skills <span class="count">${iss.tips.length} 件</span></h2><span class="m">X・Reddit・Zenn・Qiita で反応が多かった実践例。手順は投稿者のもので、動作は検証していません</span></div>
+    <section class="panel c12 o6" id="tips"><div class="ph"><h2>SNS で話題の使い方・Skills <span class="count">${iss.tips.length} 件</span></h2><span class="m">X・Reddit・Hacker News・Zenn・Qiita で反応が多かった実践例。手順は投稿者のもので、動作は検証していません</span></div>
       <div class="pb">${iss.tips.length ? `<ol class="lb">${iss.tips.map((t, k) => `<li><span class="rank">${k + 1}</span><div style="min-width:0">
         <div class="lb-meta"><span class="kind">${esc(t.kind)}</span><span>${esc(t.where)} · ${esc(t.date)}</span></div>
         <h3>${inline(t.title)}</h3><p>${inline(t.summary)}</p>${t.code ? `<pre>${esc(t.code)}</pre>` : ""}</div>
