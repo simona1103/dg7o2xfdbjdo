@@ -82,8 +82,8 @@ function spark(vals, color = "var(--accent)") {
   const [lx, ly] = pts[pts.length - 1];
   return `<svg class="spark" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"><polyline points="${pts.map((p) => p.map((v) => v.toFixed(1)).join(",")).join(" ")}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" opacity=".85"/><circle cx="${lx}" cy="${ly}" r="2.6" fill="${color}"/></svg>`;
 }
-function trend(entries, cur) {
-  const W = 600, H = 200, L = 26, R = 6, Tp = 10, B = 26;
+function trend(entries, cur, W = 600) {
+  W = Math.max(280, Math.round(W)); const H = 200, L = 26, R = 6, Tp = 10, B = 26;
   const max = Math.max(4, ...entries.map((e) => e.n)); const top = Math.ceil(max / 2) * 2;
   const slots = Math.max(entries.length, 14), off = slots - entries.length; // keep bar width steady while history is short
   const bw = (W - L - R) / slots, Y = (v) => Tp + (H - Tp - B) * (1 - v / top);
@@ -127,7 +127,7 @@ function figFlow(f) {
     <rect x="${p.x}" y="${p.y}" width="${p.w}" height="${bh}" rx="7" fill="${p.n.emph ? "var(--accent-soft)" : "var(--surface)"}" stroke="${p.n.emph ? "var(--accent)" : "var(--line-2)"}" stroke-width="1.3"/>
     <text x="${p.x + p.w / 2}" y="${p.y + (p.n.sub ? 20 : bh / 2 + 4.5)}" text-anchor="middle" font-size="${fs}" font-weight="${p.n.emph ? 700 : 500}" fill="var(--ink)">${esc(p.n.label)}</text>
     ${p.n.sub ? `<text x="${p.x + p.w / 2}" y="${p.y + 37}" text-anchor="middle" font-size="${ss}" fill="var(--ink-3)">${esc(p.n.sub)}</text>` : ""}`).join("");
-  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${esc(f.title || "流れ図")}">
+  return `<svg class="flow" viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${esc(f.title || "流れ図")}">
     <defs><marker id="${mid}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-3)"/></marker></defs>${edges}${boxes}</svg>
     ${f.note ? `<div class="fig-note">${esc(f.note)}</div>` : ""}`;
 }
@@ -150,16 +150,12 @@ function figTimeline(f) {
   const pts = arr(f.points).filter((p) => DATE_RE.test(p.date));
   if (!pts.length || (f.today && !DATE_RE.test(f.today))) throw new Error("bad timeline");
   const all = pts.map((p) => T(p.date)).concat(f.today ? [T(f.today)] : []);
-  const lo = Math.min(...all), hi = Math.max(...all), W = 560, L = 40, R = W - 40, Y = 46;
-  const X = (d) => L + (hi === lo ? 0 : (T(d) - lo) / (hi - lo) * (R - L));
-  let s = `<line x1="${L}" y1="${Y}" x2="${R}" y2="${Y}" stroke="var(--line-2)" stroke-width="2"/>`;
-  if (f.today) { const x = X(f.today); s += `<line x1="${x}" y1="${Y - 22}" x2="${x}" y2="${Y + 22}" stroke="var(--warn)" stroke-dasharray="3 3"/><text x="${x}" y="${Y + 36}" text-anchor="middle" font-size="11" fill="var(--warn)">今日 ${md(f.today)}</text>`; }
-  pts.forEach((p) => { const x = X(p.date);
-    s += `<circle cx="${x}" cy="${Y}" r="6" fill="${p.emph ? "var(--accent)" : "var(--surface)"}" stroke="var(--accent)" stroke-width="2"/>
-      <text x="${x}" y="${Y - 26}" text-anchor="middle" font-size="12" fill="var(--ink-3)">${md(p.date)}</text>
-      <text x="${x}" y="${Y - 12}" text-anchor="middle" font-size="12.5" font-weight="${p.emph ? 700 : 500}" fill="var(--ink)">${esc(p.label)}</text>`; });
+  const lo = Math.min(...all), hi = Math.max(...all);
+  const P = (d) => (hi === lo ? 50 : (T(d) - lo) / (hi - lo) * 100).toFixed(2);
+  const dots = pts.map((p, i) => `<span class="tl2-pt${p.emph ? " emph" : ""}${i === 0 && pts.length > 1 ? " first" : ""}${i === pts.length - 1 && pts.length > 1 ? " last" : ""}" style="left:${P(p.date)}%"><span class="tl2-lab"><b>${md(p.date)}</b>${esc(p.label)}</span></span>`).join("");
+  const today = f.today ? `<span class="tl2-today" style="left:${P(f.today)}%"><span>今日 ${md(f.today)}</span></span>` : "";
   const days = Math.round((T(pts[pts.length - 1].date) - T(f.today || pts[0].date)) / dayMs);
-  return `<svg viewBox="0 0 ${W} 92" width="${W}" role="img" aria-label="${esc(f.title || "年表")}">${s}</svg>
+  return `<div class="tl2" role="img" aria-label="${esc(f.title || "日程")}"><div class="tl2-track">${today}${dots}</div></div>
     ${f.today && days > 0 ? `<div class="fig-note">${esc(pts[pts.length - 1].label)}まで あと ${days} 日</div>` : ""}`;
 }
 const figStats = (f) => `<div class="stats">${f.items.map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join("")}</div>`;
@@ -199,6 +195,7 @@ function card(n, iss) {
     <div class="tags">${chip(n.topic)}${followChip(n, iss)}</div>
     <div class="links"><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">一次情報：${esc(host(n.url))}</a>${(n.reactions || []).map((r) => `<span>反応：${esc(r)}</span>`).join("")}</div></div></article>`;
 }
+let trendArgs = null;
 function viewDash(iss) {
   const i = dates.indexOf(iss.date);
   const prev = dates[i + 1], next = dates[i - 1];
@@ -220,6 +217,7 @@ function viewDash(iss) {
   const tc = topicCount(iss.news); const tmax = Math.max(1, ...Object.values(tc));
   const presentTopics = Object.keys(TOPICS).filter((t) => tc[t]);
   const sampleDays = win.filter((e) => e.sample).length;
+  trendArgs = [win, iss.date];
 
   return `
   ${iss.sample ? '<p class="sample-note">見本の号です。過去号の見え方を確かめるために、実在の発表をもとに組み立てました。</p>' : ""}
@@ -300,13 +298,17 @@ function viewDash(iss) {
         <p>出どころ：<a href="${esc(u.url)}" target="_blank" rel="noopener noreferrer">${esc(u.origin)}</a></p></div>`).join("") : '<p class="empty">ありません。</p>'}</div></section>
 
     <section class="panel c6 trend o9"><div class="ph"><h2>推移</h2><span class="m mono">直近 ${win.length} 日 · 主要ニュース件数</span></div><div class="pb">
-      ${trend(win, iss.date)}
+      <div class="trend-box">${trend(win, iss.date)}</div>
       <div class="legend">${Object.keys(TOPICS).map((t) => `<span style="--c:${tColor(t)}"><i></i>${esc(tName(t))}</span>`).join("")}</div>
       ${sampleDays ? `<p class="note" style="margin:8px 0 0">${win.length} 日のうち ${sampleDays} 日は見本の件数（薄い色）。棒を押すとその号を開きます（本文があるのは ${win.filter((e) => e.full).length} 号）。</p>` : ""}</div></section>
   </div>
   <footer><span>Claude Managed Agents が ${esc(iss.generatedAt)} に生成 · 一次情報で確認できた内容だけを掲載</span><span class="mono">今月の費用 $${INDEX.filter((e) => e.date.slice(0, 7) === iss.date.slice(0, 7) && e.date <= iss.date).reduce((a, e) => a + e.cost, 0).toFixed(2)}</span></footer>`;
 }
+function drawTrend() { const box = $(".trend-box"); if (box && trendArgs && box.clientWidth) box.innerHTML = trend(trendArgs[0], trendArgs[1], box.clientWidth); }
+let resizeTimer = 0;
+window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(drawTrend, 150); });
 function wireDash() {
+  drawTrend();
   const nf = $("#nf"); if (!nf) return;
   const apply = (k) => { nf.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.k || "") === k)));
     document.querySelectorAll("#news .card").forEach((c) => { c.hidden = !!k && c.dataset.topic !== k; }); };
