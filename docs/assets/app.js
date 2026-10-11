@@ -169,15 +169,16 @@ const figure = (f) => {
 };
 
 /* thumbnails: the article's og:image (hotlinked, credited) or a tile drawn from the source name */
-function tile(n) {
+function tile(n, small) {
   const name = (n.source || n.where || "").replace(/ (リリースノート|CHANGELOG|Changelog)$/, "");
+  const big = small ? 20 : 17, y = small ? 56 : 50;
   return `<svg viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="90" fill="var(--chip)"/><rect width="5" height="90" fill="${tColor(n.topic)}"/>
-    <text x="16" y="50" font-size="${textW(name, 17) > 132 ? 12.5 : 17}" font-weight="700" fill="var(--ink-2)">${esc(name)}</text>
-    <text x="16" y="70" font-size="11" fill="var(--ink-3)">${esc(host(n.url))}</text></svg>`;
+    <text x="16" y="${y}" font-size="${textW(name, big) > 132 ? 15.5 : big}" font-weight="700" fill="var(--ink-2)">${esc(name)}</text>
+    ${small ? "" : `<text x="16" y="70" font-size="11" fill="var(--ink-3)">${esc(host(n.url))}</text>`}</svg>`;
 }
-function thumb(n) {
-  if (!n.image) return `<div class="thumb tile">${tile(n)}</div>`;
-  return `<div class="thumb">${tile(n)}<img src="${esc(n.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="credit">画像：${esc(host(n.url))}</span></div>`;
+function thumb(n, small) {
+  if (!n.image) return `<div class="thumb tile">${tile(n, small)}</div>`;
+  return `<div class="thumb">${tile(n, small)}<img src="${esc(n.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="credit">画像：${esc(host(n.url))}</span></div>`;
 }
 
 /* ---------- dashboard ---------- */
@@ -282,7 +283,7 @@ function viewDash(iss) {
       <section class="panel o5 h6"><div class="ph"><h2>トピック構成</h2><span class="m mono">${iss.news.length} 件</span></div><div class="pb">
         <div class="tbars">${Object.keys(TOPICS).map((t) => `<div class="tbar" style="--c:${tColor(t)}"><span>${esc(tName(t))}</span><span class="tr"><span style="width:${((tc[t] || 0) / tmax * 100).toFixed(0)}%"></span></span><span class="n">${tc[t] || 0}</span></div>`).join("")}</div></div></section>
       <section class="panel o7" id="domestic"><div class="ph"><h2>国内の解説・事例</h2><span class="m mono">${iss.domestic.length} 件</span></div><div class="pb">
-        ${iss.domestic.length ? `<ul class="dom">${iss.domestic.map((x) => `<li>${thumb({ ...x, topic: "biz" })}<div><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${inline(x.title)}</a><span class="d">${inline(x.desc)}</span><span class="m">${esc(x.where)} · ${esc(x.date)}${x.image ? " · 画像：" + esc(host(x.url)) : ""}</span></div></li>`).join("")}</ul>`
+        ${iss.domestic.length ? `<ul class="dom">${iss.domestic.map((x) => `<li>${thumb({ ...x, topic: "biz" }, true)}<div><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${inline(x.title)}</a><span class="d">${inline(x.desc)}</span><span class="m">${esc(x.where)} · ${esc(x.date)}${x.image ? " · 画像：" + esc(host(x.url)) : ""}</span></div></li>`).join("")}</ul>`
           : '<p class="empty">この号では取り上げていません。</p>'}</div></section>
       <section class="panel o5 h6" id="sources"><div class="ph"><h2>取得状況</h2><span class="m mono">${ok}/${iss.sources.length}</span></div><div class="pb">
         <div class="srcs">${iss.sources.map(([nm, k]) => `<div class="${k ? "" : "bad"}"><span class="dot"></span>${esc(nm)}</div>`).join("")}</div>
