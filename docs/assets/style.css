@@ -164,11 +164,15 @@ a.kpi:hover { border-color: var(--line-2); }
 .filters button { font-size: 13px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); border-radius: 999px; padding: 1px 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .filters button i { width: 7px; height: 7px; border-radius: 2px; background: var(--c, var(--ink-3)); }
 .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; align-items: start; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); grid-auto-flow: row dense; gap: 12px; align-items: start; }
+@media (min-width: 720px) { .card.wide { grid-column: span 2; } }
+.card .thumb.tile { display: none; } /* no real image: let the text lead */
+.card.wide .thumb { aspect-ratio: 21 / 8; }
 .card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); display: grid; grid-template-columns: minmax(0, 1fr); min-width: 0; }
 .card .cb { padding: 10px 12px 12px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 5px; min-width: 0; }
 .card h3 { font-family: var(--font-display); font-weight: 700; font-size: 16px; line-height: 1.5; margin: 0; text-wrap: balance; }
-.card .p1 { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.card .points { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.card .points li + li { margin-top: 4px; }
 .card .impact { font-size: 14px; }
 details.more > summary { cursor: pointer; font-size: 13.5px; color: var(--accent); list-style: none; width: fit-content; }
 details.more > summary::-webkit-details-marker { display: none; }

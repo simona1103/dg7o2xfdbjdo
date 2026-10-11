@@ -184,25 +184,20 @@ function thumb(n) {
 }
 
 /* ---------- dashboard ---------- */
-function newsDetail(n) {
-  return `<ul class="points">${n.points.map((p) => `<li>${inline(p)}</li>`).join("")}</ul>${figure(n.figure)}
-    ${(n.reactions || []).length ? `<div class="links">${n.reactions.map((r) => `<span>反応：${esc(r)}</span>`).join("")}</div>` : ""}`;
-}
 function followChip(n, iss) {
   if (!n.story) return "";
   const st = allItems.filter((x) => x.story === n.story); const earlier = st.filter((x) => x.issue < iss.date);
   return earlier.length ? `<a class="chip thread" href="#t-${esc(n.story)}">続報 · ${esc(STORIES[n.story] || n.story)} ${st.length} 件目</a>` : "";
 }
 function card(n, iss) {
-  const more = n.points.length > 1 || n.figure || (n.reactions || []).length;
-  return `<article class="card" id="i-${esc(n.id)}" data-topic="${esc(n.topic)}">${thumb(n)}<div class="cb">
+  return `<article class="card${n.figure ? " wide" : ""}" id="i-${esc(n.id)}" data-topic="${esc(n.topic)}">${thumb(n)}<div class="cb">
     <div class="byline"><b>${esc(n.source)}</b><span>${esc(n.date)}</span></div>
     <h3>${inline(n.title)}</h3>
-    <p class="p1">${inline(n.points[0])}</p>
+    <ul class="points">${n.points.filter(Boolean).map((p) => `<li>${inline(p)}</li>`).join("")}</ul>
     ${n.impact ? `<div class="impact"><b>実務では</b>${inline(n.impact)}</div>` : ""}
+    ${figure(n.figure)}
     <div class="tags">${chip(n.topic)}${followChip(n, iss)}</div>
-    ${more ? `<details class="more"><summary>詳しく${n.figure ? "（図あり）" : ""}</summary>${newsDetail(n)}</details>` : ""}
-    <div class="links"><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">一次情報：${esc(host(n.url))}</a></div></div></article>`;
+    <div class="links"><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">一次情報：${esc(host(n.url))}</a>${(n.reactions || []).map((r) => `<span>反応：${esc(r)}</span>`).join("")}</div></div></article>`;
 }
 function viewDash(iss) {
   const i = dates.indexOf(iss.date);
@@ -382,7 +377,6 @@ function runSearch() {
 let pendingFocus = null;
 function focusItem(id) {
   const el = document.getElementById("i-" + id); if (!el) return;
-  const det = el.querySelector("details.more"); if (det) det.open = true;
   el.scrollIntoView({ block: "start" }); el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
 }
 let routeSeq = 0;
