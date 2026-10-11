@@ -231,7 +231,48 @@
    "image": ""
   }
  ],
- "tips": [],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "俺のAIプログラミング手法：評価指標を決めて /goal とループで回す",
+   "where": "Zenn",
+   "date": "10/05",
+   "heat": "♡ 1061",
+   "summary": "人間の役割を評価指標の設計に置き、claude -p のループや /goal で Issue 消化を自律的に回す手順の棚卸し。グローバルプロンプトには判断基準だけ書く、という方針も紹介。",
+   "code": "while : ; do claude -p \"Git 履歴を見て次にやることを探して\"; done\n/goal Issues を全部潰して",
+   "url": "https://zenn.dev/mizchi/articles/ai-coding-loop-formal"
+  },
+  {
+   "kind": "使い方",
+   "title": "Claude Mods を入れる前に claude plugin validate で中身を確かめる",
+   "where": "Zenn",
+   "date": "10/05",
+   "heat": "♡ 71",
+   "summary": "公開 mod 3 つ（prompt-rail、md-prompt、qa-guide）を試した報告。mod はサンドボックス外でユーザー権限で動くため、導入前にどのイベントを拾い何の API を呼ぶかを確認する手順を紹介。",
+   "code": "claude plugin validate",
+   "url": "https://zenn.dev/yoshihiko555/articles/ea2db6070058b3"
+  },
+  {
+   "kind": "使い方",
+   "title": "Haiku 5.5 を機にサブエージェントのモデルを役割ごとに見直す",
+   "where": "Zenn",
+   "date": "10/08",
+   "heat": "♡ 50",
+   "summary": "test-runner・code-explore・fast-worker の 3 役割を Haiku との相性で評価。テスト実行役は Haiku / low に切り替え、調査役は Haiku と Sonnet を effort 別に並べて比較したという報告。",
+   "code": "",
+   "url": "https://zenn.dev/genda_jp/articles/haiku-5-5-subagent-roles"
+  },
+  {
+   "kind": "Skill",
+   "title": "レビューの口伝を 40 ルールにして AI レビュー用スキルに載せる",
+   "where": "Zenn",
+   "date": "10/07",
+   "heat": "♡ 33",
+   "summary": "PR コメント 1,105 件から 40 ルールを抽出。スキルは判定基準を持たずドキュメントへの索引とし、差分に合図の文字列が出たときだけ該当ルールを開く形にしたという運用報告。",
+   "code": "",
+   "url": "https://zenn.dev/edash_tech_blog/articles/c52409a3d6fa12"
+  }
+ ],
  "unverified": [
   {
    "title": "Google Cloud の新サービス「Gemini Agent」で Claude Opus 5.5 / Sonnet 5.5 が使えるとの報道",
