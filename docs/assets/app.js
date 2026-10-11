@@ -105,9 +105,9 @@ function trend(entries, cur, W = 600) {
 const textW = (s, size) => [...String(s)].reduce((w, ch) => w + (ch.charCodeAt(0) < 256 ? size * 0.6 : size), 0);
 let figSeq = 0;
 function figFlow(f) {
-  const fs = 13, ss = 11, pad = 14, gapX = 46, gapY = 12, mid = "ah" + (++figSeq);
+  const fs = 14, ss = 12, pad = 14, gapX = 46, gapY = 12, mid = "ah" + (++figSeq);
   const hasSub = f.cols.some((c) => c.some((n) => n.sub));
-  const bh = hasSub ? 48 : 36;
+  const bh = hasSub ? 50 : 38;
   const widths = f.cols.map((c) => Math.max(...c.map((n) => Math.max(textW(n.label, fs), textW(n.sub || "", ss)) + pad * 2), 76));
   const heights = f.cols.map((c) => c.length * bh + (c.length - 1) * gapY);
   const H = Math.max(...heights) + 4, xs = []; let x = 2;
@@ -126,9 +126,10 @@ function figFlow(f) {
   const boxes = pos.flat().map((p) => `
     <rect x="${p.x}" y="${p.y}" width="${p.w}" height="${bh}" rx="7" fill="${p.n.emph ? "var(--accent-soft)" : "var(--surface)"}" stroke="${p.n.emph ? "var(--accent)" : "var(--line-2)"}" stroke-width="1.3"/>
     <text x="${p.x + p.w / 2}" y="${p.y + (p.n.sub ? 20 : bh / 2 + 4.5)}" text-anchor="middle" font-size="${fs}" font-weight="${p.n.emph ? 700 : 500}" fill="var(--ink)">${esc(p.n.label)}</text>
-    ${p.n.sub ? `<text x="${p.x + p.w / 2}" y="${p.y + 37}" text-anchor="middle" font-size="${ss}" fill="var(--ink-3)">${esc(p.n.sub)}</text>` : ""}`).join("");
-  return `<svg class="flow" viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${esc(f.title || "流れ図")}">
-    <defs><marker id="${mid}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-3)"/></marker></defs>${edges}${boxes}</svg>
+    ${p.n.sub ? `<text x="${p.x + p.w / 2}" y="${p.y + 38}" text-anchor="middle" font-size="${ss}" fill="var(--ink-3)">${esc(p.n.sub)}</text>` : ""}`).join("");
+    const steps = `<ol class="flow-steps">${f.cols.map((c) => `<li>${c.map((n) => `<span class="fs-node${n.emph ? " emph" : ""}">${esc(n.label)}${n.sub ? `<small>${esc(n.sub)}</small>` : ""}</span>`).join("")}</li>`).join("")}</ol>`;
+  return `<svg class="flow" viewBox="0 0 ${W} ${H}" width="${W}" style="min-width:${Math.round(W * 0.85)}px" role="img" aria-label="${esc(f.title || "流れ図")}">
+    <defs><marker id="${mid}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-3)"/></marker></defs>${edges}${boxes}</svg>${steps}
     ${f.note ? `<div class="fig-note">${esc(f.note)}</div>` : ""}`;
 }
 function figCompare(f) {
@@ -234,9 +235,9 @@ function viewDash(iss) {
     <a class="kpi" href="#news"><span class="lab">主要ニュース</span><span class="val">${iss.news.length}<small>件</small></span>
       <span class="sub">${before ? `前号比 <span class="${diff > 0 ? "up" : "down"}">${diff > 0 ? "+" : diff < 0 ? "−" : "±"}${Math.abs(diff)}</span>` : "—"}</span>${spark(win.map((e) => e.n))}</a>
     <a class="kpi" href="#news" data-filter="claude"><span class="lab">Claude 関連</span><span class="val">${tc.claude || 0}<small>件</small></span>
-      <span class="sub">${iss.news.length ? Math.round((tc.claude || 0) / iss.news.length * 100) : 0}% · 最優先トピック</span>${spark(win.map((e) => e.topics.claude || 0), "var(--t-claude)")}</a>
-    <a class="kpi" href="#watch"><span class="lab">続報</span><span class="val">${follow.length}<small>件</small></span><span class="sub">過去号と同じ話題の続き</span></a>
-    <a class="kpi" href="#unverified"><span class="lab">未確認の話題</span><span class="val">${iss.unverified.length}<small>件</small></span><span class="sub">一次情報が見つからない</span></a>
+      <span class="sub">${iss.news.length ? Math.round((tc.claude || 0) / iss.news.length * 100) : 0}% · 最優先</span>${spark(win.map((e) => e.topics.claude || 0), "var(--t-claude)")}</a>
+    <a class="kpi" href="#watch"><span class="lab">続報</span><span class="val">${follow.length}<small>件</small></span><span class="sub">過去号の続き</span></a>
+    <a class="kpi" href="#unverified"><span class="lab">未確認の話題</span><span class="val">${iss.unverified.length}<small>件</small></span><span class="sub">一次情報なし</span></a>
     ${nextDl ? `<a class="kpi warn" href="#deadlines"><span class="lab">次の期限</span><span class="val">${dlDays}<small>日後</small></span><span class="sub">${md(nextDl.deadline.date)} ${esc(nextDl.deadline.label)}</span></a>`
       : `<div class="kpi"><span class="lab">次の期限</span><span class="val">—</span><span class="sub">期限のある発表なし</span></div>`}
     <a class="kpi" href="#sources"><span class="lab">情報源</span><span class="val">${ok}<small>/${iss.sources.length}</small></span>
