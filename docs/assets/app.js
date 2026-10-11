@@ -186,14 +186,16 @@ function followChip(n, iss) {
   return earlier.length ? `<a class="chip thread" href="#t-${esc(n.story)}">続報 · ${esc(STORIES[n.story] || n.story)} ${st.length} 件目</a>` : "";
 }
 function card(n, iss) {
-  return `<article class="card${n.figure ? " wide" : ""}" id="i-${esc(n.id)}" data-topic="${esc(n.topic)}">${thumb(n)}<div class="cb">
-    <div class="byline"><b>${esc(n.source)}</b><span>${esc(n.date)}</span></div>
-    <h3>${inline(n.title)}</h3>
-    <ul class="points">${n.points.filter(Boolean).map((p) => `<li>${inline(p)}</li>`).join("")}</ul>
-    ${n.impact ? `<div class="impact"><b>実務では</b>${inline(n.impact)}</div>` : ""}
-    ${figure(n.figure)}
-    <div class="tags">${chip(n.topic)}${followChip(n, iss)}</div>
-    <div class="links"><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">一次情報：${esc(host(n.url))}</a>${(n.reactions || []).map((r) => `<span>反応：${esc(r)}</span>`).join("")}</div></div></article>`;
+  return `<article class="card${n.image ? " has-img" : ""}" id="i-${esc(n.id)}" data-topic="${esc(n.topic)}">
+    <div class="card-main"><div class="cb">
+      <div class="byline"><b>${esc(n.source)}</b><span>${esc(n.date)}</span></div>
+      <h3>${inline(n.title)}</h3>
+      <ul class="points">${n.points.filter(Boolean).map((p) => `<li>${inline(p)}</li>`).join("")}</ul>
+      ${n.impact ? `<div class="impact"><b>実務では</b>${inline(n.impact)}</div>` : ""}
+    </div>${n.image ? thumb(n) : ""}</div>
+    ${n.figure ? `<div class="card-fig">${figure(n.figure)}</div>` : ""}
+    <div class="card-foot"><div class="tags">${chip(n.topic)}${followChip(n, iss)}</div>
+      <div class="links"><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">一次情報：${esc(host(n.url))}</a>${(n.reactions || []).map((r) => `<span>反応：${esc(r)}</span>`).join("")}</div></div></article>`;
 }
 let trendArgs = null;
 function viewDash(iss) {
