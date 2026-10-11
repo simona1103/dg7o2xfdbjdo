@@ -88,17 +88,17 @@ function trend(entries, cur) {
   const slots = Math.max(entries.length, 14), off = slots - entries.length; // keep bar width steady while history is short
   const bw = (W - L - R) / slots, Y = (v) => Tp + (H - Tp - B) * (1 - v / top);
   let g = "";
-  [0, top / 2, top].forEach((v) => { g += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="IBM Plex Mono, monospace">${v}</text>`; });
+  [0, top / 2, top].forEach((v) => { g += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end" font-size="11" fill="var(--ink-3)">${v}</text>`; });
   const bars = entries.map((e, i) => {
     const x = L + (i + off) * bw + bw * 0.18, w = bw * 0.64; let y0 = Y(0), segs = "";
     Object.keys(TOPICS).forEach((t) => { const v = e.topics[t] || 0; if (!v) return; const h = Y(0) - Y(v);
       segs += `<rect x="${x.toFixed(1)}" y="${(y0 - h).toFixed(1)}" width="${w.toFixed(1)}" height="${Math.max(h - 1, 0).toFixed(1)}" rx="2" fill="${tColor(t)}" opacity="${e.sample ? 0.55 : 1}"/>`; y0 -= h; });
-    const lab = (i % 2 === entries.length % 2 || e.date === cur) ? `<text x="${x + w / 2}" y="${H - 9}" text-anchor="middle" font-size="10" fill="${e.date === cur ? "var(--ink)" : "var(--ink-3)"}" font-weight="${e.date === cur ? 700 : 400}" font-family="IBM Plex Mono, monospace">${md(e.date)}</text>` : "";
+    const lab = (i % 2 === entries.length % 2 || e.date === cur) ? `<text x="${x + w / 2}" y="${H - 9}" text-anchor="middle" font-size="11" fill="${e.date === cur ? "var(--ink)" : "var(--ink-3)"}" font-weight="${e.date === cur ? 700 : 400}">${md(e.date)}</text>` : "";
     const ring = e.date === cur ? `<rect x="${(x - 3).toFixed(1)}" y="${(y0 - 3).toFixed(1)}" width="${(w + 6).toFixed(1)}" height="${(Y(0) - y0 + 3).toFixed(1)}" rx="3" fill="none" stroke="var(--ink)" stroke-width="1.2"/>` : "";
     const body = `<rect class="hit" x="${(L + (i + off) * bw).toFixed(1)}" y="${Tp}" width="${bw.toFixed(1)}" height="${H - Tp - B}" fill="transparent"/>${segs}${ring}${lab}<title>${md(e.date)}：${e.n} 件${e.sample ? "（見本）" : ""}</title>`;
     return e.full ? `<a href="#d${e.date}">${body}</a>` : `<g>${body}</g>`;
   }).join("");
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="直近 ${entries.length} 日の主要ニュース件数（トピック別）" font-family="Noto Sans JP, sans-serif">${g}${bars}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="直近 ${entries.length} 日の主要ニュース件数（トピック別）">${g}${bars}</svg>`;
 }
 
 /* ---------- figures: the agent writes only {type, data}; drawing is fixed here ---------- */
@@ -127,7 +127,7 @@ function figFlow(f) {
     <rect x="${p.x}" y="${p.y}" width="${p.w}" height="${bh}" rx="7" fill="${p.n.emph ? "var(--accent-soft)" : "var(--surface)"}" stroke="${p.n.emph ? "var(--accent)" : "var(--line-2)"}" stroke-width="1.3"/>
     <text x="${p.x + p.w / 2}" y="${p.y + (p.n.sub ? 20 : bh / 2 + 4.5)}" text-anchor="middle" font-size="${fs}" font-weight="${p.n.emph ? 700 : 500}" fill="var(--ink)">${esc(p.n.label)}</text>
     ${p.n.sub ? `<text x="${p.x + p.w / 2}" y="${p.y + 37}" text-anchor="middle" font-size="${ss}" fill="var(--ink-3)">${esc(p.n.sub)}</text>` : ""}`).join("");
-  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${esc(f.title || "流れ図")}" font-family="Noto Sans JP, sans-serif">
+  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${esc(f.title || "流れ図")}">
     <defs><marker id="${mid}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-3)"/></marker></defs>${edges}${boxes}</svg>
     ${f.note ? `<div class="fig-note">${esc(f.note)}</div>` : ""}`;
 }
@@ -156,10 +156,10 @@ function figTimeline(f) {
   if (f.today) { const x = X(f.today); s += `<line x1="${x}" y1="${Y - 22}" x2="${x}" y2="${Y + 22}" stroke="var(--warn)" stroke-dasharray="3 3"/><text x="${x}" y="${Y + 36}" text-anchor="middle" font-size="11" fill="var(--warn)">今日 ${md(f.today)}</text>`; }
   pts.forEach((p) => { const x = X(p.date);
     s += `<circle cx="${x}" cy="${Y}" r="6" fill="${p.emph ? "var(--accent)" : "var(--surface)"}" stroke="var(--accent)" stroke-width="2"/>
-      <text x="${x}" y="${Y - 26}" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">${md(p.date)}</text>
+      <text x="${x}" y="${Y - 26}" text-anchor="middle" font-size="12" fill="var(--ink-3)">${md(p.date)}</text>
       <text x="${x}" y="${Y - 12}" text-anchor="middle" font-size="12.5" font-weight="${p.emph ? 700 : 500}" fill="var(--ink)">${esc(p.label)}</text>`; });
   const days = Math.round((T(pts[pts.length - 1].date) - T(f.today || pts[0].date)) / dayMs);
-  return `<svg viewBox="0 0 ${W} 92" width="${W}" role="img" aria-label="${esc(f.title || "年表")}" font-family="Noto Sans JP, sans-serif">${s}</svg>
+  return `<svg viewBox="0 0 ${W} 92" width="${W}" role="img" aria-label="${esc(f.title || "年表")}">${s}</svg>
     ${f.today && days > 0 ? `<div class="fig-note">${esc(pts[pts.length - 1].label)}まで あと ${days} 日</div>` : ""}`;
 }
 const figStats = (f) => `<div class="stats">${f.items.map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join("")}</div>`;
@@ -175,8 +175,8 @@ const figure = (f) => {
 function tile(n) {
   const name = (n.source || n.where || "").replace(/ (リリースノート|CHANGELOG|Changelog)$/, "");
   return `<svg viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="90" fill="var(--chip)"/><rect width="5" height="90" fill="${tColor(n.topic)}"/>
-    <text x="16" y="50" font-size="${textW(name, 17) > 132 ? 12.5 : 17}" font-weight="700" fill="var(--ink-2)" font-family="Zen Kaku Gothic New, sans-serif">${esc(name)}</text>
-    <text x="16" y="70" font-size="10" fill="var(--ink-3)" font-family="IBM Plex Mono, monospace">${esc(host(n.url))}</text></svg>`;
+    <text x="16" y="50" font-size="${textW(name, 17) > 132 ? 12.5 : 17}" font-weight="700" fill="var(--ink-2)">${esc(name)}</text>
+    <text x="16" y="70" font-size="11" fill="var(--ink-3)">${esc(host(n.url))}</text></svg>`;
 }
 function thumb(n) {
   if (!n.image) return `<div class="thumb tile">${tile(n)}</div>`;
