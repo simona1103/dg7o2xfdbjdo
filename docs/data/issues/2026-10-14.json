@@ -1,0 +1,240 @@
+{
+ "date": "2026-10-14",
+ "weekday": "水",
+ "headline": "Google が Gemini 4 Argon を公開、Copilot にも同日対応",
+ "generatedAt": "06:50",
+ "keyPoints": [
+  [
+   "Google が Gemini 4 Argon を API・Gemini アプリで提供開始。導入価格は入力 $2・出力 $10 / 100 万トークン。",
+   "gemini-4-argon"
+  ],
+  [
+   "GitHub の secret scanning が Anthropic の API キーを push protection の既定ブロック対象に追加。",
+   "github-secret-scanning-anthropic-keys"
+  ],
+  [
+   "Anthropic が 1 日 3 万件超のマージを支える社内 VCS Scion への移行を公開。",
+   "anthropic-scion-source-control"
+  ]
+ ],
+ "news": [
+  {
+   "id": "gemini-4-argon",
+   "lead": true,
+   "topic": "model",
+   "story": "gemini-4-argon",
+   "storyTitle": "Google Gemini 4 Argon の提供開始",
+   "title": "Google が Gemini 4 Argon を一般提供",
+   "source": "Google DeepMind / Google",
+   "date": "10/13",
+   "points": [
+    "API（AI Studio・Gemini platform）、Antigravity（AI Ultra）、Gemini アプリと検索の AI Mode（AI Ultra / Pro）で提供開始。",
+    "導入価格は入力 $2・出力 $10 / 100 万トークン、キャッシュ入力は 95% 引き。Google は Vals Index で 1 位と説明。"
+   ],
+   "impact": "コーディング・エージェント用途の比較対象が増えた。Claude 利用の WG でも、同じ課題で費用と品質を測り直す価値がある。",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-argon__blog-header__2784x1566.width-1300.png",
+   "deadline": null,
+   "figure": {
+    "type": "stats",
+    "title": "Gemini 4 Argon の導入価格（100 万トークンあたり）",
+    "items": [
+     {
+      "value": "$2",
+      "label": "入力"
+     },
+     {
+      "value": "$10",
+      "label": "出力"
+     },
+     {
+      "value": "95% 引き",
+      "label": "キャッシュ入力"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini-4-argon-copilot",
+   "topic": "dev",
+   "story": "gemini-4-argon",
+   "storyTitle": "Google Gemini 4 Argon の提供開始",
+   "title": "Copilot で Gemini 4 Argon が一般提供",
+   "source": "GitHub Changelog",
+   "date": "10/13",
+   "points": [
+    "Copilot Pro+・Max・Business・Enterprise で利用可能。VS Code、Visual Studio、Copilot CLI、coding agent、JetBrains などのモデルピッカーから選ぶ。",
+    "課金は従量課金のプロバイダー定価。ロールアウトは段階的。"
+   ],
+   "impact": "Business / Enterprise の管理者は、既定ではモデルが自動で有効になるため、Copilot 設定のモデルポリシーで可否を確認する。",
+   "url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/669843404-1a20c331-b765-4da1-985b-47ce30aaa064.png",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "github-secret-scanning-anthropic-keys",
+   "topic": "sec",
+   "story": "github-secret-scanning-anthropic",
+   "storyTitle": "GitHub secret scanning の Anthropic キー対応",
+   "title": "Anthropic の API キーを push protection で既定ブロック",
+   "source": "GitHub Changelog",
+   "date": "10/13",
+   "points": [
+    "secret scanning が `anthropic_service_api_key` と `anthropic_user_api_key` を検出対象に追加。",
+    "この 2 種は push protection の既定対象になり、secret scanning 有効なリポジトリ（無料の公開リポジトリ含む）でコミットが自動ブロックされる。"
+   ],
+   "impact": "Claude API キーの誤コミットが push 時点で止まる。ブロックされた場合の運用手順を開発者に周知しておく。",
+   "url": "https://github.blog/changelog/2026-10-13-secret-scanning-blocks-anthropic-keys-by-default-adds-salesforce",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/571554102-6349f5b6-b0b7-4130-9300-6d5d87e0b6e9_963b5b.jpg",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "anthropic-scion-source-control",
+   "topic": "claude",
+   "story": "anthropic-scion",
+   "storyTitle": "Anthropic の社内ソース管理 Scion",
+   "title": "Anthropic が社内 VCS「Scion」への移行を公開",
+   "source": "Anthropic Engineering",
+   "date": "10/13",
+   "points": [
+    "1 日のマージ数は 5 月の約 2,500 件から 9 月には 30,000 件超へ。git では追いつかず、5 か月でモノレポを自作の Scion に移行した。",
+    "Scion はコミットをサーバー側で作る設計で、チェックアウトはスパース／仮想化が前提。Claude がその開発自体を支えたとしている。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d344b849251502fade67ad16f09bb86fa6f42363-500x263.png",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "liquid-lfm25-24b-a2b",
+   "topic": "local",
+   "story": "liquid-lfm25",
+   "storyTitle": "Liquid AI LFM2.5 シリーズ",
+   "title": "Liquid AI が LFM2.5-24B-A2B を公開",
+   "source": "Hugging Face（Liquid AI）",
+   "date": "10/13",
+   "points": [
+    "総 24B・アクティブ 2B の推論特化 MoE。コンテキストは 32K から 131K に拡大し、ツール呼び出しやエージェント用途を想定。",
+    "Apple M5 Max で 184 tok/s、単一 NVIDIA B300 で最大 21K tok/s と記載。"
+   ],
+   "impact": "",
+   "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+   "reactions": [],
+   "image": "https://cdn-uploads.huggingface.co/production/uploads/644249b08443bce4c9890a0f/YxGx9U6yV6_mumklCyMsE.png",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "sarashina-free-beta",
+   "topic": "model",
+   "story": "sarashina-service",
+   "storyTitle": "国産 AI Sarashina の無償 β 提供",
+   "title": "SB Intuitions が Sarashina の無償 β を開始",
+   "source": "ITmedia AI+（SB Intuitions 発表）",
+   "date": "10/13",
+   "points": [
+    "API とサイト上のチャット・日英翻訳を無償 β で提供。Google アカウントでログインでき、事前申込は不要。",
+    "API で選べるのは mini・nano・embedding・rerank・guard・translate の 6 モデル。リクエスト数に制限があり、無償版は利用データを改善に使う場合がある。"
+   ],
+   "impact": "社内データを扱う検証には使わず、日本語モデルの比較評価用途にとどめる。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002210/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/13/2000002210/10009163/2048",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "Claude Sonnet 5.5 への移行手順：Sonnet 5 との違いと影響する 5 つの変更",
+   "where": "Zenn",
+   "date": "10/13",
+   "desc": "料金は据え置き、モデル ID は claude-sonnet-5-5。Sonnet 5 のコードに影響する変更 5 点と、effort を medium から測り直す手順を整理した記事。",
+   "url": "https://zenn.dev/kenji_harada/articles/claude-sonnet-5-5-vs-sonnet-5-opus-5-5-8083fdad",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--gt-QBc5F--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Sonnet%25205.5%2520%25E3%2581%25B8%25E3%2581%25AE%25E7%25A7%25BB%25E8%25A1%258C%25E6%2589%258B%25E9%25A0%2586%25EF%25BC%259ASonnet%25205%2520%25E3%2581%25A8%25E3%2581%25AE%25E9%2581%2595%25E3%2581%2584%25E3%2583%25BB%25E5%25BD%25B1%25E9%259F%25BF%25E3%2581%2599%25E3%2582%258B%25E5%25A4%2589%25E6%259B%25B4%25205%2520%25E3%2581%25A4%25E3%2583%25BBeffort%2520%25E3%2581%25AE%25E8%25A8%25AD%25E5%25AE%259A%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E5%258E%259F%25E7%2594%25B0%25E8%25B3%25A2%25E6%25B2%25BB%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSXBDeDB1YVkyUUFvbmJSa2dKNHdRYm5qLW84NTFCa2kxRUo0NkdXMTdXTVlBNDFFcz1zMjUwLWM=%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  },
+  {
+   "title": "Claude Code に .env を読ませない設定を入れても、読めてしまう場面があった",
+   "where": "Zenn",
+   "date": "10/13",
+   "desc": "Claude Code と Codex で 5 条件・15 回を実測。permissions.deny は単独コマンドは止めたが、スクリプト経由の読み取りは止まらなかったという報告。",
+   "url": "https://zenn.dev/bpr_prot/articles/c3c58f88e594ef",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--xm2bunso--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25AB%2520.env%2520%25E3%2582%2592%25E8%25AA%25AD%25E3%2581%25BE%25E3%2581%259B%25E3%2581%25AA%25E3%2581%2584%25E8%25A8%25AD%25E5%25AE%259A%25E3%2582%2592%25E5%2585%25A5%25E3%2582%258C%25E3%2581%25A6%25E3%2582%2582%25E3%2580%2581%25E8%25AA%25AD%25E3%2582%2581%25E3%2581%25A6%25E3%2581%2597%25E3%2581%25BE%25E3%2581%2586%25E5%25A0%25B4%25E9%259D%25A2%25E3%2581%258C%25E3%2581%2582%25E3%2581%25A3%25E3%2581%259F%25EF%25BC%2588Codex%2520%25E3%2581%25A8%25E6%25AF%2594%25E8%25BC%2583%25EF%25BC%2589%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:BPR%2520Prot.%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzk5MTMzYTU5OWEuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   0
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
