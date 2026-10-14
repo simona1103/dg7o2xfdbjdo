@@ -1,0 +1,235 @@
+{
+ "date": "2026-10-15",
+ "weekday": "木",
+ "headline": "Claude API が OpenTelemetry 出力に対応、Muse Wonder 登場",
+ "generatedAt": "06:56",
+ "keyPoints": [
+  [
+   "Claude API のトレースを、Console の設定だけで既存の監視基盤へ送れるようになった（ベータ）。",
+   "claude-api-opentelemetry-beta"
+  ],
+  [
+   "Claude Code 2.1.299・2.1.300 でアイドル時の自動圧縮などが入った。",
+   "claude-code-2-1-300"
+  ],
+  [
+   "Copilot の HydraFusion に Claude Opus 5.5 が加わり、Max 版も登場した。",
+   "copilot-hydrafusion-max"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-api-opentelemetry-beta",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-api-otel",
+   "storyTitle": "Claude API の OpenTelemetry エクスポート",
+   "title": "Claude API が OpenTelemetry 出力に対応（ベータ）",
+   "source": "Claude Platform",
+   "date": "10/14",
+   "points": [
+    "Messages API のリクエストと Managed Agents のセッションを、Console で送信先を追加するだけで OTLP 対応の監視基盤にトレース出力できる。コード変更は不要。",
+    "Claude SDK は Python・TypeScript・C#・Go・Java・PHP・Ruby で span を出力し、API 側の span と同じ trace で見られる（Claude Platform on AWS を除く）。"
+   ],
+   "impact": "C# の SDK を使う .NET システムでも既存の監視基盤で Claude 呼び出しの遅延・失敗・トークン使用量を追えるので、社内 PoC のログ設計に取り込む価値がある。",
+   "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry",
+   "image": "https://platform.claude.com/web-api/og/docs/en/manage-claude/opentelemetry?design-rev=3",
+   "reactions": [
+    "Qiita・Zenn で解説記事が出ている"
+   ],
+   "figure": {
+    "type": "flow",
+    "title": "トレースの経路",
+    "cols": [
+     [
+      {
+       "label": "アプリ（Claude SDK）",
+       "sub": "コードで tracer provider を登録"
+      }
+     ],
+     [
+      {
+       "label": "Claude API",
+       "sub": "Console に送信先（destination）を追加",
+       "emph": true
+      }
+     ],
+     [
+      {
+       "label": "監視基盤",
+       "sub": "OTLP/HTTP（protobuf）を HTTPS 443 で受信"
+      }
+     ]
+    ],
+    "note": "API 側の設定には Console の admin ロールが必要。どちらもベータ。"
+   }
+  },
+  {
+   "id": "claude-code-2-1-300",
+   "topic": "claude",
+   "title": "Claude Code 2.1.299・2.1.300 の更新",
+   "source": "Claude Code",
+   "date": "最新版",
+   "points": [
+    "2.1.299：200K トークン以上の会話が約 54 分放置されると、1 時間のプロンプトキャッシュが切れる前に自動で圧縮する。`idleCompaction: false` で無効化できる。",
+    "2.1.300：OpenTelemetry の span に GenAI 標準属性を追加。`/advisor` が Claude Platform on AWS で使えるようになり、api.anthropic.com への大きなリクエストは常に gzip 圧縮される。"
+   ],
+   "impact": "アイドル後の再開コストが下がる一方、挙動が変わるので、プロンプトキャッシュ前提のコスト見積もりをしている場合は確認する。",
+   "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+   "image": "",
+   "reactions": []
+  },
+  {
+   "id": "copilot-hydrafusion-max",
+   "topic": "dev",
+   "story": "copilot-hydrafusion",
+   "storyTitle": "Copilot の HydraFusion",
+   "title": "Copilot の HydraFusion 更新と Max 追加",
+   "source": "GitHub Changelog",
+   "date": "10/14",
+   "points": [
+    "複数モデルを組み合わせて 1 つの回答を作る HydraFusion のモデルプールに Claude Opus 5.5、GPT-6 Astra、GPT-6.1 Sol、GPT-6 Luna が加わり、工程ごとに推論の強さを変えるようになった。",
+    "より重いタスク向けの HydraFusion Max が追加。VS Code・GitHub Copilot app・Copilot CLI で、研究プレビューとして Pro / Pro+ / Business / Enterprise で使える。"
+   ],
+   "impact": "組織の Copilot では、実験的・プレビュー機能とモデルポリシーが有効なときだけ使える。社内で有効化するかを管理者と確認する。",
+   "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+   "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-new-releases.jpg",
+   "reactions": []
+  },
+  {
+   "id": "meta-muse-wonder",
+   "topic": "model",
+   "story": "meta-muse-wonder",
+   "storyTitle": "Meta Muse Wonder",
+   "title": "Meta が最大モデル「Muse Wonder」を発表",
+   "source": "ITmedia（Meta の発表を報道）",
+   "date": "10/12",
+   "points": [
+    "Muse Wonder と上位版 Muse Wonder Full を発表。Muse Wonder は同日から Meta Model API とコーディングエージェント Muse Code で利用でき、コンテキスト長は 100 万トークン。",
+    "Muse Wonder Full は Muse Code の契約者向け。Meta 公開のベンチマークでは長期コーディングの DeepSWE 1.1 で Claude Opus 5.5 を上回る一方、Terminal-Bench 4.0-AA などは Opus 5.5 が最高だった。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2610/13/2000002197/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2610/13/2000002197/10009111/2048",
+   "reactions": [
+    "Hacker News で議論"
+   ]
+  },
+  {
+   "id": "dhu-claude-campus",
+   "topic": "biz",
+   "story": "dhu-claude",
+   "storyTitle": "デジタルハリウッド大学の Claude 全学導入",
+   "title": "デジハリ大が Claude を全学導入",
+   "source": "ITmedia（大学の発表を報道）",
+   "date": "10/14",
+   "points": [
+    "デジタルハリウッド大学が 11 月から、全学生・全教職員に大学発行のアカウントで Claude を提供する。利用量や費用を気にせず使える形で、国内の大学での全学導入は同学が初という。",
+    "AI 利用の申告や、著作物・個人情報の取り扱いに関する学内規程も整える。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2610/14/2000002278/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2610/14/2000002278/10009373/2048",
+   "reactions": []
+  },
+  {
+   "id": "clark-japan-rsi-cyber",
+   "topic": "sec",
+   "story": "ai-self-replication",
+   "storyTitle": "小型 AI モデルの自己複製リスク",
+   "title": "Anthropic 共同創業者が来日、AI 自己改善の予測を前倒し",
+   "source": "ITmedia（講演・説明会を報道）",
+   "date": "10/14",
+   "points": [
+    "ジャック・クラーク氏は 10/13 の東大での講演で、自らの後継を訓練できる AI が 2027 年に登場する確率を 50% 超とした（年初は 2027 年 30%）。ただし来年それを実行する可能性は「ゼロに近い」と述べた。",
+    "10/14 の説明会では、日本企業への相次ぐサイバー攻撃にオープンウェイトモデルが使われる可能性に言及。AI が自律的に攻撃した事例は「知り得る限りない」とした。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/14/2000002262/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/14/2000002262/10009326/2048",
+   "reactions": []
+  }
+ ],
+ "tips": [],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "Claude Code が「手元で何をしたか」まで追う — OpenTelemetry × BigQuery の収集基盤",
+   "where": "Zenn",
+   "date": "10/14",
+   "desc": "Claude Code の OTel を Cloud Run functions 経由で BigQuery に集め、コスト・スキル運用・監査に使う構成。受信時に自社 org 以外を破棄し、機密属性を別カラムへ退避している。",
+   "url": "https://zenn.dev/canly/articles/a20d02428b475a",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--KtTf45e1--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%258C%2522%25E6%2589%258B%25E5%2585%2583%25E3%2581%25A7%25E4%25BD%2595%25E3%2582%2592%25E3%2581%2597%25E3%2581%259F%25E3%2581%258B%2522%25E3%2581%25BE%25E3%2581%25A7%25E8%25BF%25BD%25E3%2581%2586%2520%25E2%2580%2594%2520OpenTelemetry%2520%25C3%2597%2520BigQuery%2520%25E3%2581%25AE%25E5%258F%258E%25E9%259B%2586%25E5%259F%25BA%25E7%259B%25A4%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:KeitoInoue%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2EwYjI3NWVjYTkuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2582%25AB%25E3%2583%25B3%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzNlODhiOTJiNTAuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  },
+  {
+   "title": "Windows の Claude Code フックは、日本語のときだけ黙って壊れる",
+   "where": "Zenn",
+   "date": "10/14",
+   "desc": "日本語 Windows の Python 3.14 以前では、フックの標準入出力が cp932 で処理され、日本語プロンプトだけ判定が働かない。UTF-8 を明示する直し方を紹介。",
+   "url": "https://zenn.dev/haruto_miyakawa/articles/claude-code-hook-windows-cp932",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--4JOTUkLf--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Windows%2520%25E3%2581%25AE%2520Claude%2520Code%2520%25E3%2583%2595%25E3%2583%2583%25E3%2582%25AF%25E3%2581%25AF%25E3%2580%2581%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%25E3%2581%25AE%25E3%2581%25A8%25E3%2581%258D%25E3%2581%25A0%25E3%2581%2591%25E9%25BB%2599%25E3%2581%25A3%25E3%2581%25A6%25E5%25A3%258A%25E3%2582%258C%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:haruto%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2E3NWUxNWM3NjkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   0
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
