@@ -1,0 +1,267 @@
+{
+ "date": "2026-10-16",
+ "weekday": "金",
+ "headline": "Copilot が Opus 4.8・5 を 11/16 廃止、Meta は 816B のオープンモデル公開",
+ "generatedAt": "06:52",
+ "keyPoints": [
+  [
+   "GitHub Copilot が Claude Opus 4.8・Opus 5・GPT-5.6 Terra を 11/16 に廃止し、代替は Opus 5.5 など。",
+   "copilot-model-deprecation-nov16"
+  ],
+  [
+   "Opus 5.5 の fast mode がリサーチプレビューを終え、申請・ベータヘッダが不要になった。",
+   "claude-opus-55-fast-mode-ga"
+  ],
+  [
+   "Meta が 816B/42B active・1M コンテキストのオープンウェイト Muse Spark Open を公開した。",
+   "muse-spark-open"
+  ]
+ ],
+ "news": [
+  {
+   "id": "copilot-model-deprecation-nov16",
+   "lead": true,
+   "topic": "dev",
+   "story": "copilot-model-deprecation",
+   "storyTitle": "Copilot のモデル廃止（11/16）",
+   "title": "Copilot、Opus 4.8・Opus 5 などを 11/16 に廃止",
+   "source": "GitHub Changelog",
+   "date": "10/15",
+   "points": [
+    "Claude Opus 4.8、Claude Opus 5、GPT-5.6 Terra を 2026-11-16 に全 Copilot 体験（Chat・インライン編集・ask/agent・補完）で廃止する。",
+    "代替は Opus 4.8・Opus 5 が Claude Opus 5.5、GPT-5.6 Terra が GPT-6.1 Sol か GPT-6 Luna。Opus 4.8 は個人の年額プラン契約者には引き続き提供される。"
+   ],
+   "impact": "Business/Enterprise は既定設定なら代替モデルが自動で有効になるが、グローバル既定をオフにしている場合はモデルポリシーで代替を有効にし、ワークフローの指定モデルを 11/16 までに切り替える。",
+   "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/645867806-878ea927-48c9-4765-a896-4a5f3d7b8f2e.jpg",
+   "deadline": {
+    "from": "2026-10-15",
+    "date": "2026-11-16",
+    "label": "Copilot の対象モデル廃止日"
+   },
+   "figure": {
+    "type": "compare",
+    "title": "廃止されるモデルと代替",
+    "cols": [
+     "廃止日",
+     "代替モデル"
+    ],
+    "rows": [
+     [
+      "Claude Opus 4.8（年額の個人プランは継続）",
+      "2026-11-16",
+      "Claude Opus 5.5"
+     ],
+     [
+      "Claude Opus 5",
+      "2026-11-16",
+      "Claude Opus 5.5"
+     ],
+     [
+      "GPT-5.6 Terra",
+      "2026-11-16",
+      "GPT-6.1 Sol / GPT-6 Luna"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "claude-opus-55-fast-mode-ga",
+   "topic": "claude",
+   "story": "claude-opus-55-fast-mode",
+   "storyTitle": "Claude Opus 5.5 の fast mode",
+   "title": "Opus 5.5 の fast mode がリサーチプレビュー終了",
+   "source": "Claude Platform リリースノート",
+   "date": "10/15",
+   "points": [
+    "Claude Opus 5.5 の fast mode はアクセス申請が不要になり、`fast-mode-2026-02-01` ベータヘッダも不要（送っても動く）。全 usage tier に既定のレート制限が付く。",
+    "Opus 5 と Opus 4.8 の fast mode はリサーチプレビューのまま。Claude in Microsoft Foundry（Azure）でも Opus 5.5 の fast mode が使える。"
+   ],
+   "impact": "Opus 5.5 を使う API 呼び出しはヘッダ削除と申請待ちの解消が可能。Opus 5 / 4.8 向けのコードはヘッダを残す。",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "reactions": [],
+   "image": "",
+   "figure": null,
+   "lead": false
+  },
+  {
+   "id": "claude-code-2-1-301",
+   "topic": "claude",
+   "title": "Claude Code 2.1.301：OTel 拡充と mods の挙動変更",
+   "source": "Claude Code CHANGELOG",
+   "date": "最新版",
+   "points": [
+    "OpenTelemetry の `tool_decision` イベントに `classifier_verdict`・`permission_mode` などを追加し、auto mode の分類器判定と権限ルールを区別できる。`CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` も追加。",
+    "mods の hook の `.catch` は hook が例外・タイムアウトしたときだけ実行され、`$.env.set` は `{}` か `{ deny }` で解決する挙動に変更。`fable` エイリアスが組織で使えないとき前の Fable モデルで再試行する修正も入った。"
+   ],
+   "impact": "mods を自作・導入している場合は `.catch` と `$.env.set` の挙動変更を確認する。",
+   "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+   "reactions": [],
+   "image": "",
+   "figure": null,
+   "lead": false
+  },
+  {
+   "id": "muse-spark-open",
+   "topic": "model",
+   "story": "muse-spark-open",
+   "storyTitle": "Meta Muse Spark Open",
+   "title": "Meta、816B のオープンウェイト Muse Spark Open を公開",
+   "source": "Hugging Face / Meta",
+   "date": "10/15",
+   "points": [
+    "総パラメータ約 816B・アクティブ約 42B の MoE で、コンテキストは最大 1M トークン。テキスト・画像・音声・動画を入力でき、出力はテキスト。コーディングエージェント用途で学習したと Meta は説明している。",
+    "チェックポイントは BF16（約 1.5 TB）と NVFP4。NVFP4 は B200 1 ノードで動作し、transformers・llama.cpp・vLLM・SGLang・MLX に対応。ライセンスは Muse Model License。"
+   ],
+   "impact": "全重みをメモリに載せる必要があり、手元の PC で動かす用途ではない（小型でローカル向けなのは 8 月公開の Muse Glimmer）。",
+   "url": "https://huggingface.co/blog/meta-muse-spark-open",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://huggingface.co/blog/assets/meta-muse-spark-open/thumbnail.png",
+   "figure": {
+    "type": "stats",
+    "title": "Muse Spark Open の主な仕様",
+    "items": [
+     {
+      "value": "816B",
+      "label": "総パラメータ"
+     },
+     {
+      "value": "42B",
+      "label": "トークンあたりのアクティブ"
+     },
+     {
+      "value": "1M",
+      "label": "コンテキスト（トークン）"
+     }
+    ]
+   },
+   "lead": false
+  },
+  {
+   "id": "github-ai-scan-agentic-autofix-ga",
+   "topic": "sec",
+   "story": "github-code-security-ai",
+   "storyTitle": "GitHub Code Security の AI 機能",
+   "title": "GitHub、AI Scan と agentic autofix が一般提供",
+   "source": "GitHub Changelog",
+   "date": "10/15",
+   "points": [
+    "AI Scan for pull requests が GA。CodeQL が未対応の PHP・Shell/Bash・Terraform(HCL)・Dockerfile・JSP・Blazor(C#) などの PR 差分を検査する。結果は参考表示で、チェックを失敗させず merge もブロックしない。",
+    "agentic autofix が GA。コードスキャンのアラートを Copilot に割り当てると、修正案の作成と CodeQL 再実行での検証を経てドラフト PR を作る。Enterprise Cloud と Code Security / Advanced Security が必要。"
+   ],
+   "impact": "どちらも Code Security の AI クレジットを消費する。Blazor や Dockerfile を含む .NET リポジトリは AI Scan の対象になる。",
+   "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/668637028-c7fd9e91-ddbd-40bd-a7cb-c31366bbc342.jpeg",
+   "figure": null,
+   "lead": false
+  },
+  {
+   "id": "anthropic-independent-evaluators-metr",
+   "topic": "sec",
+   "story": "anthropic-independent-evaluators",
+   "storyTitle": "Anthropic の外部評価者との連携",
+   "title": "Anthropic、METR に社員並みのアクセスを付与",
+   "source": "Anthropic",
+   "date": "10/15",
+   "points": [
+    "METR の社員 6 人に、自社のリスク評価チームとほぼ同等の社内ツール・システムへのアクセスを与え始めた。METR は評価結果を公表し、Anthropic に公開の拒否権はない（定めた限られた種類の情報のみ黒塗りを要求できる）。",
+    "ほかに SecureBio と Accenture を評価者としており、Hugging Face を含む複数の組織とも協議中。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2e351e6311a0ada8ea4a0304ce6cda39243eaf4-1200x630.jpg",
+   "figure": null,
+   "lead": false
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "スマホから Mac の Claude Code を操作してモバイルアプリ開発を回す",
+   "where": "Zenn",
+   "date": "10/12",
+   "heat": "♡ 31",
+   "summary": "Remote Control で Mac 上のセッションをスマホの Claude アプリから操作し、配信をコマンド化しておけば外出先でも実装から実機確認まで進められるという投稿者の報告。ログインや CAPTCHA は PC が必要。",
+   "code": "claude --remote-control   # 実行中のセッションでは /remote-control（/rc）",
+   "url": "https://zenn.dev/yasi/articles/mobile-dev-from-phone-with-claude"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "CTO が「生産性 2 倍」を掲げた企業のその後：開発者 802 人の追跡調査",
+   "where": "ITmedia NEWS",
+   "date": "10/15",
+   "desc": "AI 導入を義務化した IT 企業で PR 約 19 万件を追跡した研究の紹介。開発者 1 人あたりの提出量は 2.09 倍、組織全体は約 3.1 倍に増えた一方、レビュー担当は 1.5 倍程度で、PR の 8 割超を AI ボットが自動レビューする状態になった。",
+   "url": "https://www.itmedia.co.jp/news/article/2610/15/2000002260/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2610/15/2000002260/10009323/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   0
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
