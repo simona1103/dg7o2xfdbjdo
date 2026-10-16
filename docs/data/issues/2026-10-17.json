@@ -1,0 +1,247 @@
+{
+ "date": "2026-10-17",
+ "weekday": "土",
+ "headline": "Claude Code チームがレビュー運用を公開、Reflection が 501B の Beam",
+ "generatedAt": "06:57",
+ "keyPoints": [
+  [
+   "Claude Code チームが、全 PR に Claude レビューを掛ける運用と成果（PR 2 倍超、revert 4 割減）を公開。",
+   "claude-code-team-code-review"
+  ],
+  [
+   "Claude Code 2.1.302 で、スタンドアロン Claude Design の 12/14 終了が案内された。",
+   "claude-code-2-1-302"
+  ],
+  [
+   "Reflection が Apache 2.0 の 501B オープンモデル Beam を公開。",
+   "reflection-beam-open-model"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-team-code-review",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-review-practice",
+   "storyTitle": "Claude Code チームのコードレビュー運用",
+   "title": "Claude Code チームのコードレビュー運用を公開",
+   "source": "claude.dev ブログ",
+   "date": "10/15",
+   "points": [
+    "6〜9月で Claude Code の merge 済み PR は2倍超、revert された割合は40%超減ったと報告。レビューの大半を機械に移し、人間の確認は最大1人に絞る方針。",
+    "全 PR に Claude レビューを実施し、リポジトリごとに REVIEW.md でレビュー観点を指定。公開版の Code Review は Team / Enterprise で GA。"
+   ],
+   "impact": "CLAUDE.md に加えて REVIEW.md でレビュー観点を書き、PR ごとの人間の承認数や revert 率を指標にする運用は、WG での導入設計の参考になる。",
+   "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://claude.dev/blog/solving-code-review-at-anthropic/og.png",
+   "figure": {
+    "type": "delta",
+    "title": "Anthropic モノレポで 1 日に取り込まれる変更数",
+    "rows": [
+     {
+      "label": "5月 → 9月（約）",
+      "before": 2500,
+      "after": 30000,
+      "unit": "件",
+      "digits": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-302",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.302",
+   "source": "Claude Code CHANGELOG",
+   "date": "最新版",
+   "points": [
+    "`CLAUDE_CODE_AUTO_MODE_MODEL` を追加。クライアント側 auto モードの分類器が使うモデルを選べる（サーバー側 auto モードのモデルは変わらない）。",
+    "fork サブエージェントが `claude -p`・Agent SDK・デスクトップ・VS Code でも既定で有効に（`CLAUDE_CODE_FORK_SUBAGENT=0` で無効化）。"
+   ],
+   "impact": "`claude -p` や SDK 経由の自動化でサブエージェントの動きが変わる可能性があるため、更新後に動作を確認する。",
+   "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+   "reactions": [],
+   "image": "",
+   "deadline": {
+    "from": "2026-10-17",
+    "date": "2026-12-14",
+    "label": "スタンドアロン Claude Design（claude.ai/design）の終了"
+   },
+   "figure": {
+    "type": "timeline",
+    "title": "Claude Design（スタンドアロン）の終了",
+    "today": "2026-10-17",
+    "points": [
+     {
+      "date": "2026-10-17",
+      "label": "2.1.302 で終了を案内"
+     },
+     {
+      "date": "2026-12-14",
+      "label": "終了",
+      "emph": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "reflection-beam-open-model",
+   "topic": "local",
+   "story": "reflection-beam",
+   "storyTitle": "Reflection の Beam（オープンウェイトモデル）",
+   "title": "Reflection が 501B のオープンモデル Beam",
+   "source": "Hugging Face / Reflection",
+   "date": "10/16",
+   "points": [
+    "MoE で総 501B・アクティブ 23B、コンテキスト 1M トークン、Apache 2.0。コーディングとエージェント用途向けで、Reflection 初のモデル。",
+    "NVFP4 版で約 280GB。推奨は B200 4 基で、Blackwell 以前の GPU には FP8 版（H200 8 基）を案内。SWE-bench Verified 81.6%（BF16、Reflection 公表値）。"
+   ],
+   "impact": "自前 GPU は大規模構成が前提。試すだけなら HF の Inference Providers 経由が現実的。",
+   "url": "https://huggingface.co/blog/reflection-beam",
+   "reactions": [],
+   "image": "https://huggingface.co/blog/assets/reflection-beam/thumbnail.jpg"
+  },
+  {
+   "id": "muse-spark-open-mac-studio",
+   "topic": "local",
+   "story": "muse-spark-open",
+   "storyTitle": "Meta Muse Spark Open",
+   "title": "Muse Spark Open、Mac Studio 2 台で動作",
+   "source": "Meta / Hugging Face",
+   "date": "10/15",
+   "points": [
+    "モデルカードによると、M5 Ultra 搭載 Mac Studio 2 台で MLX により動作するよう最適化。NVFP4 は VRAM 700GB 以上、BF16 は 2TB が必要。",
+    "HF ブログでは 3bit 量子化版を M3 Ultra（512GB）で試し、約 344GB を使い生成は毎秒約 21 トークン。"
+   ],
+   "impact": "ローカル検証には 256GB 超のメモリが必要で、一般的な開発 PC では動かせない。",
+   "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/meta-models/Muse-Spark-Open-816B-A42B.png"
+  },
+  {
+   "id": "copilot-slack-teams-multirepo",
+   "topic": "dev",
+   "story": "copilot-slack-teams",
+   "storyTitle": "Copilot in Slack / Teams の更新",
+   "title": "Slack・Teams の GitHub Copilot が複数リポジトリ対応",
+   "source": "GitHub Changelog",
+   "date": "10/16",
+   "points": [
+    "@GitHub が 1 つの会話で複数リポジトリをまたいで PR 状況の確認や Issue 調査をできる。",
+    "メッセージ中どこでも @GitHub でき、Slack の共有メッセージやスレッドを文脈として使える。"
+   ],
+   "impact": "",
+   "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/image-13.jpg"
+  },
+  {
+   "id": "claude-ecdsa-curve-origins",
+   "topic": "claude",
+   "story": "claude-ecdsa",
+   "storyTitle": "Claude による ECDSA 曲線シードの由来解明",
+   "title": "Claude が NIST 曲線シードの由来を解明",
+   "source": "Anthropic",
+   "date": "10/16",
+   "points": [
+    "社内の研究用モデルが 30 分足らずで、NIST P-192〜P-521 のシードは Unix タイムスタンプで初期化した `lrand48` の出力だと突き止めた。",
+    "Anthropic は暗号の破れや新たな攻撃ではないと説明。曲線に意図的な弱点がある可能性が下がるとしている。"
+   ],
+   "impact": "対応は不要（Anthropic も「何もする必要はない」としている）。",
+   "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/dac862860da089b5a053e6ad2105b422d01fefe1-1200x630.jpg"
+  }
+ ],
+ "tips": [],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "「Claude Haiku 5.5」は本当にコスパがいいのか？ 3つの日本語タスクで検証",
+   "where": "ITmedia AI+",
+   "date": "10/16",
+   "desc": "お詫びメール・議事録・英文メール対応の 3 課題で Haiku 5.5 を Sonnet 5.5 と比較。medium では約 17 分の 1 の費用で、定型文書はほぼ同等の点だったと報告。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002313/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/16/2000002313/10009515/2048"
+  },
+  {
+   "title": "Microsoft、社内エンジニア数万人で Claude Code・Copilot CLI 導入の影響を分析",
+   "where": "ITmedia NEWS",
+   "date": "10/16",
+   "desc": "導入初週に使ったエンジニアは merge 済み PR が平均 24% 増。ツール別では Claude Code 11.4%、Copilot CLI 24.9%。周囲の利用が試用のきっかけになるという。",
+   "url": "https://www.itmedia.co.jp/news/article/2610/16/2000002277/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2610/16/2000002277/10009372/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   0
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
