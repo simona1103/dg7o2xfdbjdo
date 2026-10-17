@@ -1,0 +1,90 @@
+{
+ "date": "2026-10-18",
+ "weekday": "日",
+ "headline": "DeepSeek が V4.1 Flash を更新、重みは MIT ライセンスで公開",
+ "generatedAt": "06:50",
+ "keyPoints": [
+  [
+   "DeepSeek-V4.1-Flash-1017 が公開。推論・コーディング・エージェント性能を改善し、重みは MIT ライセンス。",
+   "deepseek-v41-flash-1017"
+  ]
+ ],
+ "news": [
+  {
+   "id": "deepseek-v41-flash-1017",
+   "lead": true,
+   "topic": "local",
+   "story": "deepseek-v41-flash",
+   "storyTitle": "DeepSeek V4.1 Flash",
+   "title": "DeepSeek-V4.1-Flash-1017 を公開",
+   "source": "DeepSeek（Hugging Face）",
+   "date": "10/17",
+   "points": [
+    "V4.1 Flash のマイナーアップデート。推論・コーディング・エージェント・画像系ベンチマークが向上し、タスク実行時間と出力長も減ったと説明している。",
+    "重みとリポジトリは MIT ライセンス。safetensors の総容量は約 510GB で、MLX・EXL3・GGUF の量子化版が公開済み。"
+   ],
+   "impact": "ローカルで動かすには数百 GB 級の重みが必要。業務での利用可否は、まず自社環境のメモリ量と MIT ライセンスの条件を確認する。",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "reactions": [
+    "Hacker News で議論（603 点）"
+   ],
+   "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/deepseek-ai/DeepSeek-V4.1-Flash-1017.png",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude Code に過去の会話を思い出させる（claude-recall）",
+   "where": "Zenn",
+   "date": "10/13",
+   "heat": "♡ 40",
+   "summary": "Claude Code の会話 transcript を SQLite に取り込み、Claude に検索させるツールの紹介。grep より少ない手数で目的のセッションに着けると投稿者は報告している。",
+   "code": "",
+   "url": "https://zenn.dev/babarot/articles/claude-code-session-recall"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "OpenCode の旧システムへ不正アクセス、ユーザーの API キーが流出した可能性",
+   "origin": "Hacker News の投稿（520 点）。元は OpenCode 公式アカウントの X 投稿",
+   "note": "HN のコメントに引用された OpenCode チームのメールには、廃止作業中の旧システムへの不正アクセスと、ワークスペースに保存した OpenAI・Anthropic などのキーが流出した可能性、キーの失効と再発行の依頼が書かれている。公式の告知ページは開けず、影響範囲は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50133401"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "Claude Code のレビューが全部通ったのに残った書き漏れ、原因は差分だった",
+   "where": "Zenn",
+   "date": "10/17",
+   "desc": "差分だけを渡すレビューでは「書くべきだったのに変わっていないファイル」を検査できないという事例。差分内の「〇〇に反映した」という記述の送り先ファイルもレビュー材料に加える、という対処を CLAUDE.md に追記した手順を紹介。",
+   "url": "https://zenn.dev/ara_jlu/articles/diff-review-blind-spot",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--UvibLWVO--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25AE%25E3%2583%25AC%25E3%2583%2593%25E3%2583%25A5%25E3%2583%25BC%25E3%2581%258C%25E5%2585%25A8%25E9%2583%25A8%25E9%2580%259A%25E3%2581%25A3%25E3%2581%259F%25E3%2581%25AE%25E3%2581%25AB%25E6%25AE%258B%25E3%2581%25A3%25E3%2581%259F%25E6%259B%25B8%25E3%2581%258D%25E6%25BC%258F%25E3%2582%258C%25E3%2580%2581%25E5%258E%259F%25E5%259B%25A0%25E3%2581%25AF%25E5%25B7%25AE%25E5%2588%2586%25E3%2581%25A0%25E3%2581%25A3%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Ara%253B%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2I3NGNlYTdiNzAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  },
+  {
+   "title": "AIエージェントに「何を指示するか」より「何をさせないか」――NVIDIAが示す設計の原則",
+   "where": "@IT（ITmedia）",
+   "date": "10/16",
+   "desc": "NVIDIA のブログ「AI Security Is an Engineering Problem」を紹介。エージェントの権限設計と、OpenShell によるサンドボックス実行などの仕組みを解説。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/16/news032.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2610/16/cover_news032.jpg"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
