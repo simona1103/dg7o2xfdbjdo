@@ -1,0 +1,90 @@
+{
+ "date": "2026-10-20",
+ "weekday": "火",
+ "headline": "Claude Code 2.1.304：auto mode 設定支援と Code Review のレビューレベル追加",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.304 が公開。`/auto-mode-setup` の追加と、Code Review の Quick / Standard / Deep 切り替えが入った。",
+   "claude-code-2-1-304"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-304",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.304 公開",
+   "source": "Anthropic（claude-code リリースノート）",
+   "date": "10/20",
+   "points": [
+    "`/auto-mode-setup` を追加。プロジェクトと最近のセッションを読んで auto mode に環境を学習させる対話式の設定で、Bedrock・Vertex・Foundry でも使える。",
+    "Code Review にレビューレベル（Quick / Standard（既定）/ Deep）を追加。組織単位で選べ、リポジトリごとの上書きや、組織内の全リポジトリを自動対象にする設定もある。"
+   ],
+   "impact": "Code Review を使っているなら、管理設定でレビューの深さをリポジトリごとに調整できる。Pro/Max では長く放置した会話を再開すると 5 時間枠を大きく使う場合に警告が出る。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
+   "reactions": [],
+   "image": "",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "MiniMax M3.1 Flash の公開",
+   "origin": "Hacker News（299 点、10/19）で共有された MiniMax のブログ記事",
+   "note": "HN の投稿とタイトルは確認できた。ブログ本体は開けず、性能や料金などの内容は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50154540"
+  },
+  {
+   "title": "Inception の Mercury 3（拡散型 LLM）",
+   "origin": "Hacker News（196 点、10/19）で共有された Inception Labs のブログ記事",
+   "note": "HN の投稿とタイトルは確認できた。ブログ本体は開けず、仕様や提供条件は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50155245"
+  },
+  {
+   "title": "Anthropic の IPO と非公開の信託を巡る報道",
+   "origin": "Hacker News（120 点、10/19）で共有された WSJ の記事",
+   "note": "HN の投稿とタイトルは確認できた。WSJ 記事は有料で開けず、内容は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50151376"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AI で約 2900 時間を削減した世田谷区、「確認と修正の負担」が新たな課題に",
+   "where": "ITmedia ビジネスオンライン",
+   "date": "10/19",
+   "desc": "世田谷区が Genspark を試して約 2900 時間の削減効果を確認した一方、AI 出力の確認と修正の負担が増えた。自治体での定着策の講演をまとめた記事。",
+   "url": "https://www.itmedia.co.jp/business/articles/2610/19/news064.html",
+   "image": "https://image.itmedia.co.jp/business/articles/2610/19/cover_news064.jpg"
+  },
+  {
+   "title": "Claude Code に PR レビューと動作確認を丸投げするときのプロンプト",
+   "where": "Zenn",
+   "date": "10/19",
+   "desc": "タスクリスト作成、PR 概要の説明、レビュー観点、PR コメントの投稿ルールまでを 1 つにしたプロンプトの全文を公開。筆者が使いながら更新している。",
+   "url": "https://zenn.dev/ryoushin/articles/claude-code-pr-review-prompt",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--Hf_vm8Aw--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25ABPR%25E3%2583%25AC%25E3%2583%2593%25E3%2583%25A5%25E3%2583%25BC%25E3%2581%25A8%25E5%258B%2595%25E4%25BD%259C%25E7%25A2%25BA%25E8%25AA%258D%25E3%2582%2592%25E4%25B8%25B8%25E6%258A%2595%25E3%2581%2592%25E3%2581%2599%25E3%2582%258B%25E3%2581%25A8%25E3%2581%258D%25E3%2581%25AE%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%25E3%2582%2592%25E5%2585%25AC%25E9%2596%258B%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E6%25A2%2581%25E9%259C%2587%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzlkZGE1ZGRlZGIuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
