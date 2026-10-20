@@ -1,0 +1,261 @@
+{
+ "date": "2026-10-21",
+ "weekday": "水",
+ "headline": "Claude Code 2.1.305 公開、Copilot 旧モデル廃止と package firewall",
+ "generatedAt": "06:57",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.305 は 2.1.304 の Vertex・Bedrock 回帰を修正し、サンドボックス設定を追加。",
+   "claude-code-2-1-305"
+  ],
+  [
+   "Copilot の旧モデル 6 種が 10/19 に廃止され、model policy API も一般提供に。",
+   "copilot-models-deprecated-1019"
+  ],
+  [
+   "GitHub package firewall が Enterprise Cloud でパブリックプレビュー。",
+   "github-package-firewall-preview"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-305",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.305：2.1.304 の回帰修正など",
+   "source": "Claude Code",
+   "date": "10/21",
+   "points": [
+    "2.1.304 で出た、ゲートウェイが tool search を拒否すると Vertex・Bedrock などで全リクエストが失敗する回帰を修正。拒否されたら tool search なしで再試行する。",
+    "`sandbox.allowNestedUserNamespaces` を追加。Linux のサンドボックス内でユーザー名前空間を作れるが、サンドボックスのファイル保護を回避できる。"
+   ],
+   "impact": "Bedrock・Vertex・社内ゲートウェイ経由で 2.1.304 を使っている場合は更新する。`allowedMcpServers` は `managed-mcp.json` の stdio サーバー（`env` のみ `${VAR}` 使用）を絞らなくなり、許可リスト外のものが更新後に読み込まれるので、止めたいなら `deniedMcpServers` を使う。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
+   "reactions": [],
+   "image": "",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "platform-inference-hooks-ga",
+   "topic": "claude",
+   "title": "Inference hooks が Claude Enterprise で正式提供に",
+   "source": "Claude Platform",
+   "date": "10/20",
+   "points": [
+    "Claude Platform のリリースノートに、Claude Enterprise 組織向けの inference hooks がベータを終了したと記載された。"
+   ],
+   "impact": "Enterprise 契約の組織は、ベータ扱いなしで使える。詳細は同リリースノートを確認する。",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/release-notes/overview?design-rev=4",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "copilot-models-deprecated-1019",
+   "topic": "dev",
+   "story": "copilot-model-deprecation",
+   "storyTitle": "Copilot のモデル廃止（11/16）",
+   "title": "Copilot の旧モデル 6 種が 10/19 に廃止",
+   "source": "GitHub Changelog",
+   "date": "10/19",
+   "points": [
+    "9/18 に予告していた廃止が 10/19 に実施された。対象は Gemini 3.7 Flash、GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini、Grok 4.5。",
+    "同日、Copilot の model policy API（GET/PATCH）が enterprise・enterprise teams・agent apps・organization の 4 階層で一般提供になった。"
+   ],
+   "impact": "Enterprise 管理者は代替モデルが model policy で有効か確認する。API で一括管理もできる。",
+   "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/675076555-e8b71783-0511-4913-b6f3-dca3cf564538.jpg",
+   "deadline": null,
+   "figure": {
+    "type": "compare",
+    "title": "廃止されたモデルと推奨される代替",
+    "cols": [
+     "廃止（10/19）",
+     "代替"
+    ],
+    "rows": [
+     [
+      "Gemini 3.7 Flash",
+      "no Gemini 3.7 Flash",
+      "ok Gemini 3.8 Flash"
+     ],
+     [
+      "GPT-5.5",
+      "no GPT-5.5",
+      "ok GPT-6.1 Sol"
+     ],
+     [
+      "GPT-5.4",
+      "no GPT-5.4",
+      "ok GPT-6.1 Sol"
+     ],
+     [
+      "GPT-5.4 mini",
+      "no GPT-5.4 mini",
+      "ok GPT-6 Luna"
+     ],
+     [
+      "GPT-5 mini",
+      "no GPT-5 mini",
+      "ok GPT-6 Luna"
+     ],
+     [
+      "Grok 4.5",
+      "no Grok 4.5",
+      "ok Grok 4.7"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "github-package-firewall-preview",
+   "topic": "sec",
+   "story": "github-package-firewall",
+   "storyTitle": "GitHub package firewall",
+   "title": "GitHub package firewall がパブリックプレビュー",
+   "source": "GitHub Changelog",
+   "date": "10/20",
+   "points": [
+    "Actions ランナーやコーディングエージェントと上流パッケージレジストリの間に入り、メタデータ要求とダウンロードを検査する。GitHub Enterprise Cloud の全顧客が対象。",
+    "管理者がクールダウン期間、Advisory Database によるマルウェア・脆弱性確認、attestation ダウングレードなどのサプライチェーン検査を設定する。"
+   ],
+   "impact": "CI やエージェントの取得先をファイアウォール経由に切り替える設定が必要。誤ブロック時は例外申請できる。",
+   "url": "https://github.blog/changelog/2026-10-20-github-package-firewall-in-public-preview/",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/Changelog_NewRelease_Unfurl_Centered_GitHubPackageFirewall.jpg",
+   "deadline": null,
+   "figure": {
+    "type": "flow",
+    "title": "package firewall の流れ",
+    "cols": [
+     [
+      {
+       "label": "Actions ランナー / コーディングエージェント"
+      }
+     ],
+     [
+      {
+       "label": "package firewall",
+       "sub": "管理者のポリシーで検査",
+       "emph": true
+      }
+     ],
+     [
+      {
+       "label": "上流パッケージレジストリ"
+      }
+     ]
+    ],
+    "note": "メタデータ要求とパッケージのダウンロードの両方が通る。"
+   }
+  },
+  {
+   "id": "gennai-agent-180k",
+   "topic": "biz",
+   "story": "digital-agency-gennai",
+   "storyTitle": "デジタル庁「源内」のAIエージェント展開",
+   "title": "デジタル庁、職員約18万人に AI エージェント環境",
+   "source": "ITmedia NEWS",
+   "date": "10/20",
+   "points": [
+    "「源内」でエージェントチャットと、自然言語でプログラム作成・修正を進める「源内工房」を提供。一般職員も使える政府共通基盤として約18万人規模で導入するとデジタル庁は説明している。",
+    "利用者・管理者・開発者ごとの責務を定めた「源内基準」を AISI の協力で策定し公表。2027年2月ごろをめどに OSS「源内OSS Ver.2.0」として公開予定。"
+   ],
+   "impact": "自治体・民間がエージェント統制を考える際、源内基準が参考になると大臣が述べている。社内ルール作りの材料になる。",
+   "url": "https://www.itmedia.co.jp/news/article/2610/20/2000002428/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2610/20/2000002428/10009937/2048",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "claude-scorpion-binder-design",
+   "topic": "claude",
+   "story": "claude-drug-discovery",
+   "storyTitle": "Claude による創薬・タンパク質設計の研究",
+   "title": "Claude がサソリ毒素向けタンパク質結合体を設計",
+   "source": "Anthropic",
+   "date": "10/20",
+   "points": [
+    "社内研究モデルが 64 時間、ほぼ自律で 318,484 件を設計し 180 件を選定。人手の 31 件を足した 211 件を実験し、17 件が結合の基準を満たした。",
+    "毒素を中和するかは未確認で、抗毒素を作ったとは主張していない。211 件の設計とデータは公開されている。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/187c8077329b22f6bd02c5648ea58749af892e8c-1200x630.jpg",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "AI に指示を守らせる 6 原則：指示は AGENTS.md に、CLAUDE.md は 1 行",
+   "where": "Qiita",
+   "date": "10/19",
+   "heat": "LGTM 30",
+   "summary": "Claude Code・Codex・Antigravity CLI で実験した投稿者の報告。Claude Code は CLAUDE.md を優先し、無ければ AGENTS.md を読む。共通指示は AGENTS.md に書き、CLAUDE.md は参照 1 行にする運用を勧めている。",
+   "code": "# CLAUDE.md\n@AGENTS.md",
+   "url": "https://qiita.com/songchong/items/351a939e2e1b673c2929"
+  },
+  {
+   "kind": "使い方",
+   "title": "Claude Code の .env 保護を 48 回試した：deny だけでは漏れる",
+   "where": "Qiita",
+   "date": "10/18",
+   "heat": "LGTM 21",
+   "summary": "偽のキーで検証した投稿者の報告。deny のみでは、ファイル名を glob で書く探索やアプリが .env を直接開く場合に漏れた。サンドボックス併用では漏えいゼロだったが、アプリも動かなくなった。",
+   "code": "\"permissions\": { \"deny\": [\"Read(.env)\", \"Read(.env.*)\", \"Read(!.env.example)\"] }",
+   "url": "https://qiita.com/yakumo_09/items/5a86ca330b449db0e6bc"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Mistral が Voxtral 3 を公開",
+   "origin": "Hacker News で 441 点（2026-10-20 投稿、mistral.ai/news/voxtral-3 へのリンク）",
+   "note": "HN の投稿が存在することは確認できた。mistral.ai の発表ページは開けず、モデルの仕様・料金・ライセンスは確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50168396"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AIコーディングのAPIキーが狙われている：OpenCodeのキー流出とインフォスティーラー「Aoki」から学ぶ対策",
+   "where": "@IT",
+   "date": "10/21",
+   "desc": "Aoki の新しい版が Claude・Codex・Cursor・Gemini などの認証情報を盗む機能を持つと Symantec が 10/15 に公表。OpenCode Console のキー流出可能性（10/17 公表）と併せ、保存先の確認を促す。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/21/news011.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2610/21/cover_news011.jpg"
+  },
+  {
+   "title": "Claude Code のセッション同士でメッセージを送り合うなど、スラッシュコマンドに無い機能6つ",
+   "where": "Zenn",
+   "date": "10/20",
+   "desc": "セッション間メッセージ、スマホ通知、Monitor、CronCreate など、言葉で頼むだけで使えるツールを Claude Code 2.1.300 で試した記録。",
+   "url": "https://zenn.dev/yohakucode/articles/claude-code-features-without-slash",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--LuWIVHrW--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25AE%25E3%2582%25BB%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E5%2590%258C%25E5%25A3%25AB%25E3%2581%25A7%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%2592%25E9%2580%2581%25E3%2582%258A%25E5%2590%2588%25E3%2581%2586%25E3%2581%25AA%25E3%2581%25A9%25E3%2582%25B9%25E3%2583%25A9%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A5%25E3%2582%25B3%25E3%2583%259E%25E3%2583%25B3%25E3%2583%2589%25E3%2581%25AB%25E7%2584%25A1%25E3%2581%2584%25E6%25A9%259F%25E8%2583%25BD6%25E3%2581%25A4%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:yohakucode%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2I0MzM1ODk4NjkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+   }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
