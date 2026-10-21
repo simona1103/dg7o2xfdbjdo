@@ -1,0 +1,260 @@
+{
+ "date": "2026-10-22",
+ "weekday": "木",
+ "headline": "Claude API が新バージョン 2026-10-21 に、SDK に破壊的変更",
+ "generatedAt": "06:52",
+ "keyPoints": [
+  [
+   "Claude API の新バージョン 2026-10-21 では、temperature などの指定が 400 エラーになり、C# SDK は 13.0.0 に。",
+   "claude-api-version-2026-10-21"
+  ],
+  [
+   "Anthropic が Claude による攻撃面削減の研究を公開。OSS 25 件で 493 件の問題を報告。",
+   "anthropic-attack-surface-reduction"
+  ],
+  [
+   "OpenAI が AI で見つけた PHP の重大脆弱性を調整公開。PHP を使う環境は更新を優先。",
+   "openai-patch-the-planet-php"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-api-version-2026-10-21",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-api-versioning",
+   "storyTitle": "Claude API の新 API バージョンと SDK メジャー更新",
+   "title": "Claude API に新バージョン 2026-10-21、SDK も刷新",
+   "source": "Claude Platform リリースノート",
+   "date": "10/21",
+   "points": [
+    "API バージョン 2026-10-21 を公開。各 SDK の新メジャー版（C# SDK 13.0.0 など）と ant CLI 2.0.0 は、この版を既定で送る。SDK と CLI のライセンスは MIT から Apache 2.0 に変わった。",
+    "新版では temperature・top_p・top_k を送ると 400 エラー。assistant メッセージ内の document ブロックと、user メッセージの text ブロックの citations も 400 になる。"
+   ],
+   "impact": "C# SDK 13.0.0 へ上げる前に、リクエストの temperature などのサンプリング指定と citations の使用箇所を洗い出して外すこと。",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "image": "https://platform.claude.com/web-api/og/docs/en/release-notes/overview?design-rev=4",
+   "reactions": [],
+   "figure": {
+    "type": "compare",
+    "title": "2026-10-21 で変わる主な点（移行ガイドより）",
+    "cols": [
+     "新版での挙動",
+     "対処"
+    ],
+    "rows": [
+     [
+      "temperature / top_p / top_k",
+      "no 既定値でも 400 エラー",
+      "リクエストから削除する"
+     ],
+     [
+      "assistant 内の document ブロック",
+      "no 400 エラー",
+      "user メッセージで送る"
+     ],
+     [
+      "user の text ブロックの citations",
+      "no 空でない配列は 400 エラー",
+      "citations を外す"
+     ],
+     [
+      "Admin API のフィールド名",
+      "warn 旧名がレスポンスから消える",
+      "新しい名前（role_ids など）を読む"
+     ],
+     [
+      "Amazon Bedrock",
+      "warn Claude 4.7 以降のモデルのみ対応",
+      "旧モデルは現行の SDK・版のまま"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "anthropic-attack-surface-reduction",
+   "topic": "sec",
+   "story": "claude-attack-surface",
+   "storyTitle": "Claude による攻撃面の分析・削減",
+   "title": "Claude で攻撃面を減らす研究、25 プロジェクトで 493 件",
+   "source": "Anthropic",
+   "date": "10/20",
+   "points": [
+    "Frontier Red Team が OSS 25 プロジェクト（500 万行超）に Claude を適用。既定設定で到達できる不要なコードや、設定の組合せによる保護の無効化など 493 件を報告した。",
+    "162 件の設定の組合せが警告も文書化もなく受理され、うち 94 件はセキュリティ制御を黙って無効にしていた。"
+   ],
+   "impact": "自社システムでも、既定設定で認証前に到達できる処理と、設定項目同士の干渉を点検する観点として使える。",
+   "url": "https://www.anthropic.com/research/attack-surface-reduction",
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+   "reactions": [
+    "Hacker News で議論"
+   ]
+  },
+  {
+   "id": "openai-patch-the-planet-php",
+   "topic": "sec",
+   "story": "php-ai-vulns",
+   "storyTitle": "AI が見つけた PHP の重大脆弱性",
+   "title": "AI が見つけた PHP の重大脆弱性、OpenAI が調整公開",
+   "source": "OpenAI",
+   "date": "10/21",
+   "points": [
+    "OpenAI の Patch the Planet の一環で、Calif が GPT-5.6 Sol を使い PHP の重大な欠陥を発見。Wiz も独立に報告し、PHP の保守担当が修正版を公開した。",
+    "OpenAI は PHP のバージョン確認用 Codex skill を公開し、AI 時代の重大脆弱性対応の枠組みを提案した。"
+   ],
+   "impact": "PHP を使う環境があれば、PHP 公式と各プロバイダーの案内に沿って修正版への更新を優先する。",
+   "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
+   "image": "",
+   "reactions": [
+    "Hacker News で PHP の RCE 告知が議論",
+    "ITmedia AI+ も報道"
+   ]
+  },
+  {
+   "id": "openai-models-google-cloud",
+   "topic": "model",
+   "story": "openai-google-cloud",
+   "storyTitle": "OpenAI モデルの Google Cloud 提供",
+   "title": "OpenAI のモデルと Codex が Google Cloud に",
+   "source": "OpenAI",
+   "date": "10/21",
+   "points": [
+    "OpenAI と Google Cloud が提携し、OpenAI のフロンティアモデルと Codex のエージェント機能を Model Garden に提供する。",
+    "利用者は Google Cloud Marketplace 経由でモデルを購入でき、Google Cloud のアクセス制御やデータガバナンスと組み合わせられる。"
+   ],
+   "impact": "",
+   "url": "https://openai.com/index/openai-models-google-cloud/",
+   "image": "",
+   "reactions": [
+    "Hacker News で話題"
+   ]
+  },
+  {
+   "id": "claude-code-2-1-306",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.306：ログイン表示と compaction の修正",
+   "source": "Claude Code",
+   "date": "10/21",
+   "points": [
+    "クラウドセッション内の `claude -p` が、環境変数なしで起動すると「Not logged in」と表示される不具合を修正。",
+    "MCP ツールが多いセッションで、API エラーが「prompt is too long」に置き換わり、不要な compaction が走る不具合を修正。"
+   ],
+   "impact": "MCP サーバーを多数つないでいる場合は更新する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+   "image": "",
+   "reactions": []
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Sphinx：push 前に AI 生成コードの理解度をクイズで確認する hook",
+   "where": "Hacker News",
+   "date": "10/18",
+   "heat": "▲ 252",
+   "summary": "既存のコーディングエージェントの流れに差し込み、本番へ push する際に、そのコードを理解しているかを問う質問票を出す FOSS の hook。投稿者の説明による。コメントでは効果を疑う声もある。",
+   "code": "",
+   "url": "https://news.ycombinator.com/item?id=50137950"
+  },
+  {
+   "kind": "使い方",
+   "title": "Tmux と Claude Code：セッション、send-keys、その限界",
+   "where": "Hacker News",
+   "date": "10/19",
+   "heat": "▲ 170",
+   "summary": "tmux で Claude Code を動かす運用ガイド。コメントでは、名前付き tmux セッションで ssh ログインを済ませてから Claude に引き継ぐ、サブエージェントを tmux 連携で管理する、といった実践例が出ている。",
+   "code": "",
+   "url": "https://news.ycombinator.com/item?id=50148855"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Claude Duet",
+   "origin": "Hacker News（204 points）で共有された claude.com の製品ページ",
+   "note": "HN の投稿は確認できたが、製品ページは開けず、検索でも一次情報を確認できなかった。機能や提供条件は不明。コメントでは、Claude 本体とは別のアプリ／UX だという指摘が出ている。",
+   "url": "https://news.ycombinator.com/item?id=50186037"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "OpenAI、COBOL など学習リソースの少ない言語のコーディング能力が向上",
+   "where": "ITmedia NEWS",
+   "date": "10/21",
+   "desc": "COBOL・Fortran・Visual Basic などでの開発・移行能力の向上を OpenAI が発表。COBOL から他言語への移行テストで GPT-6.1 Sol は低推論量で 86.6%、推論量を上げると 97.9%。本番適用には専門家レビューが必要としている。",
+   "url": "https://www.itmedia.co.jp/news/article/2610/21/2000002447/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2610/21/2000002447/10009991/2048"
+  },
+  {
+   "title": "Claude Code 10月リリースを導入判断で読む：Haiku 5.5・effort 指定・hooks の onFailure",
+   "where": "Zenn",
+   "date": "10/21",
+   "desc": "claude -p の無人実行を回す筆者が、10 月の更新を採否表で評価。導入前に呼び出し単位の実コストを記録するラッパーを置くことを勧めている。",
+   "url": "https://zenn.dev/joinclass/articles/claude-code-oct-2026-release-adoption",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--VuT4Xyps--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%252010%25E6%259C%2588%25E3%2583%25AA%25E3%2583%25AA%25E3%2583%25BC%25E3%2582%25B9%25E3%2582%2592%25E5%25B0%258E%25E5%2585%25A5%25E5%2588%25A4%25E6%2596%25AD%25E3%2581%25A7%25E8%25AA%25AD%25E3%2582%2580%25EF%25BC%259AHaiku%25205.5%25E3%2583%25BBeffort%25E6%258C%2587%25E5%25AE%259A%25E3%2583%25BBhooks%25E3%2581%25AEonFa...%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:JOINCLASS%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2NhOWUwY2FiYmYuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
