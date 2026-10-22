@@ -1,0 +1,253 @@
+{
+ "date": "2026-10-23",
+ "weekday": "金",
+ "headline": "Agent Skills が AAIF へ、Google Cloud で Claude API 提供開始",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Anthropic が Agent Skills 標準を AAIF に寄贈。70 以上の基盤が対応済み。",
+   "agent-skills-aaif"
+  ],
+  [
+   "Claude API が Google Cloud 経由（IAM・Marketplace 課金）でも利用可能に。",
+   "claude-models-google-cloud"
+  ],
+  [
+   "Copilot の全体既定ポリシー適用が 10/26 まで進行中。管理者は設定の確認を。",
+   "copilot-global-default-policy"
+  ]
+ ],
+ "news": [
+  {
+   "id": "agent-skills-aaif",
+   "lead": true,
+   "topic": "claude",
+   "story": "agent-skills-aaif",
+   "storyTitle": "Agent Skills の AAIF への移管",
+   "title": "Agent Skills を AAIF に寄贈",
+   "source": "Anthropic",
+   "date": "10/22",
+   "points": [
+    "Anthropic が Agent Skills の標準・名称・ロゴ・GitHub 組織・agentskills.io ドメインを、Linux Foundation 傘下の Agentic AI Foundation（AAIF）に寄贈した。",
+    "ChatGPT、Cursor、GitHub Copilot、VS Code など 70 以上のエージェント基盤が対応済み。公開済みスキルは 100 万件、インストールは約 2.8 億回。"
+   ],
+   "impact": "SKILL.md 形式のスキルは特定ベンダーに縛られない共有資産になる。社内 WG で作るスキルも Claude 以外のツールで再利用しやすくなる。",
+   "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+   "figure": {
+    "type": "stats",
+    "title": "Agent Skills の現在地",
+    "items": [
+     {
+      "value": "70+",
+      "label": "対応エージェント基盤"
+     },
+     {
+      "value": "100万",
+      "label": "公開済みスキル"
+     },
+     {
+      "value": "約2.8億",
+      "label": "インストール数"
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-models-google-cloud",
+   "topic": "claude",
+   "story": "claude-on-google-cloud",
+   "storyTitle": "Google Cloud 上の Claude（Anthropic managed）",
+   "title": "Google Cloud で Claude API を提供開始",
+   "source": "Claude Platform",
+   "date": "10/22",
+   "points": [
+    "「Claude Models on Google Cloud (Anthropic managed)」を開始。Anthropic が運用する Claude API を Google Cloud プロジェクト経由で使え、アクセスは Google Cloud IAM、課金は Google Cloud Marketplace で行う。",
+    "Claude Opus 5.5 の fast mode もこの提供形態で使える。"
+   ],
+   "impact": "Google Cloud 契約で Claude を使いたい場合の選択肢が増える。導入すると既存の Anthropic 組織（Enterprise を含む）とは別の新しい組織が作られる点に注意。",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed?design-rev=4",
+   "figure": null
+  },
+  {
+   "id": "copilot-global-default-policy",
+   "topic": "dev",
+   "story": "copilot-global-default",
+   "storyTitle": "Copilot 全体既定ポリシーの適用",
+   "title": "Copilot 機能の全体既定ポリシーを適用開始",
+   "source": "GitHub Changelog",
+   "date": "10/22",
+   "points": [
+    "Copilot Business / Enterprise で、GA 機能とクライアント機能の全体既定ポリシーの適用を 10/22 から 10/26 まで順次進める。",
+    "未設定（Unconfigured）の GA 機能が選択済みの既定（有効・無効・組織に任せる）に設定される。明示的に設定済みの項目は変わらず、プレビュー機能は引き続きオプトイン。"
+   ],
+   "impact": "管理者は AI Controls → Copilot → Default policy for new features を 10/26 までに確認し、未設定のままにしたい機能は明示的に設定しておく。",
+   "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/658446301-3cc026e6-3fe9-4cf3-8d6c-36d90d6c665a.jpeg",
+   "deadline": {
+    "from": "2026-10-22",
+    "date": "2026-10-26",
+    "label": "全体既定ポリシーの適用完了（以後、未設定の GA 機能に既定が適用）"
+   },
+   "figure": {
+    "type": "timeline",
+    "title": "適用の流れ",
+    "today": "2026-10-23",
+    "points": [
+     {
+      "date": "2026-10-22",
+      "label": "段階的な適用を開始"
+     },
+     {
+      "date": "2026-10-26",
+      "label": "適用完了予定",
+      "emph": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-308",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.307 / 2.1.308",
+   "source": "Claude Code",
+   "date": "10/22",
+   "points": [
+    "2.1.307：新 API バージョン 2026-10-21 へコードを移行する `/claude-api api-version` を追加。ツール呼び出しが止まった・確認された・差し戻された場合の OpenTelemetry イベント `claude_code.safety_event` を追加。",
+    "HTTP MCP ツール呼び出しが二重送信される不具合を修正（再試行は読み取り専用・冪等なツールのみ）。2.1.308 は不具合修正と信頼性の改善。"
+   ],
+   "impact": "`/claude-api api-version` で SDK メジャー更新後の API 移行を進められる。OpenTelemetry で権限・フック・サンドボックスによる停止を集計できる。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "openai-decisions-api",
+   "topic": "model",
+   "story": "openai-decisions-api",
+   "storyTitle": "OpenAI Decisions API",
+   "title": "OpenAI が Decisions API を発表",
+   "source": "OpenAI",
+   "date": "10/22",
+   "points": [
+    "質問と選択肢を定義し、テキスト・画像・JSON のコンテキストを渡すと、確率・選択・スコアのいずれかを返す API。",
+    "音声モデル GPT‑Live とも連携。導入企業の Sierra は p95 280 ms 未満、従来比で約 3 倍速く 1 回あたりコスト 90% 減と報告している。"
+   ],
+   "impact": "分類・振り分けのように答えが限られる判断を、自由文の生成と解析に頼らず呼び出せる。",
+   "url": "https://openai.com/index/decisions-api",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "anno-cyber-proposal",
+   "topic": "sec",
+   "story": "php-ai-vulns",
+   "storyTitle": "AI が見つけた PHP の重大脆弱性",
+   "title": "チームみらい、AI 悪用の攻撃で政府に緊急提言",
+   "source": "ITmedia AI+",
+   "date": "10/22",
+   "points": [
+    "党首の安野貴博氏が 10/22 の会見で、AI を使ったサイバー攻撃に対し電力・水道・医療などの停止を伴う被害を想定すべきと述べた。",
+    "提言「相次ぐ情報漏えいから国民を守るための緊急提言　AIにはAIで、守りを固める」は 10/23 にデジタル庁の大臣へ提出し、党の note で公開予定。11/4 に超党派の勉強会も開く。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002518/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/22/2000002518/10010194/2048",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "Skill",
+   "title": "仕組みを説明する動画を Claude Code に作らせるスキル",
+   "where": "Zenn",
+   "date": "10/21",
+   "heat": "♡ 97",
+   "summary": "アプリの操作と裏の処理を交互に見せる解説動画を、スキル「animated-arch-diagram」と指示テンプレートで Claude Code に生成させる方法。投稿者は顧客への説明に使い便利だったと報告している。",
+   "code": "# animated-arch-diagram フォルダを ~/.claude/skills/ にコピーして使う",
+   "url": "https://zenn.dev/explaza/articles/c749042ecbe232"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "Claude Code で CI 待ち時間を 18 分から 4 分台に短縮する【GitHub Actions】",
+   "where": "Zenn",
+   "date": "10/20",
+   "desc": "Vitest の環境を node と jsdom に分け、DB のダンプをキャッシュし、ジョブを分割して短縮した事例。まず Claude Code に実行時間の内訳を計測させ、ボトルネックを特定している。",
+   "url": "https://zenn.dev/edash_tech_blog/articles/5b90aa33bd8d49",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--9Kbut0u1--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25A7%2520CI%2520%25E5%25BE%2585%25E3%2581%25A1%25E6%2599%2582%25E9%2596%2593%25E3%2582%2592%252018%2520%25E5%2588%2586%25E3%2581%258B%25E3%2582%2589%25204%2520%25E5%2588%2586%25E5%258F%25B0%25E3%2581%25AB%25E7%259F%25AD%25E7%25B8%25AE%25E3%2581%2599%25E3%2582%258B%25E3%2580%2590GitHub%2520Actions%25E3%2580%2591%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:iakito%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzNkZWM5ZjExNTcuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:e-dash%2520Tech%2520Blog%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzIzZmVjYTVlYTguanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
