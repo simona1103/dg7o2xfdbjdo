@@ -1,0 +1,120 @@
+{
+ "date": "2026-10-25",
+ "weekday": "日",
+ "headline": "Claude Code 2.1.310、Teams の Copilot 統合アプリは旧アプリ 11/16 廃止",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.310 で Monitor ツールが Bedrock・Vertex・Foundry でも使え、ゲートウェイ互換性や Windows フックの不具合も修正。",
+   "claude-code-2-1-310"
+  ],
+  [
+   "Teams の Copilot は統合 GitHub アプリに移行。旧アプリは 11/16 に廃止。",
+   "copilot-teams-consolidated-app"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-310",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.310：Bedrock/Vertex でも Monitor ツール",
+   "source": "Claude Code",
+   "date": "10/23",
+   "points": [
+    "Bedrock・Vertex・Foundry 上、およびテレメトリや非必須通信を無効にした環境でも Monitor ツールとプラグインの monitor が使えるようになった。",
+    "`effort-2025-11-24` ベータ値を拒むゲートウェイや互換サーバーで、Claude Code が外して再試行するよう修正。Windows の PreToolUse/PermissionRequest フックが Git Bash 不在時に素通しになる問題も修正。"
+   ],
+   "impact": "社内ゲートウェイ経由や Windows 環境で Claude Code を使っているなら、更新して hooks の動作を確認する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
+   "reactions": [],
+   "image": "",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "copilot-teams-consolidated-app",
+   "topic": "dev",
+   "story": "copilot-slack-teams",
+   "storyTitle": "Copilot in Slack / Teams の更新",
+   "title": "Copilot in Teams：統合 GitHub アプリで通知から PR まで",
+   "source": "GitHub Changelog",
+   "date": "10/23",
+   "points": [
+    "Teams の新しい GitHub アプリ（旧 GitHub notifications）で、@GitHub にメンションすると課題の調査・修正・PR 作成を依頼できる。",
+    "旧 GitHub アプリは「GitHub (deprecated)」に改名され 11/16 に廃止。Copilot in Teams を使うには統合アプリのインストールが必要。"
+   ],
+   "impact": "Teams で旧アプリを使っている組織は、11/16 までに統合アプリへ切り替える。",
+   "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/Issue_notification_social.jpeg",
+   "deadline": {
+    "from": "2026-10-23",
+    "date": "2026-11-16",
+    "label": "旧 GitHub アプリ（Teams）の廃止"
+   },
+   "figure": null
+  },
+  {
+   "id": "copilot-usage-metrics-by-client",
+   "topic": "dev",
+   "story": "copilot-usage-metrics",
+   "storyTitle": "Copilot usage metrics API",
+   "title": "Copilot 利用メトリクス API にクライアント別集計",
+   "source": "GitHub Changelog",
+   "date": "10/23",
+   "points": [
+    "enterprise・organization・ユーザー単位の 1 日/28 日レポートに `totals_by_client` を追加。OpenCode など従来集計されなかったツールの利用も含まれる。",
+    "クライアントは `claude_code`、`codex`、`vscode`、`jetbrains` などで識別し、リクエスト数・セッション数・トークン量を出す。"
+   ],
+   "impact": "Copilot の利用状況を集計している管理者は、レポートの形式変更に合わせて集計処理を見直す。",
+   "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/682164468-bde58abd-ebed-4a21-983d-e7ea362b9ed5.jpeg",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Corgi：Codex / Claude Code / Pi をまとめて扱うエージェント多重化ツール",
+   "where": "Hacker News (Show HN)",
+   "date": "10/23",
+   "heat": "▲ 123",
+   "summary": "投稿者によると、複数エージェントの活動フィードを見ながら未読エージェントへ F1 で移動でき、複数アカウント向けの統一ランチャーでセッション検索・再開や使用量表示もできる。",
+   "code": "",
+   "url": "https://news.ycombinator.com/item?id=50214373"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "Claude Code にハーネスを導入した — 不変条件は Hook で強制する",
+   "where": "Zenn",
+   "date": "10/24",
+   "desc": ".env 読み取りなど事故になる操作は PreToolUse Hook で exit 2 でブロックし、推奨事項は 48 行の CLAUDE.md に分ける構成を、個人開発アプリで試した記録。",
+   "url": "https://zenn.dev/pythona/articles/claude-code-harness-first-setup",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--716DFxOr--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25AB%25E3%2583%258F%25E3%2583%25BC%25E3%2583%258D%25E3%2582%25B9%25E3%2582%2592%25E5%25B0%258E%25E5%2585%25A5%25E3%2581%2597%25E3%2581%259F%2520%25E2%2580%2594%2520%25E4%25B8%258D%25E5%25A4%2589%25E6%259D%25A1%25E4%25BB%25B6%25E3%2581%25AFHook%25E3%2581%25A7%25E5%25BC%25B7%25E5%2588%25B6%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:pythona%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSWYyMnNwblpxQUFneElIVXpxRDdlU1dfdzJmbldBWTZNVzNYWDFHX2VOSjI0SUV3PXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
