@@ -1,0 +1,61 @@
+{
+ "date": "2026-10-26",
+ "weekday": "月",
+ "headline": "報告する新着はありませんでした",
+ "generatedAt": "06:49",
+ "keyPoints": [],
+ "news": [],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "VS Code 1.142 の Canvases を有効化し /create-canvas で共有画面を作る",
+   "where": "Qiita",
+   "date": "10/23",
+   "heat": "LGTM 29",
+   "summary": "投稿者は、設定を ON にして新しい Copilot セッションで /create-canvas を使うと、チャット横にエージェントと同じ画面を開けたと報告。手で足したカードをエージェントが読み取れた一方、デスクトップ版のローカルセッションのみ対応で、Claude・Codex・Web は現時点で非対応とのこと。",
+   "code": "\"chat.canvases.enabled\": true\n/create-canvas",
+   "url": "https://qiita.com/shahin0809/items/81e6a6737b2254bdc6ed"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Qwen3.8-27B を 5 つ組み合わせるハーネス「GVS5H」が Fable 5 に並ぶという報告",
+   "origin": "Hacker News（180 点）の投稿。リンク先は GitHub リポジトリ slee-persis/GVS5H",
+   "note": "投稿の存在と点数は確認できたが、リポジトリは開けず、数値や条件は確認できていない。コメントには、比較対象が飽和した古いコーディングベンチマークで、実際のエージェント作業を反映していないとの指摘がある。",
+   "url": "https://github.com/slee-persis/GVS5H"
+  },
+  {
+   "title": "Claude Code が外向き HTTP にユーザーのメールアドレスを付けているという指摘",
+   "origin": "Hacker News（21 点）で共有された X の投稿",
+   "note": "HN 投稿の存在は確認できたが、X の投稿は開けず、Anthropic による説明やリリースノートでの記載も見つからなかった。何が送られるのか、条件は何かは確認できていない。",
+   "url": "https://twitter.com/chrislakin/status/2113358733548081528"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "プロンプトキャッシュの効果の実測：保持時間を過ぎるとコスト 11 倍に",
+   "where": "Qiita",
+   "date": "10/26",
+   "desc": "投稿者が Claude Code（サブスクリプション）などで会話を続け、入力を「キャッシュ読み出し・書き込み・対象外」に分けて費用を測定。2 ターン目は費用の 75% が書き込みで、約 1 時間の保持時間を過ぎた再開は 11 倍になったと報告。/compact の効果にも触れている。",
+   "url": "https://qiita.com/songchong/items/7144594b0ad9529a168b",
+   "image": ""
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
