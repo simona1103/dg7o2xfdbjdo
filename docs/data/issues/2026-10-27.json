@@ -1,0 +1,134 @@
+{
+ "date": "2026-10-27",
+ "weekday": "火",
+ "headline": "OpenAI が GPT-6.1 Terra 公開、Anthropic は IPO 申請書を提出",
+ "generatedAt": "06:51",
+ "keyPoints": [
+  [
+   "OpenAI が GPT-6.1 Terra を公開。標準 API 価格は GPT-5.6 Terra・GPT-6.1 Sol より 50% 低い。",
+   "gpt-6-1-terra"
+  ],
+  [
+   "GPT-6.1 Terra が GitHub Copilot で一般提供に。C# タスクの初期テスト結果も公表。",
+   "gpt-6-1-terra-copilot"
+  ],
+  [
+   "Anthropic が SEC に S-1 を提出し、Nasdaq「ANT」での上場を計画。",
+   "anthropic-s1-ipo"
+  ]
+ ],
+ "news": [
+  {
+   "id": "gpt-6-1-terra",
+   "lead": true,
+   "topic": "model",
+   "story": "openai-gpt-6-1-terra",
+   "storyTitle": "OpenAI GPT-6.1 Terra",
+   "title": "OpenAI が GPT-6.1 Terra を公開",
+   "source": "OpenAI",
+   "date": "10/26",
+   "points": [
+    "高速・効率型モデル。標準 API 価格は GPT-5.6 Terra と GPT-6.1 Sol のどちらよりも 50% 低い。API 名は `gpt-6.1-terra`。",
+    "ChatGPT Work と Codex では Plus / Pro / Enterprise / Edu で利用可。OpenAI は Claude Opus 5.5 より最大設定でタスク当たり約 9 倍低コストと主張。"
+   ],
+   "impact": "Claude との比較は OpenAI 自身の評価なので、社内の業務タスクで実測してから判断する。",
+   "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+   "image": "",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "anthropic-s1-ipo",
+   "topic": "biz",
+   "story": "anthropic-ipo",
+   "storyTitle": "Anthropic の新規株式公開（IPO）",
+   "title": "Anthropic が IPO に向け S-1 を提出",
+   "source": "Anthropic",
+   "date": "10/26",
+   "points": [
+    "米 SEC に Form S-1 を提出。Class A 普通株を Nasdaq Global Select Market にシンボル「ANT」で上場する予定。",
+    "株数と価格帯は未定。登録届出書はまだ効力を生じておらず、株式の販売はできない。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/news/s1-sec",
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "gpt-6-1-terra-copilot",
+   "topic": "dev",
+   "story": "openai-gpt-6-1-terra",
+   "storyTitle": "OpenAI GPT-6.1 Terra",
+   "title": "GPT-6.1 Terra が Copilot で一般提供",
+   "source": "GitHub Changelog",
+   "date": "10/26",
+   "points": [
+    "日常的なエージェント型コーディングとターミナル作業向け。初期テストでは GPT-5.6 Terra より C# を含むコーディング課題を多く解いたという。",
+    "Pro / Pro+ / Max / Business / Enterprise で VS Code・Visual Studio・Copilot CLI などから選択可。提供は段階的。"
+   ],
+   "impact": "Business / Enterprise の管理者は、既定で新モデルが自動有効になる設定かをモデルポリシーで確認する。",
+   "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
+   "image": "https://github.blog/wp-content/uploads/2026/10/682153766-30ae8bb0-a424-401c-80e8-bb06bec001b2.png",
+   "reactions": [],
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "オープンウェイトモデルの「気になる挙動」を報告した Cohere のブログ",
+   "origin": "Hacker News（216 点、10/26 投稿）で共有された Cohere のブログ記事",
+   "note": "HN に投稿とコメントがあることは確認。コメントには、100,000 回に 1 回未満の頻度で起きる挙動という記述の引用がある。cohere.com の本文は開けず、対象モデルと詳細は確認できなかった。",
+   "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model"
+  },
+  {
+   "title": "IBM CEO「オープンウェイトモデルは、オンプレで十分良く安い」",
+   "origin": "Hacker News（411 点、10/26 投稿）で共有された The Register の記事",
+   "note": "HN に投稿があることは確認。The Register の本文は開けず、発言の文脈や根拠は確認できなかった。",
+   "url": "https://www.theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "Claude Code 2.1.303 の PowerShell hook が node の exit 2 で止まらない：7通りの実測表",
+   "where": "Zenn",
+   "date": "10/26",
+   "desc": "Windows で `\"shell\": \"powershell\"` の hook は、2.1.303 では exit 2 でも操作を止めなかったと筆者が報告。command の末尾に `; exit $LASTEXITCODE` を足すと止まったという実測表つき。",
+   "url": "https://zenn.dev/tamao825/articles/claude-code-hooks-powershell-exit2-not-blocking",
+   "image": ""
+  },
+  {
+   "title": "CLAUDE.md とコードが違ったら、Claude Code はどちらに従う？",
+   "where": "Zenn",
+   "date": "10/26",
+   "desc": "CLAUDE.md が古くなったとき、Sonnet 5.5 は食い違いに気づいても古い方に従ったと筆者が報告（168 回の試行）。食い違い時はコードに従う旨の 1 行を末尾に足すと、古い方に従う回は 0 になったという。",
+   "url": "https://zenn.dev/kakushigoto/articles/stale-claude-md-vs-code",
+   "image": ""
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
