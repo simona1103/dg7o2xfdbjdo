@@ -1,0 +1,287 @@
+{
+ "date": "2026-10-29",
+ "weekday": "木",
+ "headline": "Gemini 4 Carbon 発表、Copilot Fusion は一般提供に",
+ "generatedAt": "06:51",
+ "keyPoints": [
+  [
+   "Google が Gemini 4 Carbon を発表。まず防御側の限定提供で、一般提供は未定。",
+   "gemini-4-carbon"
+  ],
+  [
+   "DL フォルダの AGENTS.md で Codex・Claude Code が乗っ取られる攻撃が報告された。",
+   "agents-md-downloads-attack"
+  ],
+  [
+   "GitHub Copilot Fusion が一般提供になり、Enterprise への Copilot 同梱も始まった。",
+   "copilot-fusion-ga"
+  ]
+ ],
+ "news": [
+  {
+   "id": "gemini-4-carbon",
+   "lead": true,
+   "topic": "model",
+   "story": "gemini-4-argon",
+   "storyTitle": "Google Gemini 4 Argon の提供開始",
+   "title": "Gemini 4 Carbon 発表、まず防御側限定で提供",
+   "source": "Google DeepMind / Google",
+   "date": "10/28",
+   "points": [
+    "Argon の2週間後に登場。Artificial Analysis Intelligence Index v5.0 で1位（59）、サイバー防御系ベンチマークで首位と説明している。",
+    "今週から一部のサイバー防御担当者に提供し、Fairwind Program で信頼できるパートナーへ段階的に拡大。開発者・企業・一般向けは「できるだけ早く」とのみ。"
+   ],
+   "impact": "一般向け API はまだ使えない。公開時の価格は Argon と同じ入力 $2 / 出力 $10（100万トークンあたり）と案内されており、提供時期の続報を待つ。",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "reactions": [
+    "Hacker News で議論（666 pt）"
+   ],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+   "deadline": null,
+   "figure": {
+    "type": "stats",
+    "title": "Gemini 4 Carbon の主な数値（発表資料）",
+    "items": [
+     {
+      "value": "59",
+      "label": "AA Intelligence Index v5.0（1位）"
+     },
+     {
+      "value": "$2 / $10",
+      "label": "入力 / 出力 100万トークン"
+     },
+     {
+      "value": "88.2%",
+      "label": "SEC-bench Pro（脆弱性発見）"
+     }
+    ]
+   }
+  },
+  {
+   "id": "agents-md-downloads-attack",
+   "topic": "sec",
+   "story": "agents-md-downloads",
+   "storyTitle": "ダウンロードフォルダ経由の AGENTS.md 攻撃",
+   "title": "DL フォルダの AGENTS.md でコーディングエージェント乗っ取り",
+   "source": "Forever Security の報告（ITmedia 報道）",
+   "date": "10/28",
+   "points": [
+    "Web ページがユーザー操作なしでダウンロードフォルダに保存した悪意ある AGENTS.md を、同フォルダで起動した Codex や Claude Code が読むと、設定の書き換えやトークン送信に至る恐れがある。",
+    "同社の検証では指示の実行率は Codex が90%超、Claude Code が約50%。通常形式の指示ファイルが使われており、OpenAI・Anthropic 側の修正点はないとしている。"
+   ],
+   "impact": "`~/Downloads` でエージェントを起動しない。見覚えのない AGENTS.md / CLAUDE.md や MCP・API 接続先の設定がないか確認し、あればキーとトークンを再発行する。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/28/2000002671/",
+   "reactions": [
+    "Zenn・Qiita で対策記事が多数"
+   ],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/28/2000002671/10010715/2048",
+   "deadline": null,
+   "figure": null,
+   "lead": false
+  },
+  {
+   "id": "copilot-fusion-ga",
+   "topic": "dev",
+   "story": "copilot-hydrafusion",
+   "storyTitle": "Copilot の HydraFusion",
+   "title": "GitHub Copilot Fusion が一般提供に",
+   "source": "GitHub Changelog",
+   "date": "10/28",
+   "points": [
+    "モデルを選ばず Fusion を選ぶと、タスクごとに Copilot がモデルを選択・組み合わせる（Standard / High / Max の3段階）。",
+    "Fusion Max は Artificial Analysis Coding Agent Index で60点。GitHub は、Opus 5.5 Max 版 Claude Code に2点差で、タスクあたり API コストは約半分と説明している。"
+   ],
+   "impact": "課金は使われた各モデルの通常料金。管理者は Fusion が使えるモデルを組織ポリシーで制限でき、既定モデルにも設定できる。",
+   "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/683299408-b1d020a6-0c6d-49a5-ab57-5434d64fb7f9.png",
+   "deadline": null,
+   "figure": {
+    "type": "compare",
+    "title": "Copilot Fusion の処理パターン",
+    "cols": [
+     "動き",
+     "向く場面"
+    ],
+    "rows": [
+     [
+      "Single",
+      "ok 1つのモデルが直接解く",
+      "単純なタスク"
+     ],
+     [
+      "Cascade",
+      "ok 効率的なモデルが下書き→品質確認で必要なら上位へ",
+      "コスト重視"
+     ],
+     [
+      "Critique",
+      "ok 下書き→別モデルがレビュー→修正",
+      "品質重視"
+     ]
+    ]
+   },
+   "lead": false
+  },
+  {
+   "id": "github-enterprise-includes-copilot",
+   "topic": "dev",
+   "story": "copilot-enterprise-bundle",
+   "storyTitle": "GitHub Enterprise への Copilot 同梱",
+   "title": "GitHub Enterprise に Copilot を同梱、予算で従量管理",
+   "source": "GitHub Changelog",
+   "date": "10/28",
+   "points": [
+    "GitHub / Microsoft の担当チーム経由で、GitHub Enterprise Cloud の全ライセンスユーザーに Copilot を含められるようになった。Copilot Business / Enterprise も引き続き購入できる。",
+    "Enterprise ライセンスのないユーザーは Copilot Standalone（$10/ユーザー/月）。どちらもシートごとの月次 AI クレジットは付かず、使用量は最初のリクエストから企業予算に計上される。"
+   ],
+   "impact": "セルフサービス契約はまだ対象外（数週間内に日程を案内予定）。管理対象が「席数＋使用量」から「予算」に変わるので、予算超過時の挙動（補完は継続、Chat・コードレビューは停止）を確認する。",
+   "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/10/Changelog_NewRelease_Unfurl_Centered_GitHubEnterpriseCopilot.jpg",
+   "deadline": null,
+   "figure": {
+    "type": "compare",
+    "title": "Copilot の管理対象の変化",
+    "cols": [
+     "従来",
+     "Enterprise 同梱"
+    ],
+    "rows": [
+     [
+      "管理するもの",
+      "席数と AI 使用量の2つ",
+      "ok 企業予算に対する使用量"
+     ],
+     [
+      "月次 AI クレジット",
+      "シートに付属",
+      "no 付かない"
+     ],
+     [
+      "予算が尽きたとき",
+      "—",
+      "warn 補完は継続、Chat・コードレビュー・クラウド実行は停止"
+     ]
+    ]
+   },
+   "lead": false
+  },
+  {
+   "id": "copilot-app-projects-universe",
+   "topic": "dev",
+   "story": "copilot-app-projects",
+   "storyTitle": "GitHub Copilot app の Projects と自動化",
+   "title": "Copilot app に Projects、Agentic Workflows が GA",
+   "source": "GitHub Changelog",
+   "date": "10/28",
+   "points": [
+    "Copilot app の Projects（パブリックプレビュー）は、複数リポジトリや設計資料をまとめて目標を渡し、エージェントが並列で進めて PR などを返す。Computer use も macOS / Windows でプレビュー。",
+    "GitHub Agentic Workflows が一般提供。Markdown で書いた自動化が Actions の YAML にコンパイルされ、読み取り専用権限・サンドボックスが既定。共有 Copilot Automations も展開中。"
+   ],
+   "impact": "Actions ベースの自動化は既存のランナーグループとポリシーが適用される。試す場合は読み取り専用既定と予算（`gh aw forecast`）を先に確認する。",
+   "url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/685514709-41f0ff65-b075-454a-a844-00d288bb4bc1.jpg",
+   "deadline": null,
+   "figure": null,
+   "lead": false
+  },
+  {
+   "id": "anthropic-gsa-40-discount",
+   "topic": "biz",
+   "story": "anthropic-gsa",
+   "storyTitle": "Anthropic と GSA の提携拡大",
+   "title": "Anthropic、米政府向けに Claude を40%割引",
+   "source": "Anthropic",
+   "date": "10/27",
+   "points": [
+    "GSA との新協定で、Claude Enterprise・Claude for Government・Claude API が政府機関向けに40%割引。直販に加え、数か月内にクラウド経由の購入にも適用し、州・地方政府にも広がる。",
+    "約500の米政府機関が Claude を利用。Utah は Claude Code を34人に配布し、4週間のパイロットで71%が20時間以上の削減を報告したとしている。"
+   ],
+   "impact": "日本の調達条件には直接関係しない。公共分野で Claude Code の導入事例が出始めた点が参考になる。",
+   "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/4e3bfa972a8ec391977288fa36de3da1ecd78232-1920x1080.webp",
+   "deadline": null,
+   "figure": null,
+   "lead": false
+  },
+  {
+   "id": "plamo-3-1-prime",
+   "topic": "model",
+   "story": "pfn-plamo",
+   "storyTitle": "PFN の国産モデル PLaMo",
+   "title": "PFN「PLaMo 3.1 Prime」提供開始、API 無料プランも",
+   "source": "PFN（ITmedia 報道）",
+   "date": "10/27",
+   "points": [
+    "国産フルスクラッチのフラグシップ。Web 検索と、オンプレミスでも使える Deep Research を搭載。ハルシネーション系8ベンチで前版から平均約15%改善と説明している。",
+    "API は上限付き無料の Free プランと、100万トークンあたり入力60円・出力250円の Standard プラン。STEM・コーディングなどの性能は競合モデルを下回ったと報じられている。"
+   ],
+   "impact": "社内文書を外に出せない調査業務の選択肢。コーディング用途では競合を下回るので、用途を分けて評価する。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/28/2000002652/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/28/2000002652/10010657/2048",
+   "deadline": null,
+   "figure": null,
+   "lead": false
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude 便利術20選：CLAUDE.md は「お願い」、permissions と Hooks は「強制」",
+   "where": "Qiita",
+   "date": "10/26",
+   "heat": "LGTM 24",
+   "summary": "Terraform を題材に20機能を試した記録。投稿者は、守らせたい操作（apply / destroy など）は CLAUDE.md ではなく permissions の deny と Hooks に置くよう勧めている。",
+   "code": "{ \"permissions\": { \"deny\": [\"Bash(terraform apply:*)\", \"Bash(terraform destroy:*)\"] } }",
+   "url": "https://qiita.com/N-Kyo/items/bf4a3a2185db2d28eee5"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "AGENTS.md 乗っ取り対策を Claude Code・Codex・Cursor の hook で止めた",
+   "where": "Zenn",
+   "date": "10/27",
+   "desc": "DL フォルダ攻撃への対策を hook で実装。テスト27件が通っても、攻撃役の AI が80本の攻撃で抜け道を見つけ、作り直した過程を報告している。",
+   "url": "https://zenn.dev/shoma_endo/articles/agent-downloads-hijack-guard",
+   "image": ""
+  },
+  {
+   "title": "Codex は既定で API キー等の環境変数をコマンドに渡す：shell_environment_policy で外す",
+   "where": "Qiita",
+   "date": "10/28",
+   "desc": "codex 0.165.0 の sandbox で検証。既定ではダミーの OPENAI_API_KEY が渡り、ignore_default_excludes = false で外れるが DB_PASSWORD などは残るため filters が必要という報告。",
+   "url": "https://qiita.com/supportapp3/items/56cf6468be08e14c76dd",
+   "image": ""
+  },
+  {
+   "title": "CLAUDE.md が長くなった時の分け方と、AGENTS.md との二重管理の直し方",
+   "where": "Zenn",
+   "date": "10/28",
+   "desc": "公式 memory ページの記述をもとに、200行超の指示を skill や paths 付きルールへ分ける基準を整理。手元検証ではなく公式の記述の整理と明記している。",
+   "url": "https://zenn.dev/atasino/articles/efa9fb306b6ad0",
+   "image": ""
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
