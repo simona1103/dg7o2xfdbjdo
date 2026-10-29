@@ -1,0 +1,234 @@
+{
+ "date": "2026-10-30",
+ "weekday": "金",
+ "headline": "Claude API に使用量・コスト分析 API、Mistral Large 4 の重み公開",
+ "generatedAt": "06:52",
+ "keyPoints": [
+  [
+   "Claude Platform に Usage and Cost Analytics API（ベータ）。モデル・ワークスペース・API キー別にコストを集計できる。",
+   "claude-usage-cost-analytics-api"
+  ],
+  [
+   "Mistral Large 4 のウェイトが Hugging Face で公開。約 1T / 49B アクティブ、1M コンテキスト。",
+   "mistral-large-4-open-weights"
+  ],
+  [
+   "ChatGPT の Pro・Business に月最大 500 ドル分の API 利用枠が付く。",
+   "chatgpt-pro-business-api-credits"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-usage-cost-analytics-api",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-usage-cost-api",
+   "storyTitle": "Claude の Usage and Cost Analytics API",
+   "title": "Claude に Usage and Cost Analytics API（ベータ）",
+   "source": "Claude Platform リリースノート",
+   "date": "10/29",
+   "points": [
+    "Usage and Cost Analytics API がベータで登場。Console と Enterprise 組織のトークン使用量とコストを取得でき、モデル・ワークスペース・API キー・ユーザーやサービスアカウントで絞り込み／集計できる。",
+    "従来の Usage and Cost API と Enterprise Analytics API の usage/cost 系エンドポイントは legacy 扱いになったが、引き続きサポートされる。10/28 には Messages API と Token Counting API の最大リクエストサイズが 32 MB から 128 MB に拡大。"
+   ],
+   "impact": "コスト集計を自前で組んでいる場合は、新 API への移行ガイドを確認する。既存連携はすぐには止まらない。",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/release-notes/overview?design-rev=4",
+   "figure": {
+    "type": "delta",
+    "title": "Messages / Token Counting API の最大リクエストサイズ",
+    "rows": [
+     {
+      "label": "最大リクエストサイズ",
+      "before": 32,
+      "after": 128,
+      "unit": " MB",
+      "digits": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": "mistral-large-4-open-weights",
+   "topic": "local",
+   "story": "mistral-large-4",
+   "storyTitle": "Mistral Large 4 のオープンウェイト公開",
+   "title": "Mistral Large 4 のウェイト公開",
+   "source": "Hugging Face ブログ",
+   "date": "10/29",
+   "points": [
+    "約 1T 総パラメータ・49B アクティブのマルチモーダル MoE で、コンテキストは 1M トークン。Hugging Face にチェックポイントが公開され、transformers・vLLM・llama.cpp が day-0 で対応した。",
+    "ライセンスは Mistral Ecosystem Open-Weight License（MIT の派生で、モデルのサービス提供に制限がある）。2-bit 量子化なら 512GB の Apple Silicon Ultra 1 台で動き、それ以外は分散推論が必要。"
+   ],
+   "impact": "自社運用を検討するなら、ライセンスのサービス提供制限と必要なメモリ量を先に確認する。",
+   "url": "https://huggingface.co/blog/mistral-large4",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://huggingface.co/blog/assets/ml4/thumbnail.png",
+   "figure": {
+    "type": "stats",
+    "title": "Mistral Large 4 の規模",
+    "items": [
+     {
+      "value": "約1T",
+      "label": "総パラメータ"
+     },
+     {
+      "value": "49B",
+      "label": "アクティブ"
+     },
+     {
+      "value": "1M",
+      "label": "コンテキスト"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chatgpt-pro-business-api-credits",
+   "topic": "dev",
+   "story": "chatgpt-api-credits",
+   "storyTitle": "ChatGPT Pro・Business の API 利用枠",
+   "title": "ChatGPT Pro・Business に API 利用枠",
+   "source": "ITmedia AI+（OpenAI 発表の報道）",
+   "date": "10/28",
+   "points": [
+    "OpenAI は 10/28（現地時間）、ChatGPT の Pro と Business に API を使える特典を追加すると発表。月最大 500 ドル分の利用枠が付く。",
+    "Pro は各プランの月額と同額分。Business は 1 シートあたり標準 20 ドル・プレミアム 100 ドル分で、1 ワークスペースの上限は 500 ドル。ChatGPT と API のアカウントに同じメールアドレスでログインして設定する。Free・Go・Plus・Enterprise・Edu は対象外。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/29/2000002728/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/29/2000002728/10010924/2048",
+   "figure": null
+  },
+  {
+   "id": "openai-model-spec-update",
+   "topic": "model",
+   "story": "openai-model-spec",
+   "storyTitle": "OpenAI Model Spec の改訂",
+   "title": "OpenAI が Model Spec を改訂",
+   "source": "OpenAI",
+   "date": "10/29",
+   "points": [
+    "Model Spec を 5 つの価値（人の意図への忠実さ、害の最小化、誠実さと透明性、人の主体性、配慮）で組み直した。",
+    "文脈・監督・主体性の指針を追加し、一部の既定動作を調整、細かな文体指針の多くを廃止した。OpenAI は、モデルはまだ Spec を十分には反映していないとしている。"
+   ],
+   "impact": "",
+   "url": "https://openai.com/index/updated-model-spec/",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "Skill",
+   "title": "Claude Code スキル「imozuru」：原文から芋づる式に調べる",
+   "where": "Qiita",
+   "date": "10/27",
+   "heat": "♡ 25",
+   "summary": "知らない分野の用語・人・媒体を探し、論文の引用や記事内リンクをたどって原文を手元に保存するスキル。投稿者はコーヒーの題材で通常の AI 検索と比べ、専門家の評価語彙まで把握できたと報告している。",
+   "code": "",
+   "url": "https://qiita.com/inoyu-qiita/items/4fc91ba7f67d6763960e"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Claude Code が背景エージェントの会話を約 30 秒ごとにモデルへ送り、トークン消費の 16.4% を占めるとの報告",
+   "origin": "Hacker News（553 点）で共有された gist。投稿者のコメントによる調査報告",
+   "note": "HN のスレッドと投稿者コメントは確認できたが、gist 本体は取得できず、Anthropic の公式発表やリリースノートでも該当の記述は見つからなかった。スレッド内でも仕組みの解釈は割れている。",
+   "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "見積書100枚超をどうさばく？「半日仕事」を約30分にした建設会社のAI活用",
+   "where": "キーマンズネット（ITmedia）",
+   "date": "10/30",
+   "desc": "沖縄県の福地組が AI 文書処理サービスで、協力会社ごとに書式が異なる見積書の転記を、1 枚あたり 10〜15 分から約 1 分に短縮した事例。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2610/30/2000002725/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2610/30/2000002725/10010918/2048"
+  },
+  {
+   "title": "KDDI 傘下、社内の AI 活用事例 113 件を無料公開",
+   "where": "ITmedia AI+",
+   "date": "10/29",
+   "desc": "KDDI アイレットが Gemini・Claude などの活用事例 113 件（エンジニア 63 件）を特設サイトで公開。Claude Code と Figma の組み合わせなども載っており、ツール・分野で検索できる。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/29/2000002685/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/29/2000002685/10010758/2048"
+  },
+  {
+   "title": "「読みにくいDB」はAI開発のコストを1.9倍にする――Claude Codeで検証",
+   "where": "Zenn",
+   "date": "10/23",
+   "desc": "同じ業務ロジックで DB の命名・コメント・外部キーだけ変え、Claude Code（Sonnet 5.5）で各 5 回試行。読みにくい側はコスト約 1.9 倍・ターン数 1.4 倍で、傾向レベルの検証と著者は断っている。",
+   "url": "https://zenn.dev/actbe_tech/articles/8b4a9991d5365d",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
