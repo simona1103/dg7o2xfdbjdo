@@ -1,0 +1,195 @@
+{
+ "date": "2026-10-31",
+ "weekday": "土",
+ "headline": "Opus 4.8 の fast mode は11/30で終了、Opus 5.5 へ移行を",
+ "generatedAt": "06:49",
+ "keyPoints": [
+  [
+   "Claude Opus 4.8 の fast mode が 11/30 に廃止。以降 speed: \"fast\" はエラーになる。",
+   "claude-opus-48-fast-mode-removal"
+  ],
+  [
+   "Claude Code 2.1.314 が公開。書き込み先を作業ディレクトリ内に限る設定などを追加。",
+   "claude-code-2-1-314"
+  ],
+  [
+   "OpenAI が robots.txt の共通シグナル（AI 学習の可否表明）を尊重すると発表。",
+   "openai-robots-ai-training-signal"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-opus-48-fast-mode-removal",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-opus-55-fast-mode",
+   "storyTitle": "Claude Opus 5.5 の fast mode",
+   "title": "Opus 4.8 の fast mode、11/30 に廃止",
+   "source": "Claude Platform",
+   "date": "10/30",
+   "points": [
+    "Claude Opus 4.8 の fast mode は非推奨となり、2026-11-30 に削除される。",
+    "削除後、claude-opus-4-8 に speed: \"fast\" を付けたリクエストはエラーを返す。"
+   ],
+   "impact": "fast mode を使う場合は Claude Opus 5.5 へ移行する。fast mode の単価は Opus 5.5 のほうが安い（入力 $8、出力 $40 / MTok）。",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/build-with-claude/fast-mode?design-rev=4",
+   "deadline": {
+    "from": "2026-10-30",
+    "date": "2026-11-30",
+    "label": "Opus 4.8 の fast mode 削除"
+   },
+   "figure": {
+    "type": "delta",
+    "title": "fast mode の単価（USD / MTok）：Opus 4.8 → Opus 5.5",
+    "rows": [
+     {
+      "label": "入力",
+      "before": 10,
+      "after": 8,
+      "unit": "$",
+      "digits": 0
+     },
+     {
+      "label": "出力",
+      "before": 50,
+      "after": 40,
+      "unit": "$",
+      "digits": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-314",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.314 を公開",
+   "source": "Claude Code",
+   "date": "10/30",
+   "points": [
+    "`permissions.blockWritesOutsideWorkingDirectories` を追加。全パーミッションモードで、作業ディレクトリ外への Write / Edit / NotebookEdit を拒否する。",
+    "VS Code と Claude Desktop の Code タブに idle compaction を追加。200K トークン超の会話を放置すると要約される。"
+   ],
+   "impact": "作業ディレクトリ外への書き込みを一律で止めたいチームは、この設定を managed settings などで有効にできる。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "openai-robots-ai-training-signal",
+   "topic": "sec",
+   "story": "ai-training-signal",
+   "storyTitle": "robots.txt の AI 学習シグナル",
+   "title": "OpenAI、robots.txt の共通シグナルを尊重へ",
+   "source": "OpenAI",
+   "date": "10/30",
+   "points": [
+    "AI 学習への利用可否を示す robots.txt の共通シグナルを、OpenAI が尊重すると発表した。IETF の AI Preferences ワーキンググループの作業に基づく。",
+    "実装は「今後数か月」で、詳細は後日公表する。既存のクローラー制御は引き続き有効。"
+   ],
+   "impact": "自社サイトの AI 学習への利用可否を表明している場合は、実装時期の続報を確認する。",
+   "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "sarashina-3-2-mini-thinking",
+   "topic": "model",
+   "story": "sarashina-service",
+   "storyTitle": "国産 AI Sarashina の無償 β 提供",
+   "title": "Sarashina 初の思考モデルを API 提供",
+   "source": "ITmedia AI＋（SB Intuitions 発表の報道）",
+   "date": "10/29",
+   "points": [
+    "SB Intuitions が「Sarashina3.2 mini thinking」を発表。フルスクラッチ開発の Sarashina シリーズ初の思考モデルで、無償β版の Sarashina サービスから API で提供する。",
+    "思考の深さを low / medium / high の 3 段階で設定できる。コーディング、ツール呼び出し、Web 検索の性能が向上したとしている。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/30/2000002743/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/30/2000002743/10010977/2048",
+   "figure": null
+  },
+  {
+   "id": "chatgpt-pro-limits-doubled",
+   "topic": "biz",
+   "story": "chatgpt-api-credits",
+   "storyTitle": "ChatGPT Pro・Business の API 利用枠",
+   "title": "ChatGPT Pro の利用上限を引き上げ",
+   "source": "ITmedia AI＋（OpenAI 担当者の発言の報道）",
+   "date": "10/29",
+   "points": [
+    "OpenAI のプロダクト責任者が 10/29、Pro 100／500 プランの利用上限を 2 倍にすると X で述べた、と ITmedia が報じた。",
+    "9 月に発表した Pro 200 の実質半減は撤回するとしている。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2610/30/2000002738/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2610/30/2000002738/10010966/2048",
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "公式 Claude Code VS Code 拡張にバックドア、との報告",
+   "origin": "Hacker News（659 pt、関連スレッド複数）。Cursor Marketplace 上の拡張が対象と報じるブログ記事が出どころ",
+   "note": "HN 上で複数のスレッドが立っていることは確認できた。Anthropic・Cursor の公式告知や影響範囲（対象の版、VS Code Marketplace への波及の有無）は、この実行では開けず確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50300683"
+  },
+  {
+   "title": "Anthropic、上場後すぐには投資適格格付けを得られない可能性（Blackstone）",
+   "origin": "Hacker News（227 pt）。出どころは Financial Times の記事",
+   "note": "HN スレッドの存在と、記事冒頭の引用で趣旨を確認した。FT 本文は有料で全文を確認できず、Blackstone の発言の詳細は未確認。",
+   "url": "https://news.ycombinator.com/item?id=50307219"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "同じ6工程を1回で頼む vs 6回に分ける：達成は同じ、料金1.55倍・所要1.85倍",
+   "where": "Zenn",
+   "date": "10/30",
+   "desc": "`claude -p` を計35回走らせた実測。6条件の達成件数は両方 30/30 で、工程ごとに分けると料金と所要時間が増えたという検証。",
+   "url": "https://zenn.dev/numarn/articles/task-steps-split-vs-one-request-handson",
+   "image": ""
+  },
+  {
+   "title": "Claude Codeによる自動公開の点検が16日間「終わりました」と嘘をついた",
+   "where": "Zenn",
+   "date": "10/30",
+   "desc": "週2本の記事公開を任せた自動化で、工程の完走だけを見る見張りが 0 本の週を見逃した事例。公開前後に件数を数えて通知する直し方。",
+   "url": "https://zenn.dev/pcnotonari/articles/4b6b18838f1d15",
+   "image": ""
+  },
+  {
+   "title": "開発途中でAIモデルやエージェントを替えても品質を落とさない3原則",
+   "where": "Zenn",
+   "date": "10/30",
+   "desc": "方針・判断・進捗を `AGENTS.md`、ADR、`PROGRESS.md` としてリポジトリに残し、モデル切り替えの影響を抑える手順。",
+   "url": "https://zenn.dev/lumichy/articles/ai-agent-model-switch-guide-2026",
+   "image": ""
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
