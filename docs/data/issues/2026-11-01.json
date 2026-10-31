@@ -1,0 +1,199 @@
+{
+ "date": "2026-11-01",
+ "weekday": "日",
+ "headline": "Claude Enterprise に費用可視化・共有予算の3機能、Claude Code 2.1.316",
+ "generatedAt": "06:58",
+ "keyPoints": [
+  [
+   "Anthropic が Claude Enterprise に Smart reports・アプリ内アンケート・グループ共有予算を追加し、10/28 に一般提供を開始した（ITmedia 報道）。",
+   "claude-enterprise-cost-features"
+  ],
+  [
+   "Claude Code 2.1.316 は PowerShell フックの exit code 2 が効かない不具合などを修正し、サブエージェントの effort 指定を追加した。",
+   "claude-code-2-1-316"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-enterprise-cost-features",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-enterprise-admin",
+   "storyTitle": "Claude Enterprise の管理者向け機能",
+   "title": "Claude Enterprise に費用対効果の3機能",
+   "source": "ITmedia エンタープライズ（Anthropic 発表の報道）",
+   "date": "10/31",
+   "points": [
+    "Smart reports はチーム・期間・製品を選ぶと、会話の一部を分析して作業をワークストリームに分類し、費用・成果物・妨げになった要因を示す。",
+    "In-app surveys（標準4問）と、グループで1つの月間予算を共有する Pooled group budgets も加わった。3機能とも 10/28 に一般提供。"
+   ],
+   "impact": "WG で Claude を展開する際、費用と成果の説明材料にできる。HIPAA 対応構成や顧客管理の暗号鍵を使う組織は、構成により使える範囲が異なる。",
+   "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html",
+   "reactions": [],
+   "image": "https://image.itmedia.co.jp/enterprise/articles/2610/31/cover_news009.jpg",
+   "figure": {
+    "type": "compare",
+    "title": "3つの新機能",
+    "cols": [
+     "何をするか",
+     "補足"
+    ],
+    "rows": [
+     [
+      "Smart reports",
+      "ワークストリーム別に費用・成果物・妨げを表示",
+      "ok 推奨事項（スキル化の提案など）が付く"
+     ],
+     [
+      "In-app surveys",
+      "利用者に短いアンケートカードを表示",
+      "ok 管理者は設問を編集でき、回答を書き出せる"
+     ],
+     [
+      "Pooled group budgets",
+      "グループで月間予算を共有",
+      "ok 個人上限も併用。50/75/95/100% でメール通知"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-316",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.316 を公開",
+   "source": "Claude Code",
+   "date": "10/31",
+   "points": [
+    "`CLAUDE_CODE_SUBAGENT_EFFORT`（サブエージェントの effort 既定）と `CLAUDE_CODE_DISABLE_ULTRATHINK` を追加。",
+    "PowerShell フックが、型キャストや `param` で始まるコマンドで exit code 2 でもブロックしない不具合を修正。"
+   ],
+   "impact": "Windows で PowerShell フックによる禁止ルールを使っているなら、更新して動作を確認する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.316",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "Skill",
+   "title": "Impeccable：AI っぽい UI を避けるフロントエンド設計スキル",
+   "where": "Qiita",
+   "date": "10/28",
+   "heat": "♡ 45",
+   "summary": "投稿者は同じ依頼文で素の Claude Code と Impeccable を比べ、製品への聞き取り→候補出し→抽選→人が選ぶ、という手順で平均的な見た目から離れられたと報告している。",
+   "code": "npx impeccable install\n/impeccable init",
+   "url": "https://qiita.com/jinxin4869/items/0e72c0b925b75f1c28c9"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Claude Code VS Code 拡張の改ざん版：Cursor 告知と対処手順",
+   "origin": "Hacker News（655 点）と Zenn のまとめ記事",
+   "note": "拡張 2.1.312・2.1.313 の改ざん版が Cursor のマーケットプレイスで約11時間配布され、VS Code 版は対象外、Anthropic の正規版は無事で次版を 2.1.314 にした、とまとめ記事は書く。一次情報の Cursor 告知は開けず未確認。",
+   "url": "https://zenn.dev/sonsu/articles/67fbd9a1cf8914"
+  },
+  {
+   "title": "ChatGPT アカウントをリンク1つで乗っ取れたとする報告",
+   "origin": "Hacker News（289 点）、parameter.ai のブログ",
+   "note": "投稿の存在は HN で確認したが、ブログ本文は開けず、OpenAI の見解や修正状況も確認できなかった。",
+   "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
+  },
+  {
+   "title": "LLM で被害者の資産価値を判定するマルウェア",
+   "origin": "Hacker News（221 点）、Talos のブログ",
+   "note": "Volta infostealer が AI モデルで標的を優先順位付けするという内容。Talos の記事は開けず、手口の詳細は確認できなかった。",
+   "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AI コーディングツールを狙った攻撃から開発環境を守る",
+   "where": "Zenn",
+   "date": "10/31",
+   "desc": "Nx の s1ngularity 事件を整理し、npm の postinstall 実行や Claude Code の設定で防げるかを無害なダミーで検証した記録。npm 12.2.1 では既定で止まったと報告している。",
+   "url": "https://zenn.dev/swdrk/articles/a4b8aa3ecc3f26",
+   "image": ""
+  },
+  {
+   "title": "AI エージェントは「実運用」が主流に　成果を出す企業の共通点",
+   "where": "ITmedia エンタープライズ",
+   "date": "10/31",
+   "desc": "INDUSTRIAL-X の調査（1031人）。エージェント活用企業の74.1%が実運用だが、明確な成果が出ているのは10.0%。経営層の関与で約3.7倍の差がある。",
+   "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news008.html",
+   "image": "https://image.itmedia.co.jp/enterprise/articles/2610/31/cover_news008.jpg"
+  },
+  {
+   "title": "OSS「Hindsight」を Claude API に繋いで長期記憶を持たせる",
+   "where": "Zenn",
+   "date": "11/01",
+   "desc": "retain / recall / reflect の3つの API を持つ OSS を Docker で起動し、Claude API のエージェントに記憶を組み込む手順を示す。",
+   "url": "https://zenn.dev/yunisuta/articles/oss-hindsight-claude-api-ai-llm-python-meq5so",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
