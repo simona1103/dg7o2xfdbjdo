@@ -1,0 +1,164 @@
+{
+ "date": "2026-11-02",
+ "weekday": "月",
+ "headline": "OpenAI・Google・Microsoft が AI 学習拒否の共通シグナルに対応表明",
+ "generatedAt": "06:58",
+ "keyPoints": [
+  [
+   "robots.txt の共通トークンで AI 学習の拒否を一括指定できる仕組みに、OpenAI・Google・Microsoft が対応を表明した。Microsoft は 2027 年 2 月 1 日に開始する。",
+   "ai-training-signal-common-token"
+  ]
+ ],
+ "news": [
+  {
+   "id": "ai-training-signal-common-token",
+   "lead": true,
+   "topic": "sec",
+   "story": "ai-training-signal",
+   "storyTitle": "robots.txt の AI 学習シグナル",
+   "title": "robots.txt の共通 AI 学習拒否シグナルに各社対応",
+   "source": "ITmedia NEWS（OpenAI・Google・Microsoft の発表の報道）",
+   "date": "11/01",
+   "points": [
+    "`User-Agent: __usage_ai-training` の下に `Disallow` を書くと AI 学習への利用拒否を示せる。IETF に Anthropic の担当者が個人名義で出した草案で、正式な標準ではない。",
+    "OpenAI は数カ月以内、Google は 2027 年、Microsoft は 2027 年 2 月 1 日から対応する。Anthropic は実装を始めたが、全体への展開には時間がかかる。"
+   ],
+   "impact": "自社サイトの AI 学習拒否を robots.txt で管理しているなら、共通トークンへの移行を検討する。Microsoft の NoArchive/NoCache を AI 向けに使っているサイトは 2027 年 3 月 1 日までに新設定へ移行が必要。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/01/2000002776/10011089/2048",
+   "deadline": {
+    "from": "2026-10-30",
+    "date": "2027-03-01",
+    "label": "Microsoft の NoArchive/NoCache から新設定への移行期限"
+   },
+   "figure": {
+    "type": "timeline",
+    "title": "各社の対応時期",
+    "today": "2026-11-02",
+    "points": [
+     {
+      "date": "2026-10-30",
+      "label": "各社が対応方針を発表"
+     },
+     {
+      "date": "2027-02-01",
+      "label": "Microsoft が新設定の読み取りを開始",
+      "emph": true
+     },
+     {
+      "date": "2027-03-01",
+      "label": "Microsoft の旧設定からの移行期限",
+      "emph": true
+     }
+    ]
+   }
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude Code の /goal に届かない目標を置き、3 人分のエージェントを Slack でつないで ISUCON に参加",
+   "where": "Zenn",
+   "date": "10/31",
+   "heat": "♡ 55",
+   "summary": "各自の Claude Code を共通の GOAL.md と Slack で連携させ、デプロイとベンチマークの担当を 1 つに絞ったところ衝突による失敗が止まった、という報告。最終 207,039 点。",
+   "code": "GOAL.md 1 行目: ゴール：最終スコア 100 万点\n/goal GOAL.md の内容を実行せよ",
+   "url": "https://zenn.dev/kauche/articles/f3736c660aab77"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "ChatGPT と Codex の利用上限が共通枠に統合されるとの話",
+   "origin": "Hacker News（211 pt）の投稿。OpenAI ヘルプ記事を指している",
+   "note": "HN のコメントに「ChatGPT と Codex の共通枠」を告げるメールを受け取ったという投稿者が複数いるが、ヘルプ記事そのものは開けず、適用時期や上限の数値は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50320588"
+  },
+  {
+   "title": "Anthropic が Claude によるゲームのリバースエンジニアリングを防ぐ措置",
+   "origin": "Hacker News（178 pt）が共有した Mashable の記事",
+   "note": "Mashable の記事は開けず、措置の具体的な内容や適用範囲は確認できなかった。HN では賛否の議論が出ている。",
+   "url": "https://news.ycombinator.com/item?id=50320255"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "Windows の Claude Code：ネイティブ版か WSL 2 かは「プロジェクトの置き場所」で決める",
+   "where": "Zenn",
+   "date": "11/01",
+   "desc": "公式ドキュメントをもとに、サンドボックスが要るなら WSL 2、Windows 側のフォルダが作業場所ならネイティブ、と選び方を整理。WSL から /mnt/c を使うと検索が遅くなる点にも触れる。",
+   "url": "https://zenn.dev/deepai/articles/claude-code-windows-native-or-wsl",
+   "image": ""
+  },
+  {
+   "title": "AIに無人運用させたパイプラインで、エラーを出さずに壊れていた8件と検知の作り方",
+   "where": "Zenn",
+   "date": "11/01",
+   "desc": "Claude Code に作らせ毎日無人で回す自作パイプラインで、無音のまま壊れていた 8 件を一覧化。最長は約 4 か月で、検知の作り直し方をコード片つきで紹介する（個人環境での記録）。",
+   "url": "https://zenn.dev/zenn_content/articles/unattended-pipeline-silent-failures",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
