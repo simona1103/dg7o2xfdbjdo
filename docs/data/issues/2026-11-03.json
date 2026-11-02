@@ -1,0 +1,276 @@
+{
+ "date": "2026-11-03",
+ "weekday": "火",
+ "headline": "Claude の Max 20x が Ultra に改称、5時間制限を撤廃",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Claude の「Max 20x」が「Ultra」（月$200）に改称され、認証済みアカウントは 5 時間ごとの上限がなくなった。",
+   "claude-max-ultra-rename"
+  ],
+  [
+   "GitHub Actions は 12/2 から公開リポジトリで `pull_request_target` を既定ブロック。11/09・11/16 にブラウンアウト。",
+   "github-pull-request-target-block"
+  ],
+  [
+   "Messages API に会話をサーバー側で保持する message threads がベータで登場。",
+   "claude-api-message-threads-beta"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-max-ultra-rename",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-plans",
+   "storyTitle": "Claude 個人向けプランの改称（Max / Ultra）",
+   "title": "Claude の Max 20x が「Ultra」に改称、5時間制限を撤廃",
+   "source": "Anthropic（ITmedia 経由）",
+   "date": "10/30",
+   "points": [
+    "月$100 の「Max 5x」は「Max」に、月$200 の「Max 20x」は「Ultra」に改称。料金は据え置きで、既存契約者は手続き不要。",
+    "Ultra は認証済みアカウントで 5 時間ごとの利用上限を撤廃。週ごとの上限は従来どおりで、新しいアカウントは認証が済むまで一時的に制限が残る。"
+   ],
+   "impact": "個人で Max 20x を使っている場合、認証済みなら 5 時間枠で止まらなくなる。ただし週上限は残り、「20x」は 5 時間枠の倍率だったため、Ultra の週上限は Pro の 10 倍と表示される。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/02/2000002777/",
+   "reactions": [
+    "Qiita でまとめ記事に掲載"
+   ],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/02/2000002777/10011093/2048",
+   "deadline": null,
+   "figure": {
+    "type": "compare",
+    "title": "改称後の個人向けプラン（料金ページの記載）",
+    "cols": [
+     "Max（旧 Max 5x）月$100",
+     "Ultra（旧 Max 20x）月$200"
+    ],
+    "rows": [
+     [
+      "5時間ごとの上限",
+      "warn あり（Pro の 5 倍）",
+      "ok 認証済みアカウントは撤廃"
+     ],
+     [
+      "週ごとの上限",
+      "Pro の 5 倍",
+      "Pro の 10 倍"
+     ],
+     [
+      "Fable の利用",
+      "週上限の 50% まで",
+      "週上限の 50% まで"
+     ],
+     [
+      "API クレジット（月）",
+      "$100 分",
+      "$200 分"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "github-pull-request-target-block",
+   "topic": "dev",
+   "story": "github-pr-target-block",
+   "storyTitle": "GitHub Actions の pull_request_target 既定ブロック",
+   "title": "pull_request_target を 12/2 から既定でブロック",
+   "source": "GitHub Changelog",
+   "date": "11/02",
+   "points": [
+    "2026-12-02 から、公開リポジトリでは Actions の `pull_request_target` イベントが、Actions event policy で許可しない限り既定でブロックされる（従来予告は 11/02 開始）。",
+    "事前に 11/09 と 11/16 の各 16:00–18:00 UTC にブラウンアウトがあり、対象の実行は失敗する。非公開・内部リポジトリは対象外。"
+   ],
+   "impact": "公開リポジトリで `pull_request_target` を使っているなら、11/09 までに Insights で影響する実行を確認し、必要なら policy で明示的に許可する。",
+   "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/682988073-439dd4ff-beed-4b9b-b767-acf8c41542d9.jpg",
+   "deadline": {
+    "from": "2026-11-02",
+    "date": "2026-12-02",
+    "label": "公開リポジトリで pull_request_target が既定ブロックに"
+   },
+   "figure": {
+    "type": "timeline",
+    "title": "ブロックまでの日程",
+    "today": "2026-11-03",
+    "points": [
+     {
+      "date": "2026-11-09",
+      "label": "ブラウンアウト 1 回目（16:00–18:00 UTC）"
+     },
+     {
+      "date": "2026-11-16",
+      "label": "ブラウンアウト 2 回目（16:00–18:00 UTC）"
+     },
+     {
+      "date": "2026-12-02",
+      "label": "既定ブロックを恒久適用",
+      "emph": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-api-message-threads-beta",
+   "topic": "claude",
+   "story": "claude-message-threads",
+   "storyTitle": "Claude API の message threads",
+   "title": "Messages API に message threads（ベータ）",
+   "source": "Claude Platform リリースノート",
+   "date": "11/02",
+   "points": [
+    "会話をサーバー側に保持し、2 ターン目以降は新しいメッセージと直前の応答 ID だけを送る。長いエージェントループで送信量と最初のトークンまでの時間を減らせる。",
+    "ベータヘッダー `message-threads-2026-08-12`。スレッドは最後のリクエストから 5 分で失効し、最終利用から 1 時間以内に削除。ZDR・HIPAA の対象外。"
+   ],
+   "impact": "試すなら、失効時に 404 が返るため全履歴をアプリ側にも持ち、create からやり直す経路を最初から実装しておく。",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+   "reactions": [
+    "Qiita に解説記事"
+   ],
+   "image": "https://platform.claude.com/web-api/og/docs/en/build-with-claude/message-threads?design-rev=4",
+   "deadline": null,
+   "figure": {
+    "type": "flow",
+    "title": "message threads の流れ",
+    "cols": [
+     [
+      {
+       "label": "create",
+       "sub": "全履歴・system・tools を送り保存"
+      }
+     ],
+     [
+      {
+       "label": "continue",
+       "sub": "新規メッセージ + previous_message_id のみ",
+       "emph": true
+      }
+     ],
+     [
+      {
+       "label": "失効（5分）",
+       "sub": "continue が 404"
+      }
+     ],
+     [
+      {
+       "label": "replay",
+       "sub": "全履歴で create し直す"
+      }
+     ]
+    ],
+    "note": "スレッドはベストエフォート。アプリ側が会話の正本を持つ。"
+   }
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Anthropic の改訂 S-1 に Q3 売上 $17B・コミット $895B とする報道",
+   "origin": "Hacker News で共有された CNBC 記事（投稿見出しによる）",
+   "note": "HN の投稿見出しにこの数字があることは確認できたが、CNBC 本文は開けず、SEC の提出書類も未確認。数字の中身は確かめられていない。",
+   "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html"
+  },
+  {
+   "title": "「Astra が重みを読み書きして Qwen を改善」とするブログ",
+   "origin": "Hacker News で共有された個人ブログ記事",
+   "note": "HN の投稿とブログ URL の存在は確認できたが、ブログ本文を取得できず、OpenAI 側の発表も見つからない。内容は未確認。",
+   "url": "https://rikiyat.github.io/blog/weight-space-programming/"
+  },
+  {
+   "title": "Anthropic の社内 AI 利用が小売価格換算で社員給与を上回るとする記事",
+   "origin": "Hacker News で共有された Business Insider 記事（投稿見出しによる）",
+   "note": "HN の投稿の存在は確認できたが、記事本文は開けず、Anthropic 側の一次情報も見つからなかった。内容は未確認。",
+   "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "メルカリは「業務を止めた」――AI利用率100％をかなえたCAIOの奮闘記",
+   "where": "ITmedia ビジネスオンライン",
+   "date": "11/02",
+   "desc": "全従業員の AI ツール利用率が 100％に達したメルカリで、CAIO が語った組織づくりの試行錯誤。エージェント作りに時間を使うため、業務そのものを止めた日の話など。",
+   "url": "https://www.itmedia.co.jp/business/articles/2611/02/news032.html",
+   "image": "https://image.itmedia.co.jp/business/articles/2611/02/cover_news032.jpg"
+  },
+  {
+   "title": "ISUCON2026 で優勝しました（当日編）",
+   "where": "Zenn",
+   "date": "11/02",
+   "desc": "完全自律型の競技エージェントを 3 か月かけて準備し、1 人で参加して優勝した記録。当日のエージェントの動きと問題の構成を書いている。",
+   "url": "https://zenn.dev/luvtechno/articles/isucon2026-competition-day",
+   "image": ""
+  },
+  {
+   "title": "Claude Code の作業ディレクトリ外の書き込み禁止は Bash・PowerShell に効かない",
+   "where": "Zenn",
+   "date": "11/02",
+   "desc": "2.1.316 / Windows 11 の実測で、`blockWritesOutsideWorkingDirectories` は Write・Edit・NotebookEdit だけを止めた。PreToolUse hook で補う例つき。",
+   "url": "https://zenn.dev/tamao825/articles/claude-code-block-writes-outside-bash-powershell",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
