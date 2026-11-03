@@ -1,0 +1,137 @@
+{
+ "date": "2026-11-04",
+ "weekday": "水",
+ "headline": "Claude Code 2.1.317 とテキスト透かしの対応モデルが明記",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.317 は、ツール呼び出しがメールアドレスを送る前の確認や gateway の費用 API を追加。",
+   "claude-code-2-1-317"
+  ],
+  [
+   "Claude のテキスト透かしは Mythos 5・Opus 4.7・Sonnet 4.6 が対象。Sonnet 4.6 は sampling 設定に注意。",
+   "claude-text-watermark"
+  ],
+  [
+   "Anthropic の S-1/A で 7〜9月の売上高約170億ドルが開示された。",
+   "anthropic-s1a-q3"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-317",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.317：メール送信前の確認など",
+   "source": "Anthropic（Claude Code）",
+   "date": "11/03",
+   "points": [
+    "Web・シェルのツール呼び出しがアカウントのメールアドレスをネットワークに送る前に確認を求めるようになった。Agent SDK の hook に `onFailure: \"block\"` も追加。",
+    "Claude apps gateway の管理 API に `GET /v1/organizations/analytics/cost` を追加。期間ごとの費用を合計・開発者別・日別・IdP グループ別で取得できる。"
+   ],
+   "impact": "自己ホストランナーで `claude -p` を使っている場合、セッション ID の扱いが変わったため、従来の挙動が必要なら `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID=1` を設定する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "claude-text-watermark",
+   "topic": "claude",
+   "story": "claude-text-watermark",
+   "storyTitle": "Claude のテキスト透かし",
+   "title": "Claude のテキスト透かしの対応モデルを明記",
+   "source": "Claude Platform",
+   "date": "11/03",
+   "points": [
+    "Claude Mythos 5・Claude Opus 4.7・Claude Sonnet 4.6 が生成したテキストに Anthropic のテキスト透かしが付く（対象プラットフォームは公式ページに一覧）。",
+    "透かしはトークンや隠し文字を追加せず、意味や品質、読みやすさを変えないと説明されている。"
+   ],
+   "impact": "透かしに依存する場合、Claude Sonnet 4.6 では `temperature`・`top_p`・`top_k` をすべて省く（フレームワークが自動設定する分も含む）。",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/build-with-claude/text-watermark?design-rev=4",
+   "figure": null
+  },
+  {
+   "id": "anthropic-s1a-q3",
+   "topic": "biz",
+   "story": "anthropic-ipo",
+   "storyTitle": "Anthropic の新規株式公開（IPO）",
+   "title": "Anthropic が IPO 申請書を修正、7〜9月の数字を開示",
+   "source": "ITmedia NEWS（S-1/A の報道）",
+   "date": "11/03",
+   "points": [
+    "11/2 に Form S-1/A を提出。7〜9月期の売上高は約169.6億ドルで前期比約47％増、営業損益は5.67億ドルの赤字（前期は黒字）。",
+    "計算資源などの将来の支出約束額は約8954億ドル。うち約2138億ドルは解約可能な条件を含み、全額が確定債務ではない。売り出し株数と価格帯は未開示。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2611/03/2000002831/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/03/2000002831/10011209/2048",
+   "figure": null
+  },
+  {
+   "id": "copilot-jetbrains-air",
+   "topic": "dev",
+   "story": "copilot-jetbrains",
+   "storyTitle": "Copilot for JetBrains の更新",
+   "title": "Copilot が JetBrains Air で利用可能に",
+   "source": "GitHub Changelog",
+   "date": "11/03",
+   "points": [
+    "Agent Client Protocol（ACP）経由で、Air のエージェント選択から GitHub Copilot を使い、IDE 上またはクラウドでタスクを任せられる。",
+    "クラウドタスクは JetBrains AI クレジットではなく Copilot のプランで動く。利用には Air Teams 有効な組織の JetBrains アカウントと Copilot サブスクリプションが必要。"
+   ],
+   "impact": "JetBrains 系 IDE を使うチームは、既存の Copilot 契約のまま Air でエージェント実行を試せる。",
+   "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/689797142-96dbb0c9-dccb-41f6-8990-acf5c575db04.png",
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Codex の学習利用設定が勝手に再有効化されたとの報告",
+   "origin": "Hacker News の投稿（398 pt、11/03）。投稿者は職場の複数人で設定が戻っていたと書いている。",
+   "note": "投稿の存在とコメントは確認できたが、OpenAI の公式説明や一次情報は見つからず、広く起きているかは未確認。",
+   "url": "https://news.ycombinator.com/item?id=50352757"
+  },
+  {
+   "title": "Postman が AI プラグインを自動導入し API データの共有を試みるとの報告",
+   "origin": "Hacker News の投稿（821 pt、11/03）。Postman の GitHub issue へのリンク。",
+   "note": "HN 投稿の存在は確認できたが、issue 本文と Postman 側の公式見解は開けず、内容は未確認。",
+   "url": "https://news.ycombinator.com/item?id=50354960"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "全社員を「AIマスター化」した広告代理店の人材戦略",
+   "where": "キーマンズネット（ITmedia）",
+   "date": "11/04",
+   "desc": "テレシーが全正社員に生成AIパスポートの取得を義務付け、情報をNotionに集約。商談前の準備時間を3〜4時間短縮し、約20のエージェントが稼働しているという。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/04/2000002712/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/04/2000002712/10010860/2048"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
