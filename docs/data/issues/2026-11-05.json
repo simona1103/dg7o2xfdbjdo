@@ -1,0 +1,217 @@
+{
+ "date": "2026-11-05",
+ "weekday": "木",
+ "headline": "Claude Code 2.1.318 と FlashProve、Kimi K3.1 Pro 重み公開",
+ "generatedAt": "06:53",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.318 が共有ホームでの設定・ログイン破損を多数修正し、ログイン失効日の警告を追加。",
+   "claude-code-2-1-318"
+  ],
+  [
+   "Anthropic が、モデル応答を暗号で証明する FlashProve を Apache 2.0 で公開。",
+   "anthropic-flashprove"
+  ],
+  [
+   "Kimi K3.1 Pro（2.8T MoE）のオープンウェイトが公開された。",
+   "kimi-k3-1-pro-open-weights"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-318",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.318：共有ホームでの設定破損を多数修正",
+   "source": "Anthropic（Claude Code リリースノート）",
+   "date": "11/04",
+   "points": [
+    "共有ネットワークホームで `~/.claude.json`・設定・ログイン情報が消える／空になる問題を多数修正。`claude -p` が `Not logged in` で終了する問題も修正。",
+    "`claude auth status` に claude.ai ログインの失効日（`loginExpiresAt`）を追加。`claude -p` は失効 10 日前から stderr に警告を出す。"
+   ],
+   "impact": "無人実行（`claude -p`、SDK）や共有ホームで使っているなら更新し、ログイン失効日の警告を運用監視に取り込む。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318",
+   "image": "",
+   "reactions": [],
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "anthropic-flashprove",
+   "topic": "claude",
+   "story": "anthropic-flashprove",
+   "storyTitle": "Anthropic の推論証明 FlashProve",
+   "title": "Anthropic、モデル応答を暗号で証明する FlashProve を公開",
+   "source": "Anthropic（Frontier Red Team）",
+   "date": "11/02",
+   "points": [
+    "zkSNARK で「指定した重みのモデルが、この出力を生成した」ことを証明する研究。Llama 4 Maverick（4bit）で H100 1 基・約 110 トークン/秒、1,024 トークンあたり証明は約 19MB。",
+    "コード・Lean 証明・仕様書を Apache 2.0 で公開。研究の途中経過とされ、通常推論の約 70〜95 倍の GPU 時間を要する。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/research/provable-inference",
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2eba335a28661a8253187053fa36add230af728b-2000x1125.jpg",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "deadline": null,
+   "figure": {
+    "type": "stats",
+    "title": "FlashProve の測定値（Llama 4 Maverick 4bit）",
+    "items": [
+     {
+      "value": "~110",
+      "label": "トークン/秒（H100 1 基）"
+     },
+     {
+      "value": "~19MB",
+      "label": "証明サイズ/1,024 トークン"
+     },
+     {
+      "value": "70〜95倍",
+      "label": "通常推論に対する GPU 時間"
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-ultra-weekly-limit-explained",
+   "topic": "claude",
+   "story": "claude-plans",
+   "storyTitle": "Claude 個人向けプランの改称（Max / Ultra）",
+   "title": "Ultra の「Pro の 10 倍」表記、容量半減ではないと公式が説明",
+   "source": "ITmedia AI＋（Anthropic 担当者の X 投稿を報道）",
+   "date": "11/04",
+   "points": [
+    "10/30 に Max 20x が Ultra、Max 5x が Max に改称（月 220 ドルと 110 ドル、価格据え置き）。Ultra の 5 時間制限は撤廃され「Pro の 10 倍」表記に。",
+    "プロダクト責任者は、旧 20x は 5 時間制限の倍率で、週次制限は元々 Pro の 10 倍だったと説明。「20 倍が両方に適用と想定した新規ユーザーに申し訳ない」とした。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/04/2000002862/",
+   "image": "",
+   "reactions": [],
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "kimi-k3-1-pro-open-weights",
+   "topic": "local",
+   "story": "kimi-k3",
+   "storyTitle": "Kimi K3 系のオープンウェイト",
+   "title": "Kimi K3.1 Pro のオープンウェイトが Hugging Face に公開",
+   "source": "Moonshot AI（Hugging Face モデルカード）",
+   "date": "11/04",
+   "points": [
+    "総 2.8T・アクティブ 104B の MoE、コンテキスト 100 万トークン、画像入力対応。重みは MXFP4（量子化を考慮した学習）。",
+    "モデルカードは Claude Code ハーネスでの評価値（Terminal-Bench 4.0 などの自社測定）を掲載。"
+   ],
+   "impact": "",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+   "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/moonshotai/Kimi-K3.1-Pro.png",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "copilot-xcode-coding-assistant",
+   "topic": "dev",
+   "story": "copilot-xcode",
+   "storyTitle": "Xcode の Copilot 対応",
+   "title": "GitHub Copilot が Xcode 標準のコーディングアシスタントで利用可能に",
+   "source": "GitHub Changelog",
+   "date": "11/04",
+   "points": [
+    "Xcode 27.3 beta からパブリックプレビュー。設定は Xcode > Settings > Intelligence。macOS Tahoe 26.6 以降が必要で、全 Copilot プランが対象。",
+    "既存の GitHub Copilot for Xcode 拡張も別の選択肢として残る。"
+   ],
+   "impact": "",
+   "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+   "image": "https://github.blog/wp-content/uploads/2026/11/694394305-f9d288c4-2862-48ff-aadf-b307e5ead674.png",
+   "reactions": [],
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Ripple-65B Preview：米国発オープンウェイトの agentic coding SOTA を主張",
+   "origin": "Hacker News（141 点、11/04）。ricursive.com の発表ページが出どころ。",
+   "note": "HN 投稿の存在は確認。発表ページは取得できず、数値や公開条件は未確認。HN では比較表に他のオープンウェイトが載っていない点への指摘が出ている。",
+   "url": "https://news.ycombinator.com/item?id=50369925"
+  },
+  {
+   "title": "Tencent Hy4：Kimi 3.1 Pro よりやや劣るが安価、将来オープン化を約束との声",
+   "origin": "Hacker News（149 点、11/04）。hy.tencent.ai の研究ページが出どころ。",
+   "note": "HN 投稿の存在は確認。発表ページは取得できず、性能・料金・オープン化の話はコメント上の言及で、一次情報では未確認。",
+   "url": "https://news.ycombinator.com/item?id=50365780"
+  }
+ ],
+ "domestic": [],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
