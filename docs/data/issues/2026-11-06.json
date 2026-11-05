@@ -1,0 +1,237 @@
+{
+ "date": "2026-11-06",
+ "weekday": "金",
+ "headline": "Claude Console に IP 許可リスト、OpenAI は GPT-6 Cyber を発表",
+ "generatedAt": "06:49",
+ "keyPoints": [
+  [
+   "Claude Console に IP 許可リストがベータ登場。Admin API にはメンバーの全端末サインアウトも追加。",
+   "claude-ip-allowlist-admin-signout"
+  ],
+  [
+   "OpenAI がサイバー特化の GPT-6 Cyber を発表し、重要インフラ防御者向けの枠を新設。",
+   "openai-gpt-6-cyber"
+  ],
+  [
+   "Gemini Omni 1.2 Flash が 15 秒動画に対応し、30% 値下げで一般提供。",
+   "gemini-omni-1-2-flash"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-ip-allowlist-admin-signout",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-ip-allowlist",
+   "storyTitle": "Claude Console の IP 許可リスト",
+   "title": "Console に IP 許可リスト（ベータ）",
+   "source": "Claude Platform",
+   "date": "11/05",
+   "points": [
+    "組織単位で IPv4/IPv6 アドレスや CIDR 範囲を最大 1,000 件登録でき、許可外からのリクエストは拒否される（ベータ）。",
+    "Admin API に、Claude Enterprise メンバーをあらゆる端末からサインアウトさせる POST /v1/organizations/users/{user_id}/sign_out もベータで追加。"
+   ],
+   "impact": "API キーを固定の送信元 IP から使っているなら、キー漏えい時の被害を限定する手段として試す価値がある（ベータなので設定は変わりうる）。",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/manage-claude/ip-allowlist?design-rev=4",
+   "figure": null
+  },
+  {
+   "id": "openai-gpt-6-cyber",
+   "topic": "sec",
+   "story": "openai-gpt-6-cyber",
+   "storyTitle": "OpenAI GPT-6 Cyber",
+   "title": "OpenAI、サイバー特化の GPT-6 Cyber を発表",
+   "source": "OpenAI",
+   "date": "11/05",
+   "points": [
+    "脆弱性の発見・修正向けモデル。許可された範囲内にとどまるよう訓練したとする。新ベンチ RemoteExploitBench で GPT-6 Cyber は 95% を完了（Daybreak Blue 下の GPT-6 Astra は全拒否）。",
+    "重要インフラの防御者向けに Daybreak Red for Critical Infrastructure を新設し、10 億ドルの Daybreak for Frontline Defenders で利用を補助する。"
+   ],
+   "impact": "",
+   "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "gemini-omni-1-2-flash",
+   "topic": "model",
+   "story": "gemini-omni",
+   "storyTitle": "Google Gemini Omni",
+   "title": "Gemini Omni 1.2 Flash：15 秒動画と 30% 値下げ",
+   "source": "Google",
+   "date": "11/05",
+   "points": [
+    "動画生成・編集が最大 15 秒（1.1 は 10 秒）に。対話での複数ターン編集と参照への忠実さも強化。",
+    "1.1 から 30% 値下げし、720p は 1 秒あたり $0.07。Gemini API と Google Cloud で一般提供。"
+   ],
+   "impact": "",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "reactions": [],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-omni-1.2_FZLql41.width-1300.png",
+   "figure": {
+    "type": "compare",
+    "title": "Gemini Omni 1.1 → 1.2 Flash",
+    "cols": [
+     "1.1",
+     "1.2 Flash"
+    ],
+    "rows": [
+     [
+      "最大クリップ長",
+      "10 秒",
+      "ok 15 秒"
+     ],
+     [
+      "720p の価格",
+      "—",
+      "ok $0.07/秒（30% 減）"
+     ],
+     [
+      "提供",
+      "—",
+      "ok Gemini API・Google Cloud で GA"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "anthropic-how-researchers-use-claude",
+   "topic": "claude",
+   "story": "anthropic-science-usage",
+   "storyTitle": "Anthropic の科学研究での Claude 利用調査",
+   "title": "研究者は Claude をどう使うか：20.7 万セッション分析",
+   "source": "Anthropic",
+   "date": "11/05",
+   "points": [
+    "Claude と Claude Code の研究セッション 207,000 件を分析。データ分析が Claude で約 3 分の 1、Claude Code で半数近くを占める。",
+    "AI 利用者の研究者のうち約 40% が、2030 年までにモデルが研究プロジェクト全体を自力で遂行すると予想。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/0c1a04cc7042949252ee54565755780fe21d5ecf-1200x630.jpg",
+   "figure": null
+  },
+  {
+   "id": "github-pr-overview-preview",
+   "topic": "dev",
+   "story": "github-pr-overview",
+   "storyTitle": "GitHub のプルリクエスト Overview ページ",
+   "title": "GitHub、PR の新 Overview ページを公開プレビュー",
+   "source": "GitHub Changelog",
+   "date": "11/05",
+   "points": [
+    "マージ状況と次の操作を上部の要約にまとめ、マージボックスを半分以下の面積に再設計。未解決の会話での絞り込みや新しい順の並べ替えも追加。",
+    "オプトイン方式で、週末にかけて順次展開。ヘッダーのボタンで参加・従来表示に戻せる。"
+   ],
+   "impact": "レビュー量が多いチームは、ヘッダーのボタンから自分の PR で試して使い勝手を確かめられる。",
+   "url": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-new-releases.jpg",
+   "figure": null
+  },
+  {
+   "id": "plamo-3-translate",
+   "topic": "local",
+   "story": "pfn-plamo",
+   "storyTitle": "PFN の国産モデル PLaMo",
+   "title": "PFN、翻訳特化 LLM「PLaMo 3 Translate」を公開",
+   "source": "ITmedia AI+",
+   "date": "11/05",
+   "points": [
+    "0.8B・2B・8B・31B の 4 サイズをオープンウェイトで公開。Hugging Face から入手できる。",
+    "直近事業年度の収入・売上が 10 億円以下の企業・個人は PLaMo コミュニティライセンスで商用利用可。最小モデルでも TranslateGemma などを上回るとうたう（PFN の主張）。"
+   ],
+   "impact": "社内文書の翻訳をローカルで動かしたい場合の選択肢になる。ライセンスの売上条件は事前に確認する。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/05/2000002900/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/05/2000002900/10011377/2048",
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "SentryのアラートをClaude Codeのルーティンに調べさせてSlackに報告する",
+   "where": "Zenn",
+   "date": "11/05",
+   "desc": "Sentry の Webhook を Cloudflare Workers で署名検証・絞り込みしてから Claude Code のルーティンを起動し、原因調査を Slack に 1 通で投稿する構成。ツールを読み取り系に限定する安全設計も解説。",
+   "url": "https://zenn.dev/delt/articles/ca85da1a79cb86",
+   "image": ""
+  },
+  {
+   "title": "GPT-6モデルはAstra、Sol、それともLuna？　OpenAIが教える、Codex爆速開発の鉄則",
+   "where": "ITmedia キーマンズネット",
+   "date": "11/05",
+   "desc": "OpenAI Japan の講演をもとに、Codex で設計・レビューは Sol、難所は Astra、定型の大量作業は Luna と使い分けてコストを抑える考え方を紹介。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/05/2000002770/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/05/2000002770/10011071/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
