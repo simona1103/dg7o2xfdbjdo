@@ -1,0 +1,190 @@
+{
+ "date": "2026-11-07",
+ "weekday": "土",
+ "headline": "Claude Code 2.1.319 で auto mode 変更、11/12 に新 Usage Policy 発効",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.319：ゲートウェイ経由の auto mode は確認不能な呼び出しを確認または拒否に変更。",
+   "claude-code-2-1-319"
+  ],
+  [
+   "Anthropic の新 Usage Policy が 11/12 に発効。高リスク用途や自律的な物理動作の扱いを明確化。",
+   "claude-usage-policy-2026"
+  ],
+  [
+   "METR が AI による AI 開発の加速を評価、根拠の大半は Anthropic が黒塗り。",
+   "anthropic-metr-ai-rd-acceleration"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-319",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.319：auto mode の挙動変更と MCP タスク対応",
+   "source": "Anthropic（claude-code リリース）",
+   "date": "11/06",
+   "points": [
+    "LLM ゲートウェイ経由などテレメトリ・フラグ無効の auto mode は、サーバー側で確認できない呼び出しを確認または拒否する。内蔵分類器へ戻すには `CLAUDE_CODE_AUTO_MODE_SERVER=0`。",
+    "MCP タスクをバックグラウンド実行。`permissions.denyInsteadOfPrompting` を追加。`claude -p` は auto mode で拒否されると exit 1 になる。Bash 権限バイパスとサンドボックス脱出の修正を含む。"
+   ],
+   "impact": "ゲートウェイ経由や無人実行で auto mode を使っているなら、更新後の挙動（拒否時の終了コード 1 など）を確認する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
+   "reactions": [],
+   "image": ""
+  },
+  {
+   "id": "claude-usage-policy-2026",
+   "topic": "claude",
+   "story": "claude-usage-policy-2026",
+   "storyTitle": "Anthropic の 2026 Usage Policy",
+   "title": "新しい Usage Policy が 11/12 に発効",
+   "source": "Anthropic",
+   "date": "10/08",
+   "points": [
+    "「欺瞞的キャンペーン・人為的活動」の新セクションを追加し、選挙関連は「民主的プロセスを損なわない」に整理。武器の誘導・制御ソフトも禁止対象と明記。",
+    "健康・金融など高リスク用途の要件を明確化し、Claude が物理的行動を自律的に取る場合の制御を追加した。"
+   ],
+   "impact": "Claude を業務に組み込んでいる場合、高リスク用途や自律的な物理動作に当たる利用がないか 11/12 までに確認する。",
+   "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+   "deadline": {
+    "from": "2026-10-08",
+    "date": "2026-11-12",
+    "label": "新 Usage Policy の発効"
+   },
+   "figure": {
+    "type": "timeline",
+    "title": "Usage Policy 改定の日程",
+    "today": "2026-11-07",
+    "points": [
+     {
+      "date": "2026-10-08",
+      "label": "改定を公表"
+     },
+     {
+      "date": "2026-11-12",
+      "label": "発効",
+      "emph": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "anthropic-metr-ai-rd-acceleration",
+   "topic": "sec",
+   "story": "anthropic-independent-evaluators",
+   "storyTitle": "Anthropic の外部評価者との連携",
+   "title": "METR が「AI は AI 開発を加速しているか」の評価を公開",
+   "source": "ITmedia（METR 報告の報道）",
+   "date": "11/05",
+   "points": [
+    "METR は Anthropic の協力で評価し、10月時点の能力向上ペースは 24年3月〜25年10月の約2倍の可能性が高いとした（「1.3〜3倍でも驚かない」）。",
+    "結論に最も効く証拠の大半は、公開前に Anthropic が黒塗りした。Anthropic は他社の開発を加速しうる機密情報の除去が理由と説明している。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/06/2000002938/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/06/2000002938/10011468/2048"
+  },
+  {
+   "id": "claude-personal-finance-beta",
+   "topic": "claude",
+   "story": "claude-personal-finance",
+   "storyTitle": "Claude の Personal Finance",
+   "title": "Claude に家計管理機能「Personal Finance」（米国β）",
+   "source": "ITmedia（Anthropic 発表の報道）",
+   "date": "11/05",
+   "points": [
+    "Plaid 経由で銀行・カード口座を接続（最大16行、最大2年分の取引履歴）。米国の Pro / Max / Ultra 向けにβ提供。",
+    "読み取り専用で資金移動はできない。専用ハブ内の会話はモデル学習に使われず、広告やスポンサー付き推薦も表示しない。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2611/06/2000002935/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/06/2000002935/10011459/2048"
+  },
+  {
+   "id": "copilot-usage-metrics-review-telemetry",
+   "topic": "dev",
+   "story": "copilot-usage-metrics",
+   "storyTitle": "Copilot usage metrics API",
+   "title": "Copilot usage metrics API にコードレビュー対応率とテレメトリ欠落",
+   "source": "GitHub Changelog",
+   "date": "11/05",
+   "points": [
+    "リポジトリ単位のレポートに `copilot_code_review` が加わり、Copilot レビューの指摘に開発者が対応した数から対応率を出せる。",
+    "ユーザー単位で `client_telemetry_present` と `usage_metrics_requirements` が加わり、テレメトリ未送信や IDE・拡張のバージョン不足を把握できる。"
+   ],
+   "impact": "Copilot の効果測定をしている管理者は、集計が欠けるユーザーの洗い出しとレビュー対応率の追跡に使える。",
+   "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/696871374-0c1024be-79ea-4fd2-a050-2b8f2df34847.jpeg"
+  },
+  {
+   "id": "meta-muse-voice-avatar",
+   "topic": "model",
+   "story": "meta-muse-voice",
+   "storyTitle": "Meta Muse の音声対話",
+   "title": "Meta の Muse に音声対話とアバター（まず米国）",
+   "source": "ITmedia（Meta 発表の報道）",
+   "date": "11/05",
+   "points": [
+    "リアルタイム音声対話と、会話に合わせて表情や身ぶりが変わるアバターを追加。モバイル・Web・Mac のアプリで、米国から提供する。",
+    "声は数百種類から選べる。日本での提供時期は明らかにされていない。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2611/06/2000002939/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/06/2000002939/10011472/2048"
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Anthropic の IPO、買い手の想定評価額が最低 1.1 兆ドルとの報道",
+   "origin": "Hacker News で 147 pt の投稿（Bloomberg 記事 11/06 を共有）",
+   "note": "HN 投稿の存在は確認。Bloomberg 記事の本文は開けず、評価額の数値や根拠は確認できなかった。",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "フィックスターズ、国内 GPU サーバでオープンウェイトモデルを提供",
+   "where": "ITmedia AI＋",
+   "date": "11/06",
+   "desc": "国内の GPU サーバのみで処理し、入出力データは保存しない。まず DeepSeek-V4.1-Flash-1017 を 100 万トークンあたり入力 48 円・出力 192 円で提供する。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/06/2000002955/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/06/2000002955/10011503/2048"
+  },
+  {
+   "title": "三井住友系 SMFL、Replit でエンタープライズ バイブコーディング",
+   "where": "ITmedia AI＋",
+   "date": "11/06",
+   "desc": "認証・権限を検査する接続基盤、決定論的テストによる品質管理エージェント、最終はエンジニア確認という運用。従来 6 人で約半年の改修を 1 人 1 週間で完了したという。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/06/2000002933/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/06/2000002933/10011454/2048"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
