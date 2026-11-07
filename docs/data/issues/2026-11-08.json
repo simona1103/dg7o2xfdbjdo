@@ -1,0 +1,158 @@
+{
+ "date": "2026-11-08",
+ "weekday": "日",
+ "headline": "Claude のメモリ設計「dreaming」を解説、@GitHub が Slack/Teams で GA",
+ "generatedAt": "06:56",
+ "keyPoints": [
+  [
+   "Anthropic が、Claude がログを見直してメモを修正・整理する「dreaming」と、メモリ設計の評価結果を公開した。",
+   "anthropic-agent-memory-dreaming"
+  ],
+  [
+   "@GitHub の Slack / Teams 連携が一般提供になり、Teams には Canvas が加わった。",
+   "github-slack-teams-ga"
+  ],
+  [
+   "Copilot code review の設定を Enterprise からリポジトリまで API で管理できるようになった。",
+   "copilot-code-review-api-settings"
+  ]
+ ],
+ "news": [
+  {
+   "id": "anthropic-agent-memory-dreaming",
+   "lead": true,
+   "topic": "claude",
+   "story": "anthropic-agent-memory",
+   "storyTitle": "Anthropic のエージェントメモリ設計（dreaming）",
+   "title": "Claude のエージェントメモリと「dreaming」",
+   "source": "Anthropic",
+   "date": "11/06",
+   "points": [
+    "Claude が過去のログ（トランスクリプト）を見直してメモを修正・整理する処理を「dreaming」と呼び、Pokémon の評価では誤ったメモを正して先へ進めた例を示した。",
+    "Stainless 社内文書約 35 万ファイルで Opus 5 に wiki を作らせ、2 セッションから 128 セッションに増やすと 25 問の得点が 13% から 48% に上がった。"
+   ],
+   "impact": "メモリは「何のためにあるか」だけを伝え、書き方の細則は決めない方が強いモデルでは効いた。「失敗だけ記録」の規則は効果を大きく減らした。",
+   "url": "https://www.anthropic.com/research/components-of-agent-memory",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6ab2663a2c0bd6a41409d90136a59a5d72995ea5-1200x630.jpg",
+   "figure": {
+    "type": "stats",
+    "title": "dreaming で wiki を育てた評価（Anthropic 社内）",
+    "items": [
+     {
+      "value": "350k",
+      "label": "対象ファイル数（約 4.2 億トークン）"
+     },
+     {
+      "value": "128",
+      "label": "dreaming セッション数"
+     },
+     {
+      "value": "13%→48%",
+      "label": "25 問の得点（wiki のみで回答）"
+     }
+    ]
+   }
+  },
+  {
+   "id": "github-slack-teams-ga",
+   "topic": "dev",
+   "story": "copilot-slack-teams",
+   "storyTitle": "Copilot in Slack / Teams の更新",
+   "title": "@GitHub が Slack / Teams で一般提供",
+   "source": "GitHub Changelog",
+   "date": "11/06",
+   "points": [
+    "会話の中からバグ調査、Issue 作成、変更の実装、PR 作成まで行える。Teams には実装計画やコード変更を会話と並べて確認できる Canvas が加わった。",
+    "メッセージからリポジトリを自動で特定して開始できるようになり、作成された Issue / PR に「Slack/Teams の会話から作成」の記載が付く。"
+   ],
+   "impact": "チャットツールで Copilot を使っている組織は、リポジトリを選び直す手間が減る。",
+   "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/f5117dd56aefe8316aa8272c4ebdd472ae00acf53c2dc2020b5bfa815070450e-2400x1260-1.jpeg"
+  },
+  {
+   "id": "copilot-code-review-api-settings",
+   "topic": "dev",
+   "story": "copilot-code-review-api",
+   "storyTitle": "Copilot code review の API 管理",
+   "title": "Copilot code review の設定を API で管理",
+   "source": "GitHub Changelog",
+   "date": "11/06",
+   "points": [
+    "Enterprise・Organization・リポジトリの各レベルで、コードレビューの有効化、既定のレビュー強度、レビューの帰属情報を REST / GraphQL API で扱える。",
+    "レビュー概要コメントが簡潔になり、Copilot のレビューセッションに消費した AI クレジットが表示される。自動レビューのルールは bypass リストに対応した。"
+   ],
+   "impact": "多数のリポジトリへ同じ設定を配る運用はスクリプト化できる。ただし Enterprise / Organization の設定 API は GitHub Apps と fine-grained PAT に非対応。",
+   "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/698051474-0d2c8b20-3218-4997-9ca1-ca913297b62f.jpeg"
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Claude Code が Web 検索時の User-Agent にメールアドレスを入れるという報告",
+   "origin": "Hacker News（1589 points、11/05）で共有された GitHub Issue",
+   "note": "HN の投稿者コメントに、Web 検索・取得時の User-Agent ヘッダーに利用者のメールアドレスが入るとの説明がある。Issue 本文は読めず、Anthropic の見解や修正の有無は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50385272"
+  },
+  {
+   "title": "Claude Code の「Don't Ask Again」で公開 GitHub ファイルにパスワードが残るという調査",
+   "origin": "Hacker News（11/07）で共有された Apiiro のブログ",
+   "note": "HN のコメントでは、`.claude/settings.local.json` などをコミットしたリポジトリで、許可コマンドに含まれた鍵やパスワードが見つかったという調査と読める。ブログ本文は開けず、件数（1,122 ファイル）の根拠は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50407882"
+  },
+  {
+   "title": "Microsoft Research の AI Frontiers グループが終了するという報告",
+   "origin": "Hacker News（248 points、11/07）で共有された個人ブログ",
+   "note": "HN の投稿とコメントで話題になっている。Microsoft の公式発表は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50406563"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "コードを読まずにバイブコーディングしたら、Claude Code は分かっていてスルーしていた",
+   "where": "Zenn",
+   "date": "11/04",
+   "desc": "12,000 行のダッシュボードを読まずに作った結果、同じ「トークン数」が画面ごとに別の数え方になっていた事例。直す前後の数値表付き。",
+   "url": "https://zenn.dev/nexta_/articles/42a828ca2b8a02",
+   "image": ""
+  },
+  {
+   "title": "バイブコーディングで機能を継ぎ足していて見えてきた Claude Code の実装のクセ",
+   "where": "Zenn",
+   "date": "11/03",
+   "desc": "要件が固まらないまま作った社内の売上計画システムで、画面ごとに金額が食い違った事例。概念台帳や画面一覧を先に用意する対策を整理している。",
+   "url": "https://zenn.dev/uguisu_blog/articles/45d1f446ece415",
+   "image": ""
+  },
+  {
+   "title": "API キーをコマンド引数に書くと別ユーザーの ps から丸見え",
+   "where": "Qiita",
+   "date": "11/07",
+   "desc": "Debian 13 での実機確認。`curl -H` の Bearer は ps に出る一方、`-u` は隠れ、`-H @ファイル` ならファイル名だけが出る。",
+   "url": "https://qiita.com/supportapp3/items/cd1f04df4b681507e3e1",
+   "image": ""
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 0],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
