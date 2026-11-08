@@ -1,0 +1,153 @@
+{
+ "date": "2026-11-09",
+ "weekday": "月",
+ "headline": "Anthropic、Claude で細菌ウイルス由来ボルト粒子の 3D 構造を解明",
+ "generatedAt": "06:56",
+ "keyPoints": [
+  [
+   "Anthropic の生物学研究チームが Claude を各工程に組み込み、ファージ由来ボルト粒子の 3D 構造を決定した。",
+   "claude-vault-particle"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-vault-particle",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-biology-vault",
+   "storyTitle": "Claude による生物学研究（ボルト粒子）",
+   "title": "Claude でボルト粒子の 3D 構造を解明",
+   "source": "Anthropic",
+   "date": "11/04",
+   "points": [
+    "データベース検索、DNA 構築物の設計、単離法の最適化、顕微鏡データ処理に Claude を使い、ファージ由来ボルトを cryo-EM で解析した。",
+    "通常 3 日かかる精製は約 90 分、最初の構造モデルは 34 時間後に完成（通常は数週間と推定）。単一タンパク質 96 コピーで構成される。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/99ce1c2ac2d0649d677f097132829da2ab3c4e18-1280x1280.jpg",
+   "figure": {
+    "type": "stats",
+    "title": "Anthropic 発表の数値",
+    "items": [
+     {
+      "value": "約90分",
+      "label": "精製（従来は約3日）"
+     },
+     {
+      "value": "34時間",
+      "label": "最初の構造モデルまで"
+     },
+     {
+      "value": "96",
+      "label": "ファージ由来ボルトのコピー数（ヒトは78）"
+     }
+    ]
+   }
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Goldman Sachs が銀行員・トレーダーから Claude Code を外す",
+   "origin": "Hacker News（440 点、11/08 投稿）。thestateofai.com の記事で、元は Bloomberg 報道とコメントにある。",
+   "note": "HN の投稿とコメントの存在は確認。記事本文と元報道は開けず、Goldman 自身の発表も見つからなかったため、内容は未確認。",
+   "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers"
+  },
+  {
+   "title": "Llama-modchip：284B の DeepSeek を 64GB RAM・GPU なしで動かす",
+   "origin": "Hacker News（314 点、11/08 投稿）。GitHub リポジトリ synchopate/llama-modchip。",
+   "note": "HN の投稿は確認。リポジトリ本文は開けず、タイトルの性能・動作条件は検証できていない。",
+   "url": "https://github.com/synchopate/llama-modchip"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "コクヨが開発部門の「資料散乱」を AI でゼロに　Notion をどう使ったか",
+   "where": "ITmedia キーマンズネット",
+   "date": "11/09",
+   "desc": "約 100 人のエンジニア組織で Notion に議事録・設計書を集約し、カスタムエージェントで文書レビュー、Claude と Notion MCP の連携で情報検索・更新を進める事例。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/09/2000002973/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/09/2000002973/10011528/2048"
+  },
+  {
+   "title": "マルチエージェント設計「15のパターン」　GitHub、Google、Siemens の知見を整理",
+   "where": "@IT",
+   "date": "11/08",
+   "desc": "型付きスキーマ・アクションスキーマなど、GitHub・Google・Siemens が公開した設計パターンと、信頼性を高める 6 原則を解説。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/08/news001.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/08/cover_news001.jpg"
+  },
+  {
+   "title": "タスク管理までAIエージェントに任せたら、確認待ちに答えるだけになった",
+   "where": "Zenn",
+   "date": "11/06",
+   "desc": "司令塔役の Claude Code にタスク全体を管理させ、人の判断が要るものだけを自作パネルに集めて番号で答える運用の紹介（♡ 43）。",
+   "url": "https://zenn.dev/rescuenow/articles/4c03a548cd6589",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
