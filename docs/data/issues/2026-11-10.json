@@ -1,0 +1,299 @@
+{
+ "date": "2026-11-10",
+ "weekday": "火",
+ "generatedAt": "06:51",
+ "headline": "Claude Fable 5.2 / Mythos 5.2 が登場、Fable は値下げ（入力 $8・出力 $40）",
+ "keyPoints": [
+  [
+   "Claude Fable 5.2 と Mythos 5.2 が発表され、Fable 5.2 の API 料金は 5.1 より下がり入力 $8・出力 $40 になった。",
+   "claude-fable-5-2"
+  ],
+  [
+   "Fable 5.2 は思考ブロックの prefix チェックが全アカウントで有効で、履歴を編集して送るコードは 400 エラーになる。",
+   "claude-fable-5-2-api-migration"
+  ],
+  [
+   "Claude Code 2.1.321 が Fable 5.2 を既定の Fable モデルにし、MCP OAuth とサンドボックス周りの修正も入った。",
+   "claude-code-2-1-321"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-fable-5-2",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-fable-5-2",
+   "storyTitle": "Claude Fable 5.2 / Mythos 5.2",
+   "title": "Claude Fable 5.2 / Mythos 5.2 を発表、料金は値下げ",
+   "source": "Anthropic",
+   "date": "11/09",
+   "points": [
+    "Fable 5.2 は全ユーザー向け（API は `claude-fable-5-2`）。同じモデルの Mythos 5.2 は、サイバー・生命科学の検証プログラムに参加した組織向け。1M コンテキスト、最大出力 128k。",
+    "料金は 100 万トークンあたり入力 $8・出力 $40（5.1 は $10・$50）。fast mode は最大 2.5 倍速で入力 $16・出力 $80。"
+   ],
+   "impact": "Anthropic は、ふだんのコーディングや知的作業はまず Opus 5.5 から始め、難度の高い作業だけ Fable に上げる使い方を勧めている。",
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/b2dab182c77b4ccfd36423470106915b20f676ae-1200x630.jpg",
+   "figure": {
+    "type": "delta",
+    "title": "Fable 5.1 → 5.2 の料金（100 万トークンあたり）",
+    "rows": [
+     {
+      "label": "入力",
+      "before": 10,
+      "after": 8,
+      "unit": "$",
+      "digits": 2
+     },
+     {
+      "label": "出力",
+      "before": 50,
+      "after": 40,
+      "unit": "$",
+      "digits": 2
+     },
+     {
+      "label": "キャッシュ読み取り",
+      "before": 0.25,
+      "after": 0.2,
+      "unit": "$",
+      "digits": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-fable-5-2-api-migration",
+   "topic": "claude",
+   "story": "claude-fable-5-2",
+   "storyTitle": "Claude Fable 5.2 / Mythos 5.2",
+   "title": "Fable 5.2 への移行で確認すべき API の変更点",
+   "source": "Claude Platform",
+   "date": "11/09",
+   "points": [
+    "思考ブロックの prefix チェックが全アカウントで有効になる。system・tools・過去メッセージを編集したうえで思考ブロックを送り返すと 400 エラーになる。",
+    "computer use は `computer_toolset_20260801` のみ対応。旧 `computer_20251124` は Amazon Bedrock 以外で 400 エラー。30 日のデータ保持が必要で、ZDR では原則使えない。"
+   ],
+   "impact": "自前でメッセージ履歴を組み立てているなら、切り替え前に履歴を編集していないかを確認する。Claude Code や Agent SDK 経由なら変更は不要。",
+   "url": "https://platform.claude.com/docs/en/models/fable-5-2/migration-guide",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/models/fable-5-2/migration-guide?design-rev=4",
+   "figure": {
+    "type": "compare",
+    "title": "Fable 5.1 と 5.2 の違い（移行ガイドより）",
+    "cols": [
+     "Fable 5.1",
+     "Fable 5.2"
+    ],
+    "rows": [
+     [
+      "思考ブロックの prefix チェック",
+      "warn 2026-08-31 以降に作成したアカウントで既定エラー",
+      "no 全アカウントで 400 エラー"
+     ],
+     [
+      "旧 computer use ツール",
+      "ok 使える（beta ヘッダー）",
+      "no Bedrock 以外で 400 エラー"
+     ],
+     [
+      "データ保持",
+      "warn 30 日保持が必要",
+      "warn 30 日保持が必要"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-321",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.321：Fable 5.2 対応とセキュリティ修正",
+   "source": "Claude Code",
+   "date": "11/10",
+   "points": [
+    "Fable 5.2 を追加して既定の Fable モデルにした。保存済みの Fable 5.1 の選択は `fable` に移る（Pro・Max は即時、Team・Enterprise は組織の許可後）。",
+    "MCP OAuth でリダイレクト時に refresh token などが別ホストへ送られる問題や、読み取り専用 Bash コマンドが確認なしにサンドボックス外で動く問題などを修正。"
+   ],
+   "impact": "更新しておく。Fable 5.1 に戻したいときは `/model claude-fable-5-1` を使う。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+   "reactions": [],
+   "image": ""
+  },
+  {
+   "id": "github-secret-scanning-actions-logs",
+   "topic": "sec",
+   "story": "github-secret-scanning-actions",
+   "storyTitle": "GitHub secret scanning の Actions ログ対応",
+   "title": "Secret scanning が Actions のワークフローログを検査",
+   "source": "GitHub Changelog",
+   "date": "11/09",
+   "points": [
+    "GitHub Actions のワークフローログから秘密情報を検出する機能がパブリックプレビューで登場。対象は GitHub Enterprise Cloud（Secret Protection または Advanced Security）。",
+    "既定は無効で、Enterprise オーナーが Policies > Advanced Security で有効化する。有効化後に完了した実行だけが対象で、プレビュー中はアラートの通知が出ない。"
+   ],
+   "impact": "対象の契約なら、ポリシーを有効にしたうえで、リポジトリの secret scanning アラート一覧を自分で確認する。",
+   "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-improvements.jpg"
+  },
+  {
+   "id": "chatgpt-enterprise-aws-marketplace",
+   "topic": "biz",
+   "story": "chatgpt-enterprise-aws",
+   "storyTitle": "ChatGPT Enterprise の AWS Marketplace 提供",
+   "title": "ChatGPT Enterprise が AWS Marketplace で購入可能に",
+   "source": "OpenAI",
+   "date": "11/09",
+   "points": [
+    "既存の AWS 契約・請求で購入でき、対象の支出を AWS のコミットメントに充当できる。",
+    "OpenAI 直販と同じモデル・機能を同時期に利用でき、Codex も含まれる。利用には OpenAI か AWS の担当への資格確認が必要。"
+   ],
+   "impact": "AWS 経由で調達している組織は、購買手続きを AWS に一本化できる。",
+   "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/",
+   "reactions": [],
+   "image": ""
+  },
+  {
+   "id": "nous-arete-27b",
+   "topic": "local",
+   "story": "nous-arete",
+   "storyTitle": "Nous Research の Arete-27B",
+   "title": "Qwen3.8-27B 派生の「Arete-27B」が重みを公開",
+   "source": "ITmedia AI+（Nous Research 発表の報道）",
+   "date": "11/09",
+   "points": [
+    "Nous Research が Qwen3.8-27B を事後学習した Arete-27B の重みと学習データを Hugging Face で公開（11/6）。約 5280 万トークンのデータで、政治的話題の偏りを補正したとする。",
+    "同社の評価では、プロパガンダを含む回答が約 22% から約 1% に減り、性能低下は見られなかった。「西洋の価値観」という名目への批判もある。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/09/2000003002/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/09/2000003002/10011585/2048"
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Cloudflare Zero Wire × GitHub Actions × Claude で公開サーバーの脆弱性チェックを毎朝自動化",
+   "where": "Zenn",
+   "date": "11/07",
+   "heat": "♡ 56",
+   "summary": "Zero Wire の RSS を Actions で取得し、SSH で棚卸ししたサーバー情報と照合して Issue を作る構成。投稿者は、バージョン判定はコード、影響評価は Claude と分けたと報告している。最初に全部 Claude に任せたらうまくいかなかったという。",
+   "code": "",
+   "url": "https://zenn.dev/tomipetit/articles/zero-wire-github-actions"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Meta の小型モデル「Muse Ember」",
+   "origin": "Hacker News で共有された research.meta.ai の記事「Our Smallest, Most Efficient Model: Muse Ember」",
+   "note": "HN の投稿とコメントで Meta がこの名前のモデルを出したことは確認できたが、Meta 側のページは開けず、仕様・提供形態・ライセンスは確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50429024"
+  },
+  {
+   "title": "Gemini が Drive のファイルやメールを人間の注釈者に回しているとの主張",
+   "origin": "Hacker News で共有された GitHub リポジトリ（thisisme6598/gemini_files）",
+   "note": "HN のスレッドで議論されていることは確認できたが、リポジトリは開けず、Google の説明も見つかっていない。主張の中身は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50429426"
+  },
+  {
+   "title": "ChatGPT Desktop が SSH エージェントをリモートマシンに転送するとの指摘",
+   "origin": "Hacker News の投稿「ChatGPT Desktop forwards your SSH agent to remote machines」（外部リンクなし）",
+   "note": "HN のスレッドで議論されていることは確認できたが、OpenAI の説明や再現手順は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50422628"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "ローカルLLM利用のクリニックを受診してみた　PCマニアの院長が自力で構築、その導入効果は？",
+   "where": "ITmedia AI+",
+   "date": "11/09",
+   "desc": "都内のクリニックの院長が Mac Studio で院内にローカル LLM 環境を構築。手書き問診票をローカルの VLM で読み取ってカルテの候補を示し、最終的な紐づけは人が行う。予約システムは Claude Code で自作した。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/09/2000002916/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/09/2000002916/10011414/2048"
+  },
+  {
+   "title": "「MCPはもう特別な存在ではない」――その普及と“仕様改訂”がもたらした転換点",
+   "where": "@IT",
+   "date": "11/10",
+   "desc": "2026年7月28日の MCP 仕様改訂で、サーバ側が通信の状態を持たない「ステートレス化」が進んだ。普及状況の振り返りから、企業の導入・運用への影響までを整理する連載第5回（会員限定）。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/10/news003.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/10/cover_news003.jpg"
+  },
+  {
+   "title": "AIと作ったアプリは、削除に失敗しても「削除しました」と言った — 黙って失敗する箇所が322か所あった",
+   "where": "Zenn",
+   "date": "11/09",
+   "desc": "Claude Code と作った約2万2千行の個人アプリで、失敗を握りつぶす except が 322 か所あった報告。配布用 exe では print が見えないため、記録・画面通知・理由を書いて黙る、のいずれかに直してビルドの関門にした。",
+   "url": "https://zenn.dev/sbkm/articles/81f37a67359ba6",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   0
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
