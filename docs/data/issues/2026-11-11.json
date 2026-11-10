@@ -1,0 +1,273 @@
+{
+ "date": "2026-11-11",
+ "weekday": "水",
+ "headline": "Gemini 4 Carbon が一般提供、Anthropic は IPO ロードショー開始",
+ "generatedAt": "06:50",
+ "keyPoints": [
+  [
+   "Gemini 4 Carbon が一般提供になり、Copilot でも使える。API の導入価格は 11/30 まで。",
+   "gemini-4-carbon-ga"
+  ],
+  [
+   "Anthropic が IPO のロードショーを開始。想定価格は $70〜$78、Nasdaq「ANT」。",
+   "anthropic-ipo-roadshow"
+  ],
+  [
+   "Dependabot alerts が 12/8 から、1 年更新のない repo で停止する。",
+   "dependabot-pause-inactive-1208"
+  ]
+ ],
+ "news": [
+  {
+   "id": "gemini-4-carbon-ga",
+   "lead": true,
+   "topic": "model",
+   "story": "gemini-4-argon",
+   "storyTitle": "Google Gemini 4 Argon の提供開始",
+   "title": "Gemini 4 Carbon が一般提供、Copilot にも",
+   "source": "Google / GitHub Changelog",
+   "date": "11/10",
+   "points": [
+    "Google は Gemini 4 Carbon を開発者・企業・一般ユーザー向けに提供開始。API は AI Studio と Gemini for business で有料開発者が使え、導入価格は入力 $2・出力 $10（100万トークン）。11/30 以降は $4・$20。",
+    "GitHub Copilot でも一般提供（Pro+・Max・Business・Enterprise）。VS Code・Visual Studio・Copilot CLI などで選べ、ロールアウトは段階的。管理者は model policy で制御する。"
+   ],
+   "impact": "Copilot Business/Enterprise の管理者は、既定で新モデルが自動有効になる設定かを model policy で確認する。API 利用は 11/30 に価格が倍になる点に注意。",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "reactions": [
+    "Hacker News で議論（261 pt）"
+   ],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
+   "deadline": {
+    "from": "2026-11-10",
+    "date": "2026-11-30",
+    "label": "Gemini 4 Carbon の導入価格の終了"
+   },
+   "figure": {
+    "type": "delta",
+    "title": "Gemini 4 Carbon API 料金（100万トークンあたり）",
+    "rows": [
+     {
+      "label": "入力",
+      "before": 2,
+      "after": 4,
+      "unit": "$",
+      "digits": 0
+     },
+     {
+      "label": "出力",
+      "before": 10,
+      "after": 20,
+      "unit": "$",
+      "digits": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": "anthropic-ipo-roadshow",
+   "topic": "biz",
+   "story": "anthropic-ipo",
+   "storyTitle": "Anthropic の新規株式公開（IPO）",
+   "title": "Anthropic が IPO のロードショーを開始",
+   "source": "Anthropic",
+   "date": "11/10",
+   "points": [
+    "Class A 普通株 8 億 2,500 万株を募集（Anthropic 売出 約 8 億 135 万株、既存株主 約 2,365 万株）。想定価格は 1 株 $70〜$78。",
+    "Nasdaq Global Select Market にティッカー「ANT」で上場申請。登録届出書はまだ効力を生じていない。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/news/roadshow-launch",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+   "figure": null
+  },
+  {
+   "id": "claude-electronics-design",
+   "topic": "claude",
+   "story": "claude-electronics-design",
+   "storyTitle": "Claude による電子機器の設計",
+   "title": "Claude Fable 5.2 が電子機器を設計・試作",
+   "source": "Anthropic",
+   "date": "11/09",
+   "points": [
+    "Diode Computers と協力し、Fable 5.2 にスピーカーフォン等 3 機器を設計させた。基板配置・配線・筐体・ファームウェアまでを担い、人間が組み立てた試作機は回路修正なしで動作したと報告。",
+    "試作段階で、長期の耐久性や商用認証を通るかは未確認と Anthropic は明記している。"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/research/claude-electronics-design",
+   "reactions": [],
+   "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/b953cc611ebe78f0b84e996dd54a614efd38b3f4-2000x1125.jpg",
+   "figure": null
+  },
+  {
+   "id": "dependabot-pause-inactive-1208",
+   "topic": "dev",
+   "story": "dependabot-inactive-pause",
+   "storyTitle": "Dependabot alerts の非アクティブ repo 停止",
+   "title": "Dependabot alerts を無更新 repo で停止",
+   "source": "GitHub Changelog",
+   "date": "11/10",
+   "points": [
+    "2026/12/8 から、過去 1 年 push 等のない大半の repository で Dependabot alerts を無効化。既存 alert は削除でなくアーカイブされ、復元できる。",
+    "push すれば自動で再有効化。強制されたセキュリティ構成や、管理者のみが切替可能なポリシーの enterprise は対象外。GitHub Enterprise Server は適用外。"
+   ],
+   "impact": "長期間更新しない社内の保守 repo は alerts が止まるので、必要なものは設定で有効のままにするか、セキュリティ構成で強制する。",
+   "url": "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/Changelog_Improvement_Unfurl_TextOnly_DependabotPauseInctiveRepositories.jpg",
+   "deadline": {
+    "from": "2026-11-10",
+    "date": "2026-12-08",
+    "label": "無更新 repo の Dependabot alerts 停止"
+   },
+   "figure": null
+  },
+  {
+   "id": "claude-code-2-1-322",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.322",
+   "source": "Claude Code",
+   "date": "11/10",
+   "points": [
+    "Vertex の global・us・eu リージョンで fast mode に対応。Vertex が拒否した場合は標準速度にフォールバックする。"
+   ],
+   "impact": "",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  },
+  {
+   "id": "alphaproof-code-signal",
+   "topic": "sec",
+   "story": "alphaproof-code",
+   "storyTitle": "DeepMind の AlphaProof Code",
+   "title": "AlphaProof Code が Signal の実装を形式検証",
+   "source": "Google DeepMind",
+   "date": "11/10",
+   "points": [
+    "AI エージェントが Signal プロトコルの実コードの主要なセキュリティ特性を数学的に証明。DeepMind は、広く使われる暗号プロトコルをこの深さで AI が形式検証した初の例とする。",
+    "人間の専門家が証明対象を決め、複数 LLM のエージェント群が検証を分担する枠組み。"
+   ],
+   "impact": "",
+   "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+   "reactions": [
+    "Hacker News で議論（534 pt）"
+   ],
+   "image": "https://lh3.googleusercontent.com/hn6AiI6lYFo6chi1mL6uJ9nOW9UXfsAKnSyOApiie2urHNU2tmSPUmGn0hNfWyYLRcsWCGjCIrBZSCt1ihZmvW-LDJPfyolsr5w-yvzlknZVzmaH=w1200-h630-n-nu-rw",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude Code で最近使っている Tips【2026/11】",
+   "where": "Zenn",
+   "date": "11/10",
+   "heat": "♡ 73",
+   "summary": "/btw で作業を止めずに進捗を聞く、報告を HTML や Artifacts にまとめさせる、Claude Mods（prompt-rail など）を使う、といった 5 つの使い方を投稿者が紹介。",
+   "code": "/btw compaction のためのプロンプトを作成して",
+   "url": "https://zenn.dev/oikon/articles/claude-code-recipe"
+  },
+  {
+   "kind": "Skill",
+   "title": "Chrome 発の modern-web-guidance：エージェントに最新の Web 標準を使わせる Skill + CLI",
+   "where": "Hacker News",
+   "date": "11/10",
+   "heat": "▲ 177",
+   "summary": "200 以上のガイドを agent skill と検索 CLI で提供し、<dialog> などブラウザ標準より旧来の div+JS を選びがちなコーディングエージェントを補正する、と投稿者（Chrome 側）が説明。",
+   "code": "",
+   "url": "https://news.ycombinator.com/item?id=50443812"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Claude に Whiteboards・Sheets・Data が追加",
+   "origin": "Hacker News（115 pt）で共有された claude.com の記事",
+   "note": "HN の投稿とスレッドで存在は確認できたが、claude.com は読めず、公式の本文・提供条件・対象プランは確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50443716"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "「Fable 5.2」の用途は？ Claudeモデルの選び方、Anthropicが基本を解説",
+   "where": "ITmedia AI+",
+   "date": "11/10",
+   "desc": "Anthropic の公式ブログの要点。まず Opus 5.5 を effort「中」で試し、用途で Sonnet 5.5・Haiku 5.5・Fable 5.2 を使い分け、モデル変更前に effort を調整、サブエージェントやアドバイザーツールで下位モデルを活用する。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/10/2000003061/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/10/2000003061/10003038/2048"
+  },
+  {
+   "title": "Gemini Notebook に公式 API と MCP サーバが登場（公開プレビュー）",
+   "where": "@IT",
+   "date": "11/11",
+   "desc": "個人アカウント向け。今できるのはノートブック作成とソース追加（Web・YouTube・テキスト）のみで、質問や要約取得は未対応。筆者が Codex から MCP 経由で試した結果も紹介。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/11/news011.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/11/cover_news011.jpg"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   0
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
