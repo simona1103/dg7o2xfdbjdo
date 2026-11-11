@@ -1,0 +1,272 @@
+{
+ "date": "2026-11-12",
+ "weekday": "木",
+ "headline": "Claude に Sheets・Whiteboards 追加、Google は Decisions API 公開",
+ "generatedAt": "06:52",
+ "keyPoints": [
+  [
+   "Claude に共同編集の Sheets・Whiteboards がβ登場。Claude Data は GA で、Enterprise では 11/19 に既定で有効になる。",
+   "claude-sheets-whiteboards-data"
+  ],
+  [
+   "Google が Gemini Decisions API を公開。1 回のパスで最大 1,000 問の判断を確信度つきで返す。",
+   "gemini-decisions-api"
+  ],
+  [
+   "Notion AI のチャット記録が委託先経由で漏えいした恐れ。入力した認証情報は更新を。",
+   "notion-ai-chat-logs-fireworks"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-sheets-whiteboards-data",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-collab-tools",
+   "storyTitle": "Claude の共同編集機能（Sheets / Whiteboards / Data）",
+   "title": "Claude に共同編集の Sheets・Whiteboards、Data は GA",
+   "source": "Anthropic（ITmedia NEWS 経由）",
+   "date": "11/10",
+   "points": [
+    "Claude Sheets と Claude Whiteboards がβ版で登場。全有料プランが対象で、Web・デスクトップ・モバイルで順次提供される。",
+    "ダッシュボード機能 Claude Dashboards は Claude Data に改称して一般提供開始。MCP Apps を使うインタラクティブコネクタも拡張された。"
+   ],
+   "impact": "Enterprise では Whiteboards と Sheets が既定で無効、Claude Data は 11/19 に既定で有効になるため、管理者は設定を事前に確認したい。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003089/",
+   "reactions": [
+    "ITmedia NEWS・Qiita で解説"
+   ],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/11/2000003089/10011820/2048",
+   "deadline": {
+    "from": "2026-11-10",
+    "date": "2026-11-19",
+    "label": "Enterprise で Claude Data が既定で有効になる"
+   },
+   "figure": {
+    "type": "compare",
+    "title": "プラン別の既定設定",
+    "cols": [
+     "Team",
+     "Enterprise"
+    ],
+    "rows": [
+     [
+      "Claude Whiteboards（β）",
+      "ok 既定で有効",
+      "no 既定で無効"
+     ],
+     [
+      "Claude Sheets（β）",
+      "ok 既定で有効",
+      "no 既定で無効"
+     ],
+     [
+      "Claude Data（GA）",
+      "ok 既定で有効",
+      "warn 11/19 に既定で有効"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "gemini-decisions-api",
+   "topic": "model",
+   "story": "decision-models",
+   "storyTitle": "判断特化AIモデル",
+   "title": "Google が Gemini Decisions API を公開",
+   "source": "Google",
+   "date": "11/11",
+   "points": [
+    "新モデル Gemini Decision 1 が、1 つの入力に対する最大 1,000 問の yes/no・選択・採点を 1 回のパスで処理し、各回答に 0〜1 の確信度を返す。",
+    "遅延は 150〜250ms、入力は 100 万トークンあたり $0.10 で、出力トークンは課金されない。Google AI Studio から利用できる。"
+   ],
+   "impact": "ルーティングやポリシー判定のような分類処理を、生成呼び出しより低コストに置き換えられるか試す価値がある。",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini__decisions__blog-header_2784x1566.width-1300.png",
+   "figure": {
+    "type": "stats",
+    "title": "Decisions API の主な数値",
+    "items": [
+     {
+      "value": "1,000",
+      "label": "1 リクエストの最大質問数"
+     },
+     {
+      "value": "150-250ms",
+      "label": "エンドツーエンド遅延"
+     },
+     {
+      "value": "$0.10",
+      "label": "入力 100 万トークン"
+     },
+     {
+      "value": "0",
+      "label": "課金される出力トークン"
+     }
+    ]
+   }
+  },
+  {
+   "id": "alibaba-qwen4-max-preview",
+   "topic": "model",
+   "story": "qwen4",
+   "storyTitle": "Alibaba の Qwen4",
+   "title": "Alibaba が Qwen4 を発表、Max のプレビュー提供",
+   "source": "Alibaba Cloud（ITmedia AI＋ 経由）",
+   "date": "11/11",
+   "points": [
+    "Alibaba Cloud が Qwen4 を発表し、Qwen4-Max のプレビュー版を Token Plan で提供する。モデルの詳細は不明。",
+    "QwenWork・Qoder・Qwen APP・QwenStudio でも早期アクセスできる。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/11/2000003098/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/11/2000003098/10011843/2048"
+  },
+  {
+   "id": "copilot-enterprise-seat-github-app",
+   "topic": "dev",
+   "story": "copilot-enterprise-admin",
+   "storyTitle": "Copilot の Enterprise 管理 API",
+   "title": "Enterprise の Copilot シート管理を GitHub App から",
+   "source": "GitHub Changelog",
+   "date": "11/10",
+   "points": [
+    "Enterprise の GitHub App が、Copilot シート管理 API でユーザーや Enterprise チームへのシート割り当てを制御できる。",
+    "新しい Enterprise 用の細粒度権限「Enterprise Copilot license management」が必要。"
+   ],
+   "impact": "ライセンス割り当ての自動化を、個人トークンではなく GitHub App で運用できる。",
+   "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-improvements.jpg"
+  },
+  {
+   "id": "notion-ai-chat-logs-fireworks",
+   "topic": "sec",
+   "story": "notion-ai-leak",
+   "storyTitle": "Notion AI のチャット記録漏えい",
+   "title": "Notion AI のチャット記録が漏えいの恐れ",
+   "source": "Notion Labs（ITmedia AI＋ 経由）",
+   "date": "11/09",
+   "points": [
+    "委託先 Fireworks.ai への不正アクセスにより、Notion AI の分析機能 Insights のチャット記録が漏えいした恐れがある。影響は全ワークスペースの 1% 未満。",
+    "対象の利用者には連絡済み。チャットに入力した機密情報・パスワード・API キーは更新するよう呼び掛けている。"
+   ],
+   "impact": "AI サービスの委託先経由の漏えいが起こり得る。社内で使う AI サービスに入力する情報の範囲を見直したい。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/11/2000003104/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/11/2000003104/10011860/2048"
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "AI の「テスト通りました」を Stryker のミューテーションテストで検証",
+   "where": "Qiita",
+   "date": "11/09",
+   "heat": "LGTM 62",
+   "summary": "AI が書いたテストが本当に壊れたコードを見抜けるかを、変異を入れて確かめる手法。マルチテナント向け Prisma クライアントで試した結果を、投稿者が報告している。Stryker には C# 版もある。",
+   "code": "",
+   "url": "https://qiita.com/Dingu-suke/items/b5318ef2040a9f59224a"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "AI エージェントが未発見のマヤ遺跡を見つけたとする話",
+   "origin": "Hacker News の投稿（投稿者のブログ記事へのリンク）",
+   "note": "Hacker News の投稿の存在と日付は確認できた。リンク先のブログ記事は開けず、内容は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50452455"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AGENTS.md・CLAUDE.md は本当に効く？ 成功率は変わらず、費用だけ2割増えた理由",
+   "where": "Zenn",
+   "date": "11/12",
+   "desc": "ETH Zurich らの論文を読み解き、指示ファイルで成功率はほぼ変わらず費用が 19〜23% 増えると解説。手元で /init の出力も検証している。",
+   "url": "https://zenn.dev/takuh/articles/4d4c0666c6fa8c",
+   "image": ""
+  },
+  {
+   "title": "ISUCON2026 で優勝しました（準備編）",
+   "where": "Zenn",
+   "date": "11/11",
+   "desc": "人間が手を出さず Claude Code に 8 時間の競技を解かせるため、3 か月かけたハーネスと評価環境の準備を時系列で振り返る。",
+   "url": "https://zenn.dev/luvtechno/articles/isucon2026-preparation",
+   "image": ""
+  },
+  {
+   "title": "APIを呼ぶのは、もう人間ではない　進化するMCPとOpenAPIとの“新しい関係”",
+   "where": "＠IT",
+   "date": "11/12",
+   "desc": "MCP がステートレス化して通常の HTTP 部品に近づいた今、OpenAPI から MCP を生成する際のツール統合や説明文の作り込みなど API 設計の要点を解説する連載記事（会員限定）。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/12/news004.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/12/cover_news004.jpg"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   0
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
