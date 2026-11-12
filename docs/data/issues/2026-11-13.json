@@ -1,0 +1,258 @@
+{
+ "date": "2026-11-13",
+ "weekday": "金",
+ "headline": "Google が Gemini 4 Hydrogen、Claude Managed Agents はセルフホスト対応",
+ "generatedAt": "06:52",
+ "keyPoints": [
+  [
+   "Google が日常のコーディング・エージェント向け Gemini 4 Hydrogen を発表（$1.50 / $7.50、1M コンテキスト）。",
+   "gemini-4-hydrogen"
+  ],
+  [
+   "Claude Managed Agents のサービス全体を自社インフラで運用可能に（申請制）。",
+   "claude-self-hosted-managed-agents"
+  ],
+  [
+   "OpenAI API の日本国内推論が GPT-6 Luna で利用可能に。",
+   "openai-gpt-6-luna-japan-inference"
+  ]
+ ],
+ "news": [
+  {
+   "id": "gemini-4-hydrogen",
+   "lead": true,
+   "topic": "model",
+   "story": "gemini-4-argon",
+   "storyTitle": "Google Gemini 4 Argon の提供開始",
+   "title": "Google が Gemini 4 Hydrogen を発表",
+   "source": "Google DeepMind",
+   "date": "11/12",
+   "points": [
+    "エージェント的な作業とコーディングの日常利用向けモデル。Google AI Studio、Gemini API、Gemini アプリ、Google Search などで提供される。",
+    "料金は 100 万トークンの全域で一律、入力 $1.50・出力 $7.50（100 万トークンあたり）。Artificial Analysis Intelligence Index は既定の high で 51（Argon は 50）。"
+   ],
+   "impact": "Gemini API を使う開発では、重い Carbon/Argon を設計判断に、Hydrogen を実装・検証に分ける構成を検討できる。",
+   "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
+   "figure": {
+    "type": "stats",
+    "title": "Gemini 4 Hydrogen の要点",
+    "items": [
+     {
+      "value": "$1.50 / $7.50",
+      "label": "入力 / 出力（100 万トークンあたり）"
+     },
+     {
+      "value": "1M",
+      "label": "コンテキスト（全域で同一料金）"
+     },
+     {
+      "value": "51",
+      "label": "AA Intelligence Index（Argon は 50）"
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-self-hosted-managed-agents",
+   "topic": "claude",
+   "story": "claude-self-hosted-agents",
+   "storyTitle": "Claude Managed Agents のセルフホスト",
+   "title": "Claude Managed Agents をセルフホスト可能に",
+   "source": "Claude Platform",
+   "date": "11/12",
+   "points": [
+    "サンドボックスだけでなく、API・エージェントループ・セッション履歴の保存を含む Managed Agents サービス全体を自社インフラで運用できる。",
+    "モデル呼び出し先は Anthropic が既定で、Amazon Bedrock、Microsoft Foundry、自前のゲートウェイなども選べる。利用開始は Anthropic の担当チームへの申請。"
+   ],
+   "impact": "データを社内に置く必要がある案件では、エージェントの保存先と推論先を自社で決められる。サーバーと DB（PostgreSQL 16 以降）の運用・更新は自社の責任になる。",
+   "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/managed-agents/self-hosted?design-rev=4",
+   "figure": {
+    "type": "compare",
+    "title": "Managed Agents の動かし方",
+    "cols": [
+     "クラウド（既定）",
+     "セルフホスト・サンドボックス",
+     "セルフホスト Managed Agents"
+    ],
+    "rows": [
+     [
+      "サンドボックス",
+      "Anthropic",
+      "自社",
+      "自社"
+     ],
+     [
+      "サービス（API・履歴保存）",
+      "Anthropic",
+      "Anthropic",
+      "自社"
+     ],
+     [
+      "モデル",
+      "Anthropic",
+      "Anthropic",
+      "Anthropic または選択した提供元"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "openai-gpt-6-luna-japan-inference",
+   "topic": "model",
+   "story": "openai-gpt-6-luna-japan",
+   "storyTitle": "OpenAI API の日本国内推論",
+   "title": "OpenAI API、GPT-6 Luna の国内推論に対応",
+   "source": "ITmedia AI＋（OpenAI 日本法人の告知の報道）",
+   "date": "11/12",
+   "points": [
+    "gpt-6-luna に限り、Responses API と Chat Completions API で日本国内での推論が可能になった。対象は Standard の従量課金のみ。",
+    "利用には OpenAI への問い合わせと、MAM（変更された不正利用監視）・ZDR（ゼロデータ保持）の措置が必要。"
+   ],
+   "impact": "データを国外に出せない業務で OpenAI API を使うなら、Luna に限って選択肢になる。他モデルは対象外。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/12/2000003129/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/12/2000003129/10011950/2048"
+  },
+  {
+   "id": "united-airlines-ai-agent-ban",
+   "topic": "sec",
+   "story": "external-agent-blocking",
+   "storyTitle": "外部 AI エージェントの利用を締め出す動き",
+   "title": "United Airlines、外部 AI エージェントの利用を禁止へ",
+   "source": "ITmedia NEWS",
+   "date": "11/12",
+   "points": [
+    "許可のない第三者のパーソナル AI エージェント・アシスタントによる自社サービスの利用を禁止。自社サイトやアプリに加え、旅行代理店・予約サイト経由の利用も制限する。",
+    "理由は認証情報の共有による漏えい、意図しない購入やマイル使用、FAA・DOT 規制違反の恐れ。対象のエージェントや適用開始時期は明らかにされていない。"
+   ],
+   "impact": "外部サービスを操作するエージェントを作る場合は、相手側の利用規約や認証情報の扱いを事前に確認する必要がある。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003127/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/12/2000003127/10011947/2048"
+  },
+  {
+   "id": "aws-nitro-sandboxes",
+   "topic": "dev",
+   "story": "agent-sandboxes",
+   "storyTitle": "AI エージェント向けサンドボックス",
+   "title": "AWS、エージェント向け軽量 VM「Nitro Sandboxes」",
+   "source": "ITmedia NEWS（Publickey 転載）",
+   "date": "11/12",
+   "points": [
+    "Nitro のハードウェア隔離と EC2 ほぼ同等の実行性能を備えた軽量 VM。AI が生成した信頼できないコードの実行環境を想定。",
+    "EC2 上のサンドボックスのほか ECS・EKS の Pod として利用でき、EKS Auto Mode では有効化で Pod を軽量 VM に切り替えられる。既存のコンテナイメージやデプロイ手順はそのまま使える。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003139/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/12/2000003139/10011982/2048"
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "モデルと Effort を工程ごとに使い分け、週間制限が約 3 日→約 5 日に",
+   "where": "Zenn",
+   "date": "11/09",
+   "heat": "♡ 31",
+   "summary": "設計・調査は Opus の medium、実装は Sonnet の high、レビューは Opus の xhigh と分けたところ、週間制限に届くまでが約 3 日から約 5 日になったという投稿者の報告。",
+   "code": "opusplan  # モデルのエイリアス: プランモードは Opus、実行時は Sonnet",
+   "url": "https://zenn.dev/sun_asterisk/articles/1d1c65b1fe409a"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "10 年物の PHP 基幹を AI で Java へ移行した手順（ルール 865 行と差分比較）",
+   "where": "Zenn",
+   "date": "11/12",
+   "desc": "テストのない約 54 万行を、同じ入力を新旧に投げて 2 回に分けて比較する方法と、AI の誤りのたびにルールを 1 行足す運用を紹介。移行事例の記事。",
+   "url": "https://zenn.dev/soliperse/articles/8f3e21e9d26f92",
+   "image": ""
+  },
+  {
+   "title": "AI が書いた kintone のコード、そのまま使って大丈夫？ 無料診断が開始",
+   "where": "ITmedia キーマンズネット",
+   "date": "11/13",
+   "desc": "AI 生成コードや外部プラグインの API キー埋め込み・脆弱性を調べる無料診断。月 10 回まで、アップロードしたコードは実行せず検査し 7 日で削除される。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/13/2000003159/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/13/2000003159/10012036/2048"
+  },
+  {
+   "title": "CLAUDE.md をユーザー共通とリポジトリごとに分ける運用",
+   "where": "Zenn",
+   "date": "11/12",
+   "desc": "「別のリポジトリでこの 1 行を読んで困るか」を基準に、~/.claude/CLAUDE.md とリポジトリ直下に書く内容を振り分ける手順。",
+   "url": "https://zenn.dev/chukidx_dev/articles/claude-md-user-and-repo-split",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   0
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
