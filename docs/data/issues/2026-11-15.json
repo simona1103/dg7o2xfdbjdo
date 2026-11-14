@@ -1,0 +1,88 @@
+{
+ "date": "2026-11-15",
+ "weekday": "日",
+ "headline": "M365 障害で Claude・ChatGPT の連携コネクタが停止、14 日朝に復旧",
+ "generatedAt": "06:55",
+ "keyPoints": [
+  [
+   "Microsoft 365 の障害で Claude と ChatGPT の M365 コネクタが止まったが、14 日朝までに両社とも復旧を報告した。",
+   "m365-outage-claude-chatgpt-connectors"
+  ]
+ ],
+ "news": [
+  {
+   "id": "m365-outage-claude-chatgpt-connectors",
+   "lead": true,
+   "topic": "claude",
+   "story": "m365-connector-outage",
+   "storyTitle": "Microsoft 365 障害と Claude / ChatGPT コネクタ",
+   "title": "M365 障害で Claude・ChatGPT のコネクタも停止",
+   "source": "ITmedia AI＋",
+   "date": "11/13",
+   "points": [
+    "Microsoft 365 の複数サービス障害で、Claude と ChatGPT の Microsoft 365 コネクタが正常に動作せず、Anthropic は「メール、カレンダー、検索ツールのほとんどのリクエストで動作しない」と報告した。",
+    "Microsoft は原因をネットワーク容量増強時の問題とし、サイバー攻撃や AI とは無関係と説明。Anthropic は 14 日 6:49、OpenAI は 9:18 にコネクタ復旧を報告した。"
+   ],
+   "impact": "M365 連携で Claude を使う場合、Microsoft 側の復旧が続く間は一時的なエラーや遅延が起こりうる。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/13/2000003164/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/13/2000003164/10012056/2048",
+   "reactions": [],
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "AI 同士の「敵対的レビュー」より、実際に動かす検証にトークンを使う",
+   "where": "Zenn",
+   "date": "11/13",
+   "heat": "♡ 50",
+   "summary": "差分だけを渡した敵対的レビューは命名などの指摘に偏り、本番バグを見逃したと投稿者は報告。観点を具体的に与えるレビューと、動作確認への投資を勧めている。",
+   "code": "",
+   "url": "https://zenn.dev/karamage/articles/5c3f8370b2b370"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Claude Code の Projects を再設計、コーディネーターが並列スレッドを管理（報告）",
+   "origin": "Hacker News の投稿（98 pt、11/14）。リンク先は claude.com の記事。",
+   "note": "claude.com の記事は開けず、一次情報は確認できなかった。HN のコメント欄では Anthropic の開発者を名乗るユーザーが、Projects のコーディネーターがスレッドへ作業を委譲する仕組みで、デスクトップ版から順次提供と説明している。提供範囲や条件は未確認。",
+   "url": "https://claude.com/resources/articles/projects-redesigned"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AI エージェントの約半数が「想定外の行動」、自動停止できる組織は 17.5％",
+   "where": "@IT",
+   "date": "11/13",
+   "desc": "Salt Security の調査（380 超の組織）の紹介。49.8％が想定外の行動を確認または疑い、一連の行動を追跡できる組織は 12.5％。可視性・封じ込め・インフラの 3 つのギャップを整理している。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/13/news036.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/13/cover_news036.jpg"
+  },
+  {
+   "title": "NEC がデータカタログ 1435 個を 1 年で整備、AI の意思決定支援へ",
+   "where": "ITmedia エンタープライズ",
+   "date": "11/13",
+   "desc": "人の利用を前提に整備したデータカタログだけでは、AI による経営の意思決定支援には足りなかったという講演の再構成。データ基盤の整備から AI 活用へ進む際の課題を紹介している。",
+   "url": "https://www.itmedia.co.jp/enterprise/articles/2610/30/news006.html",
+   "image": "https://image.itmedia.co.jp/enterprise/articles/2610/30/cover_news006.jpg"
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
