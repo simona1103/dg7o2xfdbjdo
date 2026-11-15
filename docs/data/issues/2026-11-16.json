@@ -1,0 +1,37 @@
+{
+ "date": "2026-11-16",
+ "weekday": "月",
+ "headline": "報告する新着はありませんでした",
+ "generatedAt": "06:55",
+ "keyPoints": [],
+ "news": [],
+ "tips": [],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "Fireworks AI のセキュリティインシデントを整理（2 回の侵入と影響先の読み方）",
+   "where": "Zenn",
+   "date": "11/16",
+   "desc": "10/6 と 10/23〜24 の 2 回の侵入、評価ジョブに預けた第三者の鍵は発行元で作り直す必要があること、影響が確認された先を根拠の強さ 6 層に分けて整理した解説。投稿者が 11/14 時点で調べた内容。",
+   "url": "https://zenn.dev/pollenjp/articles/2026-11-10-fireworks-ai-incident",
+   "image": ""
+  }
+ ],
+ "sources": [
+  ["Anthropic", 1],
+  ["claude.dev", 1],
+  ["Platform リリースノート", 1],
+  ["Claude Code", 1],
+  ["OpenAI", 1],
+  ["Google DeepMind", 1],
+  ["Google AI", 1],
+  ["Hugging Face", 1],
+  ["GitHub Changelog", 1],
+  ["Meta AI", 1],
+  ["Reddit", 1],
+  ["Hacker News", 1],
+  ["ITmedia AI+", 1],
+  ["Zenn", 1],
+  ["Qiita", 1]
+ ]
+}
