@@ -1,0 +1,231 @@
+{
+ "date": "2026-11-17",
+ "weekday": "火",
+ "headline": "Anthropic が脆弱性の開示期限を30日に短縮、Copilot は旧モデル廃止",
+ "generatedAt": "06:54",
+ "keyPoints": [
+  [
+   "Anthropic が脆弱性の開示期限を90日から30日に短縮。2027年1月1日以降の報告分から適用",
+   "anthropic-cvd-30-days"
+  ],
+  [
+   "Claude Code チームが、E2E を中心とした検証の運用を公開",
+   "claude-code-team-verification"
+  ],
+  [
+   "Copilot で Claude Opus 4.8 など3モデルが廃止。代替モデルの有効化を確認",
+   "copilot-models-deprecated-1116"
+  ]
+ ],
+ "news": [
+  {
+   "id": "anthropic-cvd-30-days",
+   "lead": true,
+   "topic": "sec",
+   "story": "anthropic-cvd-policy",
+   "storyTitle": "Anthropic の脆弱性開示ポリシー短縮",
+   "title": "Anthropic、脆弱性の開示期限を90日から30日へ",
+   "source": "Anthropic",
+   "date": "11/16",
+   "points": [
+    "高・重大度の脆弱性の開示期限を90日から30日に、その他は45日に短縮。2027年1月1日以降に報告した分から適用する。",
+    "メンテナが応答しない場合の外部コーディネーターへのエスカレーションは30日から15日に。パッチ公開後に技術詳細を共有するまでの待機は45日から30日に短縮する。"
+   ],
+   "impact": "OSS や自社製品の脆弱性報告を受ける側は、AI 経由で報告が増え、対応期限が短くなる前提で修正と公開の手順を見直したい。",
+   "url": "https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines",
+   "reactions": [],
+   "image": "https://assets.claude.com/87317c13cd86cd0b62244c430e91d0bb13b920a1.jpg",
+   "deadline": {
+    "from": "2026-11-16",
+    "date": "2027-01-01",
+    "label": "短縮した開示期限（30/45日）の適用開始"
+   },
+   "figure": {
+    "type": "delta",
+    "title": "Anthropic の開示ポリシー変更（日数）",
+    "rows": [
+     {
+      "label": "高・重大度の開示期限",
+      "before": 90,
+      "after": 30,
+      "unit": "日",
+      "digits": 0
+     },
+     {
+      "label": "外部コーディネーターへの引き上げ",
+      "before": 30,
+      "after": 15,
+      "unit": "日",
+      "digits": 0
+     },
+     {
+      "label": "パッチ後に技術詳細を共有するまで",
+      "before": 45,
+      "after": 30,
+      "unit": "日",
+      "digits": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-team-verification",
+   "topic": "claude",
+   "story": "claude-code-review-practice",
+   "storyTitle": "Claude Code チームのコードレビュー運用",
+   "title": "Claude Code チームの「検証」の考え方",
+   "source": "claude.dev",
+   "date": "11/16",
+   "points": [
+    "Claude Code チームはコードの約9割を Claude が書き、レビューも Claude が担う。E2E・プロパティ・差分テストの3種を重視し、確認用の `verify` スキルを `.claude/skills/` に置く運用を紹介。",
+    "チェックが3回失敗したら人に引き継ぐ。差分から該当項目だけを選ぶ39項目の信頼性チェックリストも使う。"
+   ],
+   "impact": "E2E の起動手順を `verify` スキルにして Claude に渡すと、自己検証の質を上げやすい。",
+   "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+   "reactions": [],
+   "image": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/og.png",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "copilot-models-deprecated-1116",
+   "topic": "dev",
+   "story": "copilot-model-deprecation",
+   "storyTitle": "Copilot のモデル廃止（11/16）",
+   "title": "Copilot、Claude Opus 4.8 など3モデルを廃止",
+   "source": "GitHub Changelog",
+   "date": "11/16",
+   "points": [
+    "11/16 付で Claude Opus 4.8、Claude Opus 5、GPT-5.6 Terra を多くの Copilot 機能で廃止。代替は Claude Opus 5.5、GPT-6.1 Sol または GPT-6 Luna。",
+    "Opus 4.8 は年額プランの個人契約者には引き続き提供。Opus 5 はピッカーから外れるが、拒否時のフォールバック用には残る。"
+   ],
+   "impact": "全体既定ポリシーを無効にしている組織は、代替モデルをモデルポリシーで有効にする必要がある。",
+   "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/708090845-dba83c99-f90a-44f8-b5dc-ea4d634a8dee.jpg",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "hf-openrouter-inference-providers",
+   "topic": "local",
+   "story": "hf-openrouter",
+   "storyTitle": "Hugging Face Inference Providers の OpenRouter 移行",
+   "title": "HF の Inference Providers が OpenRouter 経由に",
+   "source": "Hugging Face",
+   "date": "11/16",
+   "points": [
+    "言語モデルへのリクエストを OpenRouter のルーターに切り替え、価格・速度・信頼性で提供元を選び、失敗時は別の提供元で再試行する。Claude Code・Codex などのセットアップ手順も公開。",
+    "料金は変わらず、提供元の価格をそのまま HF の請求で支払う。自前の API キーは言語モデルでは使えなくなる破壊的変更。"
+   ],
+   "impact": "HF 経由で提供元の自前キーを使っている場合は、HF 請求への切り替えか `model:provider` 指定に改める必要がある。",
+   "url": "https://huggingface.co/blog/openrouter",
+   "reactions": [],
+   "image": "https://huggingface.co/blog/assets/openrouter/thumbnail.jpg",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Skills を持つ単一エージェントに戻す：サブエージェント統合の4手順",
+   "where": "Zenn",
+   "date": "11/12",
+   "heat": "♡ 32",
+   "summary": "Anthropic のブログを基に、サブエージェント構成をメインのループに取り込む手順を整理。評価セットを先に作り、1つずつ Skills と MCP ツールに移して点数を比べるという。",
+   "code": "",
+   "url": "https://zenn.dev/happy_elements/articles/201519107f93de"
+  },
+  {
+   "kind": "使い方",
+   "title": "Claude API でシステムプロンプトやツールを会話の途中で足す",
+   "where": "Qiita",
+   "date": "11/14",
+   "heat": "LGTM 23",
+   "summary": "会話の途中に system メッセージを差し込み、プロンプトキャッシュを保ったまま指示・ツール・effort を変える例を実機で試した報告。いずれもベータ機能。",
+   "code": "betas=[\"inline-tools-2026-09-15\"]\nmessages.append({\"role\":\"system\",\"content\":[{\"type\":\"tool_addition\",\"tool\":{\"type\":\"tool_definition\",\"definition\":GET_TIME}}]})",
+   "url": "https://qiita.com/moritalous/items/9e7c02b749037238b2bc"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Qwen4-Max の公式ブログが HN で話題",
+   "origin": "Hacker News（846 pt）のスレッド。リンク先は Alibaba の qwen.ai ブログ",
+   "note": "スレッドの存在は確認できたが、qwen.ai のページは開けず、公式の内容は確認できなかった。コメントには、オープンウェイトではないという指摘と、Artificial Analysis で43点という投稿者の報告がある。11/11 に Qwen4-Max プレビューの提供開始が発表されたことは ITmedia で確認済み。",
+   "url": "https://news.ycombinator.com/item?id=50513215"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AIの誤判断、責任は誰が負うか　IDCが示す「3つの意思決定」",
+   "where": "ITmedia",
+   "date": "11/13",
+   "desc": "IDC が公式ブログで、AI に判断を任せる範囲の上限を規程でなくエージェントの制御機能に組み込むこと、人間以外の ID の棚卸し、出力の検証方針づくりを提言。一つの業務領域から試行する進め方も示す。",
+   "url": "https://www.itmedia.co.jp/enterprise/articles/2611/13/news042.html",
+   "image": "https://image.itmedia.co.jp/enterprise/articles/2611/13/cover_news042.jpg"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
