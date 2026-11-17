@@ -1,0 +1,272 @@
+{
+ "date": "2026-11-18",
+ "weekday": "水",
+ "headline": "OpenAI が GPT-6.2 Astra / Sol を公開、Copilot に MAI Code 2 も",
+ "generatedAt": "06:52",
+ "keyPoints": [
+  [
+   "OpenAI が GPT-6.2 Astra / Sol を公開。Astra の API 価格は GPT-6 Astra より 20% 低い",
+   "gpt-6-2-astra-sol"
+  ],
+  [
+   "Claude API に、アプリ利用者の Claude 組織へ課金できる Linked billing（ベータ）が追加",
+   "claude-linked-billing"
+  ],
+  [
+   "Copilot に MAI Code 2 / Flash が追加され、code review には Adaptive が登場",
+   "mai-code-2-copilot"
+  ]
+ ],
+ "news": [
+  {
+   "id": "gpt-6-2-astra-sol",
+   "lead": true,
+   "topic": "model",
+   "story": "openai-gpt-6-2",
+   "storyTitle": "OpenAI GPT-6.2 Astra / Sol",
+   "title": "OpenAI が GPT-6.2 Astra と Sol を公開",
+   "source": "OpenAI",
+   "date": "11/18",
+   "points": [
+    "ChatGPT Work・Codex・API で提供。OpenAI は Astra の価格を GPT-6 Astra より 20% 下げ、入力 $8・出力 $40（100 万トークン）にしたと発表",
+    "Sol の API 価格は GPT-6.1 Sol のまま。Astra は AI 自己改良の「High」しきい値に達した初の外部公開モデルだと OpenAI が説明"
+   ],
+   "impact": "GitHub Copilot でも Pro+ 以上で順次選べる。Claude と比べるなら、自社コードで価格と出力トークン量を測り直す価値がある。",
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "",
+   "figure": {
+    "type": "delta",
+    "title": "GPT-6.2 Astra の API 価格（100 万トークンあたり）",
+    "rows": [
+     {
+      "label": "入力",
+      "before": 10,
+      "after": 8,
+      "unit": "$",
+      "digits": 0
+     },
+     {
+      "label": "出力",
+      "before": 50,
+      "after": 40,
+      "unit": "$",
+      "digits": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": "mai-code-2-copilot",
+   "topic": "dev",
+   "story": "mai-code-2",
+   "storyTitle": "Microsoft MAI Code 2",
+   "title": "Copilot に MAI Code 2 / Flash が登場",
+   "source": "GitHub Changelog",
+   "date": "11/18",
+   "points": [
+    "MAI Code 2 は複雑なデバッグや複数ファイルの実装向け、Flash は日常の軽い編集向け。VS Code・Visual Studio・Copilot CLI などのモデルピッカーで選べる",
+    "MAI Code 2 は Pro 以上、Flash は Free・Student を含む全プラン（年額プランの対象者）。使用量課金で請求される"
+   ],
+   "impact": "Business / Enterprise は既定のモデルポリシーで自動的に有効になる。使わせたくない場合は管理者がポリシーで無効にする。",
+   "url": "https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://github.blog/wp-content/uploads/2026/11/708477214-1cb51fc6-9621-41e7-b5bb-ae9007edc021.png",
+   "lead": false,
+   "figure": null
+  },
+  {
+   "id": "claude-linked-billing",
+   "topic": "claude",
+   "story": "claude-linked-billing",
+   "storyTitle": "Claude API の Linked billing",
+   "title": "Claude API に Linked billing（ベータ）",
+   "source": "Claude Platform",
+   "date": "11/17",
+   "points": [
+    "自社アプリの利用者が自分の Claude 組織を連携し、リクエストごとの `billing_policy` で利用者払いか自社払いかを選べる。ベータヘッダーは `user-profiles-billing-2026-10-01`",
+    "対象は Anthropic に直接支払う組織（前払い・請求書払い）。クラウドマーケットプレイス経由や個人サブスクのみの組織は対象外"
+   ],
+   "impact": "Claude を組み込んだ社外向けアプリを作る場合、利用料の負担先を利用者側に切り替えられる。",
+   "url": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/manage-claude/oauth-apps/organization-billing-connections?design-rev=5",
+   "lead": false,
+   "figure": null
+  },
+  {
+   "id": "claude-code-2-1-326",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.326（2.1.325 以降）",
+   "source": "Claude Code",
+   "date": "11/17",
+   "points": [
+    "agent teams 有効時に Code Mode をオンにできるようになった。起動時に `--allowedTools` などの不完全なルールへ警告を出す",
+    "`/status` に、プロバイダーや `DISABLE_TELEMETRY` で無効化された機能の行を追加。`OTEL_RESOURCE_INCLUDE_HOST` で host.name / host.id を OpenTelemetry に含められる（既定はオフ）"
+   ],
+   "impact": "許可ルールを書いている場合は、起動時の警告で書式の誤りに気づける。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.326",
+   "reactions": [],
+   "image": "",
+   "lead": false,
+   "figure": null
+  },
+  {
+   "id": "copilot-code-review-adaptive",
+   "topic": "dev",
+   "story": "copilot-code-review-adaptive",
+   "storyTitle": "Copilot code review の Adaptive",
+   "title": "Copilot code review に Adaptive 追加",
+   "source": "GitHub Changelog",
+   "date": "11/18",
+   "points": [
+    "PR の複雑さとリスクに応じて Lite / Balanced / Max を自動で選ぶ Adaptive が公開プレビュー。既定は Balanced のまま",
+    "関連する公開リポジトリを読むクロスリポジトリ文脈と、秘密情報の検出も追加。Pro 以上の各プランが対象"
+   ],
+   "impact": "Adaptive は組織・リポジトリで設定した最大レベルを超えない。コストを抑えたい場合はその上限設定を確認する。",
+   "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/708276078-755fdd57-5343-48b5-a592-ecf652d88e0a.jpg",
+   "lead": false,
+   "figure": null
+  },
+  {
+   "id": "copilot-fusion-terminal-bench",
+   "topic": "dev",
+   "story": "copilot-hydrafusion",
+   "storyTitle": "Copilot の HydraFusion",
+   "title": "Copilot Fusion が web・VS・モバイルに拡大",
+   "source": "GitHub Changelog",
+   "date": "11/18",
+   "points": [
+    "github.com、Visual Studio、GitHub Mobile ベータ版のモデルピッカーで Copilot Fusion を選べるようになった。Claude Sonnet 5.5・GPT-6.1 Terra・MAI-Code-2 を組み込む",
+    "GitHub は Terminal-Bench 4.1 で Fusion Max が 71.2% を記録したと発表（Opus 5.5 と Fable 5.2 を 5.4 ポイント上回る）"
+   ],
+   "impact": "",
+   "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models/",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/707030498-32736842-e930-46d7-b653-5841bc626d76.png",
+   "lead": false,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "CLAUDE.md の回答ルールで「理解負債」を減らす",
+   "where": "Zenn",
+   "date": "11/15",
+   "heat": "♡ 45",
+   "summary": "C#/.NET 開発者の投稿。結論 3 行と「次：○○」だけをチャットに出し、詳細は docs/notes/ に書き出させたところ、同じ質問で約 6,000 字が約 540 字になったと報告。",
+   "code": "説明や設計の相談では、まず結論を3行以内で示す\n長い内容は docs/notes/<タスク名>.md に書き出し、チャットには要約とファイル名だけを返す",
+   "url": "https://zenn.dev/kent_code/articles/5892898be90cac"
+  },
+  {
+   "kind": "使い方",
+   "title": "Task Tools と CLAUDE.md で大量セッションの進捗を見える化",
+   "where": "Zenn",
+   "date": "11/17",
+   "heat": "♡ 72",
+   "summary": "worktree で月 6,000 セッションを回す投稿者が、Claude Code の Task Tools を有効にし、CLAUDE.md で作業をタスクに分割して goal を記録させる構成を紹介。",
+   "code": "CLAUDE_CODE_ENABLE_TODO_TOOLS=1",
+   "url": "https://zenn.dev/andoshin11/articles/ba68b39ef9a8ce"
+  },
+  {
+   "kind": "Skill",
+   "title": "Claude っぽいスライドを避ける Skill の選び方",
+   "where": "Qiita",
+   "date": "11/17",
+   "heat": "LGTM 44",
+   "summary": "公式 pptx スキルだと似た見た目になる点を検証し、frontend-slides など別の Skill を入れるだけで表紙の見た目が変わったと報告。依頼文やモデルは固定して比較している。",
+   "code": "",
+   "url": "https://qiita.com/nuco_d/items/b279477cbcdbe5921abd"
+  }
+ ],
+ "unverified": [],
+ "domestic": [
+  {
+   "title": "クレディセゾンの ChatGPT Enterprise 全社導入：1 か月の検証から決定まで",
+   "where": "キーマンズネット（ITmedia）",
+   "date": "11/17",
+   "desc": "315 人のパイロットで ROI 954%・月 14 時間削減。事務局の失敗例共有や経営層の関与など推進方法と、現場で評価の高い 3 つのカスタム GPT を紹介。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/17/2000003219/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/17/2000003219/10012189/2048"
+  },
+  {
+   "title": "AI チャットの会話タイトルが広告トラッカーへ漏れる：42 サービスの調査",
+   "where": "ITmedia NEWS",
+   "date": "11/17",
+   "desc": "ChatGPT・Claude・Gemini など 42 サービスのうち 21 で、会話の要約タイトルが外部トラッカーに送られていた。Web ページのタイトル自動取得が原因という研究の解説。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/17/2000003241/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/17/2000003241/10012261/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
