@@ -1,0 +1,221 @@
+{
+ "date": "2026-11-20",
+ "weekday": "金",
+ "headline": "Anthropic が IPO 価格を $83 に決定、Claude Code は 2.1.328",
+ "generatedAt": "06:51",
+ "keyPoints": [
+  [
+   "Anthropic が IPO を 1 株 $83 で価格決定し、11/19 に Nasdaq で「ANT」の取引を開始する予定",
+   "anthropic-ipo-priced"
+  ],
+  [
+   "Claude Code 2.1.328 で Bedrock 等への auto mode 拡大と `/code-review` の出力変更",
+   "claude-code-2-1-328"
+  ],
+  [
+   "Gemini 4 Neon が GitHub Copilot で一般提供（Pro+ 以上）",
+   "gemini-4-neon-copilot"
+  ]
+ ],
+ "news": [
+  {
+   "id": "anthropic-ipo-priced",
+   "lead": true,
+   "topic": "claude",
+   "story": "anthropic-ipo",
+   "storyTitle": "Anthropic の新規株式公開（IPO）",
+   "title": "Anthropic が IPO を 1 株 $83 で価格決定",
+   "source": "Anthropic",
+   "date": "11/18",
+   "points": [
+    "公開価格は 1 株 $83.00。売り出しは Class A 普通株 9 億 8,000 万株で、うち 9 億 5,635 万 1,354 株を Anthropic が、残りを既存株主が売却する",
+    "Nasdaq Global Select Market で 11/19 から「ANT」として取引開始予定。払込完了は 11/20 の見込みで、引受会社には 30 日間の追加購入オプション（最大 1 億 4,700 万株）がある"
+   ],
+   "impact": "",
+   "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+   "reactions": [
+    "Hacker News で議論（Reuters の上場初日報道が 600 点超）"
+   ],
+   "image": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+   "figure": {
+    "type": "stats",
+    "title": "IPO の主な数値（11/18 発表）",
+    "items": [
+     {
+      "value": "$83.00",
+      "label": "公開価格（1 株）"
+     },
+     {
+      "value": "9.8 億株",
+      "label": "売り出し株数"
+     },
+     {
+      "value": "ANT",
+      "label": "Nasdaq 銘柄コード"
+     },
+     {
+      "value": "11/19",
+      "label": "取引開始予定日"
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-328",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.328：Bedrock 等で auto mode、hooks 強化",
+   "source": "Claude Code",
+   "date": "11/19",
+   "points": [
+    "Opus 4.6 / Sonnet 4.6 の auto mode を Amazon Bedrock・Google Cloud・Microsoft Foundry・Claude apps gateway に追加。mcp_tool フックに `\"onFailure\": \"block\"` を追加",
+    "`/code-review` は多くのモデルでバグと CLAUDE.md 違反のみを報告し、指摘に Important / Pre-existing / Nit を付ける。再利用・簡素化の指摘は `/simplify` へ"
+   ],
+   "impact": "`/code-review` の出力が変わる。整理系の指摘が欲しい場合は `/simplify` を併用する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328",
+   "reactions": [],
+   "image": ""
+  },
+  {
+   "id": "gemini-4-neon-copilot",
+   "topic": "dev",
+   "story": "gemini-4-lineup",
+   "storyTitle": "Google Gemini 4 シリーズ",
+   "title": "Gemini 4 Neon が GitHub Copilot で一般提供",
+   "source": "GitHub Changelog",
+   "date": "11/18",
+   "points": [
+    "Copilot Pro+、Max、Business、Enterprise で利用可。VS Code、Visual Studio、Copilot CLI、coding agent、JetBrains、Xcode、Eclipse などのモデルピッカーから選べる。ロールアウトは段階的",
+    "課金はプロバイダーの定価（usage-based billing）。Business / Enterprise は管理者がモデルポリシーでアクセスを管理する"
+   ],
+   "impact": "Visual Studio で試すには、管理者のモデルポリシーで有効になっているかを確認する。",
+   "url": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/710810976-7eb80d08-78b7-4fbe-b584-0995e1de504f.png"
+  },
+  {
+   "id": "gemini-api-tool-retrieval",
+   "topic": "model",
+   "story": "gemini-tool-retrieval",
+   "storyTitle": "Gemini API の Tool Retrieval",
+   "title": "Gemini API に Tool Retrieval（プレビュー）",
+   "source": "Google AI",
+   "date": "11/19",
+   "points": [
+    "Gemini Interactions API で、ツールのパラメータスキーマを毎回すべて送らず、必要なときに読み込める。入力トークンの削減とツール選択精度の維持が狙い",
+    "ツール数が多いエージェント向けの機能。現在はプレビュー"
+   ],
+   "impact": "",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+   "reactions": [],
+   "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Tool_retrieval_hero.width-1300.png"
+  },
+  {
+   "id": "copilot-connectors-8",
+   "topic": "dev",
+   "story": "copilot-connectors",
+   "storyTitle": "Copilot のコネクタ拡充",
+   "title": "Copilot に Supabase など 8 サービスのコネクタ",
+   "source": "GitHub Changelog",
+   "date": "11/18",
+   "points": [
+    "Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase、Webflow、Wix を GitHub 検証済み MCP サーバー経由で接続できる（パブリックプレビュー）",
+    "Copilot app の Customize、Copilot CLI の `/mcp` の Connectors タブなどから接続する"
+   ],
+   "impact": "",
+   "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/uploads/2026/11/Changelog_Improvement_Unfurl_TextOnly_ConnectSupabase.jpg"
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Anthropic が Nasdaq 上場初日に時価総額 $2T（報道）",
+   "origin": "Hacker News（665 点）で共有された Reuters の記事",
+   "note": "Anthropic の発表で確認できたのは公開価格 $83 と 11/19 の取引開始予定まで。上場初日の値動きや時価総額は一次情報で確認できていない。",
+   "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AI エージェントと AI モデルの間の「API ルーター」に注意 428 件の調査",
+   "where": "ITmedia NEWS",
+   "date": "11/19",
+   "desc": "UCSB らの論文を解説。Claude Code や Codex と AI プロバイダーの間の中継サービス 428 個を調べ、有料 1 個・無料 8 個が悪意あるコードを注入、無料 17 個でおとりの AWS 認証情報が不正使用された。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003310/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/19/2000003310/10012483/2048"
+  },
+  {
+   "title": "ちまたの“格安GPT”、中身は偽物？ 非公式 API のモデル偽装調査",
+   "where": "ITmedia NEWS",
+   "date": "11/19",
+   "desc": "公式 API を安く仲介する「シャドー API」を調べた論文を解説。24 の接続先のうち 11 件が指紋検証で申告どおりのモデルと判定されなかった。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003309/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/19/2000003309/10012479/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
