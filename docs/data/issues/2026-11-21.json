@@ -1,0 +1,278 @@
+{
+ "date": "2026-11-21",
+ "weekday": "土",
+ "headline": "Anthropic が IPO 完了、Claude Code 2.1.329 と Inkling 2 Mini",
+ "generatedAt": "06:49",
+ "keyPoints": [
+  [
+   "Anthropic が IPO を完了。公募価格 $83、調達は総額約 $93.5B。",
+   "anthropic-ipo-closed"
+  ],
+  [
+   "Claude Code 2.1.329 で hooks の trust dialog 警告などが追加。",
+   "claude-code-2-1-329"
+  ],
+  [
+   "Inkling 2 Mini が公開され、3B active の小型モデルとしてローカル向けに登場。",
+   "inkling-2-mini"
+  ]
+ ],
+ "news": [
+  {
+   "id": "anthropic-ipo-closed",
+   "lead": true,
+   "topic": "biz",
+   "story": "anthropic-ipo",
+   "storyTitle": "Anthropic の新規株式公開（IPO）",
+   "title": "Anthropic が IPO を完了、調達額は約 935 億ドル",
+   "source": "Anthropic",
+   "date": "11/20",
+   "points": [
+    "公募価格 $83 で Class A 普通株 11.27 億株（追加購入選択権の全行使分を含む）の売出しが完了。総額は約 $93.5B で、Anthropic の受取は約 $91.6B。",
+    "11/19 に Nasdaq（ANT）で取引開始。AMD・Broadcom・Google・Microsoft・NVIDIA・TSMC などへの Class N 株の私募（約 $26.0B）も同時に完了。"
+   ],
+   "impact": "株式市場の動きは製品の提供条件とは別だが、Anthropic の資金面の見通しは Claude 導入計画の前提として押さえておく。",
+   "url": "https://www.anthropic.com/news/ipo-close",
+   "reactions": [
+    "Hacker News で上場初日の株価が議論"
+   ],
+   "image": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+   "deadline": null,
+   "figure": {
+    "type": "stats",
+    "title": "IPO クローズの数字（Anthropic 発表）",
+    "items": [
+     {
+      "value": "$83",
+      "label": "公募価格/株"
+     },
+     {
+      "value": "約 $93.5B",
+      "label": "公募の調達総額"
+     },
+     {
+      "value": "約 $26.0B",
+      "label": "同時私募（Class N）"
+     },
+     {
+      "value": "11/19",
+      "label": "Nasdaq 取引開始（ANT）"
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-329",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.329：hooks 警告と /tasks 拡張",
+   "source": "Anthropic（GitHub）",
+   "date": "11/20",
+   "points": [
+    "フォルダの hooks がどこで宣言されたかを示す trust dialog の警告を追加。管理設定の hooks が読み込めないときの警告も追加。",
+    "\\`/tasks\\` に予定タスク・\\`/loop\\`・goal・fork を表示。\\`~/.claude.json\\` の初期化、macOS Keychain での繰り返しサインアウト、\\`/terminal-setup\\` による VS Code 設定破損などを修正。"
+   ],
+   "impact": "hooks を配布している場合は、新しい trust dialog の表示が出る点をチーム内に周知する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329",
+   "reactions": [],
+   "image": "",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "inkling-2-mini",
+   "topic": "local",
+   "story": "inkling-2",
+   "storyTitle": "Thinking Machines の Inkling 2",
+   "title": "Inkling 2 Mini：3B active の小型ローカル向けモデル",
+   "source": "Hugging Face",
+   "date": "11/20",
+   "points": [
+    "Thinking Machines Lab のマルチモーダル MoE で、物理パラメータ約 26B・active 3B。中間 12 層を 3 回ループさせて容量を稼ぐ設計で、1M トークンのコンテキストに対応。",
+    "transformers・llama.cpp・MLX に対応し、SGLang は初日から対応。HF は独自の確認で Qwen 3.8 27B と同等以上としつつ、さらなる検証が必要と述べている。"
+   ],
+   "impact": "ローカル検証用に試すなら llama.cpp の GGUF（IQ4_NL / Q8_0）から。業務利用の判断は独自評価を待つ。",
+   "url": "https://huggingface.co/blog/inkling2mini",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://huggingface.co/blog/assets/inkling2mini/thumbnail.png",
+   "deadline": null,
+   "figure": {
+    "type": "stats",
+    "title": "Inkling 2 Mini の仕様（HF ブログ）",
+    "items": [
+     {
+      "value": "約 26B",
+      "label": "総パラメータ"
+     },
+     {
+      "value": "3B",
+      "label": "active/トークン"
+     },
+     {
+      "value": "1M",
+      "label": "コンテキスト"
+     },
+     {
+      "value": "24 層",
+      "label": "物理層（論理 48 層）"
+     }
+    ]
+   }
+  },
+  {
+   "id": "antigravity-third-party-terms",
+   "topic": "dev",
+   "story": "antigravity-terms",
+   "storyTitle": "Google Antigravity のサードパーティ利用規約",
+   "title": "Antigravity、他社ツール経由の利用に注意",
+   "source": "ITmedia（グーグル・クラウド・ジャパン取材）",
+   "date": "11/20",
+   "points": [
+    "個人向けの「Google Antigravity 追加利用規約」6 条は、サードパーティ製ツール経由のアクセスを違反とし、Antigravity／Gemini CLI アカウントの停止理由になり得ると定める。",
+    "グーグル・クラウド・ジャパンは、この規約は個人向けで、法人向けプランには別の規約が適用されるとする。他社エージェントで Gemini を使うなら Gemini Enterprise や Google AI Studio の API キーを勧めている。"
+   ],
+   "impact": "個人プランで Antigravity CLI を他社エージェントから呼び出している場合は、API キー方式への切り替えを検討する。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003353/",
+   "reactions": [
+    "X で話題（ITmedia 報道）"
+   ],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/20/2000003353/10012635/2048",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "gemini-mac-computer-use",
+   "topic": "model",
+   "story": "gemini-mac-computer-use",
+   "storyTitle": "Mac 版 Gemini の computer use",
+   "title": "Mac 版 Gemini に computer use 機能、まず米国",
+   "source": "Google（ITmedia 報道）",
+   "date": "11/19",
+   "points": [
+    "画面を認識しクリック・文字入力で Mac 内のアプリ・ファイル・Web を操作する機能。作業は背景ウィンドウで進み、ライブプレビューで確認でき、重要操作の前に承認を求める。",
+    "Apple Silicon・macOS 15 以降、Google AI Plus / Pro / Ultra 加入の 18 歳以上の個人アカウントが対象。米国の英語版のみで、日本での提供時期は未発表。"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/news/article/2611/20/2000003356/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/20/2000003356/10012653/2048",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude Code と Codex で作る自律改善ハーネス（規約・台帳・文脈・記録・検査を 1 リポジトリに集約）",
+   "where": "Zenn",
+   "date": "11/19",
+   "heat": "♡ 64",
+   "summary": "投稿者の報告：プロンプトを磨くより、規約・台帳・文脈・記録・検査の置き場を Git リポジトリにまとめ、CLAUDE.md / AGENTS.md を薄い入口にすると、複数セッションを並行で任せやすくなった。",
+   "code": "_harness/ に AGENTS.master.md（規約）、registry/（台帳）、context/、journal/（記録）を置く",
+   "url": "https://zenn.dev/nttdata_tech/articles/9562962cc181a1"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Anthropic 上場後に株価下落（NBC）",
+   "origin": "Hacker News（164 pt）で共有された NBC News の記事",
+   "note": "記事ページ自体は開けず、HN 上の投稿と見出しの存在のみ確認。株価の具体的な数値は確認できなかった。取引開始と調達額は Anthropic の発表で確認済み。",
+   "url": "https://news.ycombinator.com/item?id=50578794"
+  },
+  {
+   "title": "「Language Models Can Rewrite Their Own Weights」（arXiv）",
+   "origin": "Hacker News（285 pt）で共有された arXiv 論文",
+   "note": "HN の投稿とコメントの存在は確認。論文ページは開けず、手法や結果は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50577265"
+  },
+  {
+   "title": "Frostbite：AI が設計・検証した新 CPU アーキテクチャとの主張",
+   "origin": "Hacker News（575 pt）で共有された architectlabs.com のブログ",
+   "note": "HN の投稿とコメントの存在のみ確認。ブログ本文は開けず、設計・検証の内容は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50572503"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "Microsoft Perception：AI による攻撃に AI エージェントで対抗",
+   "where": "ITmedia",
+   "date": "11/20",
+   "desc": "Ignite 2026 で発表された、レッド・ブルー・グリーンの 3 チームエージェントがプレイブックに従い自律動作する新サービス（Publickey 記事の転載）。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/20/2000003368/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/20/2000003368/10012681/2048"
+  },
+  {
+   "title": "人間がボトルネックになった時代のAIエージェント設計",
+   "where": "Qiita",
+   "date": "11/18",
+   "desc": "複数エージェントの並行運用で詰まるのは人間の注意力だと整理し、セッション型の 4 つの制約と設計パターンをプロトタイプ付きで紹介（♡ 21）。",
+   "url": "https://qiita.com/Syoitu/items/5bb47c01a8513e52d1b5",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
