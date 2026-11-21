@@ -1,0 +1,182 @@
+{
+ "date": "2026-11-22",
+ "weekday": "日",
+ "headline": "Claude Code 2.1.330、組織サインイン対応／OpenAI が蒸留対策を公開",
+ "generatedAt": "06:50",
+ "keyPoints": [
+  [
+   "Claude Code 2.1.330 で、組織管理下のサインインと定期タスク 30 日化などを追加",
+   "claude-code-2-1-330"
+  ],
+  [
+   "OpenAI が敵対的蒸留への防御策を公開し、推論抽出の攻撃成功率を大幅に低減",
+   "openai-adversarial-distillation"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-code-2-1-330",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.330：組織管理下でのサインインに対応",
+   "source": "Anthropic（Claude Code）",
+   "date": "11/21",
+   "points": [
+    "Enterprise Admin Console で管理される組織へ `claude auth login` でサインインすると、組織の設定とクラウドプロバイダー／ゲートウェイが適用される",
+    "チャートを描く組み込み mod「easel」を追加（`/config` で自動チャートを無効化可）。定期タスクと `/loop` は最長 30 日まで実行"
+   ],
+   "impact": "組織導入を進めているなら、`claude auth login` で組織設定が効くかを検証環境で試す。`rm` の承認追加など挙動変更もあるので更新前に変更点を確認する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330",
+   "reactions": [],
+   "image": "",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "openai-adversarial-distillation",
+   "topic": "sec",
+   "story": "ai-distillation-defense",
+   "storyTitle": "AI モデルの敵対的蒸留への対策",
+   "title": "OpenAI が敵対的蒸留への防御策を公開",
+   "source": "OpenAI",
+   "date": "11/20",
+   "points": [
+    "推論過程（CoT）の抽出を狙う攻撃に、分類器・API 制限・アカウント網への措置を組み合わせて対処。GPT-6.2 Astra / Sol では保護された推論を会話履歴に紐づけた",
+    "適応型ブラックボックス評価の攻撃成功率は、過去リクエストからの抽出で 54.0% から 0.2% に低下"
+   ],
+   "impact": "GPT-6.2 の API では、過去のメッセージを書き換えるとそれ以降の推論が破棄される。履歴を編集する実装は挙動を確認する。",
+   "url": "https://openai.com/index/combatting-adversarial-distillation/",
+   "reactions": [],
+   "image": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
+   "deadline": null,
+   "figure": {
+    "type": "delta",
+    "title": "推論抽出の攻撃成功率（GPT-6 Astra → GPT-6.2 Astra）",
+    "rows": [
+     {
+      "label": "過去リクエストの推論を抽出",
+      "before": 54.0,
+      "after": 0.2,
+      "unit": "%",
+      "digits": 1
+     },
+     {
+      "label": "現在リクエストの推論を抽出",
+      "before": 22.9,
+      "after": 0.9,
+      "unit": "%",
+      "digits": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "meta-muse-email-all-users",
+   "topic": "model",
+   "story": "meta-muse-japan",
+   "storyTitle": "Meta Muse の日本提供",
+   "title": "Meta の Muse 専用メールアドレスが全ユーザーに",
+   "source": "ITmedia AI+（Meta 発表の報道）",
+   "date": "11/20",
+   "points": [
+    "Meta は 11/20、AIエージェント Muse 専用のメールアドレスを無料ユーザーを含む全ユーザーが取得できるようにしたと発表",
+    "メールの送受信を Muse に任せられ、認証した別アドレスからの指示も可能。Meta は予期しない動作に備え、監視と介入を促している"
+   ],
+   "impact": "",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003372/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/20/2000003372/10012692/2048",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Inkling-2-Mini を 5.4GB メモリで動かす量子化",
+   "origin": "Hacker News（257 pts、GitHub リポジトリ lookatmyquant）",
+   "note": "HN の投稿とコメントの存在は確認できた。リポジトリ本体は開けず、5.4GB での動作や品質は確認できていない。コメントでは元のチェックポイントが約 20GB（NVFP4/MXFP8 混在）と指摘されている。",
+   "url": "https://news.ycombinator.com/item?id=50591853"
+  },
+  {
+   "title": "GPT-6.2 Astra / Sol が Simple Bench で順位を落とした",
+   "origin": "Hacker News（153 pts、simple-bench.com）",
+   "note": "HN 投稿者は 6.2 Sol が 30 位、Astra 6.2 が 15 位と書いているが、leaderboard ページ本体は取得できず数値は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50588916"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AIで成果を出す企業ほど「人を増やす」？ IDC が調査結果を発表",
+   "where": "ITmedia エンタープライズ",
+   "date": "11/21",
+   "desc": "IDC の調査で、AI の ROI が高い組織の過半数が今後18カ月で増員を見込む。CoE の稼働率は 63% 対 15%。IT 部門向けに 3 つの対応を提示（会員限定記事）。",
+   "url": "https://www.itmedia.co.jp/enterprise/articles/2611/21/news003.html",
+   "image": "https://image.itmedia.co.jp/enterprise/articles/2611/21/cover_news003.jpg"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
