@@ -1,0 +1,224 @@
+{
+ "date": "2026-11-23",
+ "weekday": "月",
+ "generatedAt": "06:55",
+ "headline": "Claude と数学者がリーマン予想の証明を主張、Lean コミュニティが認定",
+ "keyPoints": [
+  [
+   "Anthropic の数学者が Claude と共同でリーマン予想の形式証明（Lean）を公開し、Lean・Mathlib コミュニティが正しいと認定した。",
+   "claude-riemann-proof"
+  ],
+  [
+   "OpenAI の Chief Scientist が、perplexity を各社共通の指標にし、共通の開発上限を設ける案を提案した。",
+   "openai-perplexity-limits"
+  ],
+  [
+   "メルカリが Notion AI の委託先 Fireworks AI への不正アクセスで 3,796 人分の情報流出の可能性を発表した。",
+   "mercari-notion-fireworks"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-riemann-proof",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-riemann",
+   "storyTitle": "Claude によるリーマン予想の証明",
+   "title": "Claude と共同でリーマン予想の証明を主張",
+   "source": "ITmedia NEWS（Anthropic の数学者の声明を報道）",
+   "date": "11/22",
+   "points": [
+    "Anthropic の数学者 Levent Alpöge 氏が 11/20 に声明を出し、Claude とリーマン予想の証明を見つけたと発表。証明は Lean の形式証明として公開された。",
+    "Lean・Mathlib コミュニティが 11/21 に正しいと認定する共同声明を出した。証明は Lean で 1,700 万行、人が読める論文はまだない。"
+   ],
+   "impact": "Claude の長期・大規模な自律作業の到達点を示す事例。ただし数学者による内容の理解と論文化はこれからで、評価は今後の検証を待つ段階。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/22/2000003388/",
+   "reactions": [
+    "Zenn・Qiita で解説記事が複数公開"
+   ],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/22/2000003388/10012748/2048",
+   "figure": {
+    "type": "stats",
+    "title": "証明の公開から認定まで",
+    "items": [
+     {
+      "value": "1,700万行",
+      "label": "Lean の証明の規模"
+     },
+     {
+      "value": "11/20",
+      "label": "Alpöge 氏が声明を公開"
+     },
+     {
+      "value": "11/21",
+      "label": "Lean・Mathlib コミュニティが認定"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai-perplexity-limits",
+   "topic": "model",
+   "story": "openai-perplexity",
+   "storyTitle": "OpenAI の perplexity 指標と共通の開発上限の提案",
+   "title": "OpenAI、perplexity を共通指標にする提案",
+   "source": "OpenAI",
+   "date": "11/22",
+   "points": [
+    "Jakub Pachocki 氏が、perplexity を開発各社が比べる指標にし、安全基準づくりに使うよう提案。OpenAI 自社モデルの測定値も公開した。",
+    "監視手法が一定の水準に達するまで各社が超えない「共通の上限」を業界標準にすることも提案している。"
+   ],
+   "impact": "",
+   "url": "https://openai.com/index/perplexity-and-intelligence/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
+   "figure": null
+  },
+  {
+   "id": "mercari-notion-fireworks",
+   "topic": "sec",
+   "story": "notion-fireworks-incident",
+   "storyTitle": "Notion AI チャット流出おそれ（Fireworks AI 委託先）",
+   "title": "メルカリ、Notion AI 委託先経由で3,796人分流出の恐れ",
+   "source": "キーマンズネット（ITmedia）",
+   "date": "11/23",
+   "points": [
+    "メルカリは、Notion AI の委託先 Fireworks AI への不正アクセスで、顧客 1,522 人分など計 3,796 人分の情報が流出した可能性があると発表した。",
+    "Fireworks は 11/17 に 2 件の別の不正アクセス事案を公表し、封じ込めと修復を完了したとしている。"
+   ],
+   "impact": "AI サービスを導入するときは、提供元だけでなく委託先やクラウド基盤まで含めて、データ保持の条件を確認する。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/23/2000003393/",
+   "reactions": [],
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/23/2000003393/10012772/2048",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude Desktop の Code タブで 5〜10 セッションを並行運用",
+   "where": "Zenn",
+   "date": "11/17",
+   "heat": "♡ 83",
+   "summary": "VS Code から Claude Desktop の Code タブに移り、親セッションにエピックを任せて 5〜10 セッションを自作の仕組みなしで並行させていると、投稿者が報告している。",
+   "code": "",
+   "url": "https://zenn.dev/peoplex_blog/articles/vscode-to-claude-desktop"
+  },
+  {
+   "kind": "Skill",
+   "title": "pstack を Claude Code に入れて自律実装を任せる",
+   "where": "Zenn",
+   "date": "11/20",
+   "heat": "♡ 32",
+   "summary": "Cursor 公式のスキル集 pstack を Claude Code に入れ、指示 1 回・約 10 分で設計から実装と自動テストまで完走できたと、投稿者が報告している。",
+   "code": "/plugin marketplace add cursor/plugins\n/plugin install pstack@cursor-plugins\n/pstack:poteto-mode",
+   "url": "https://zenn.dev/canly/articles/ca6875cd79539f"
+  },
+  {
+   "kind": "Skill",
+   "title": "mise + gh skill で dotfiles から Agent Skills を管理",
+   "where": "Zenn",
+   "date": "11/17",
+   "heat": "♡ 30",
+   "summary": "skill を別リポジトリに切り出し、mise から gh skill で ~/.claude/skills に集めて、新しい Mac でも make mise 1 回で復元できるようにしたと、投稿者が報告している。",
+   "code": "",
+   "url": "https://zenn.dev/dress_code/articles/30bd78e1a67f87"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "OpenRouter が推論プロバイダの ZDR 違反に関する対応を公表",
+   "origin": "Hacker News（274 点）が共有した OpenRouter のブログ記事",
+   "note": "HN の投稿は確認できたが、OpenRouter のブログ本文は開けなかった。コメントでは ZDR（データ非保持）に違反したプロバイダが 3 社あったとされるが、社名と詳細は確認できていない。",
+   "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+  },
+  {
+   "title": "「Anthropic の電力の 87% は 2028 年にガス由来」との試算",
+   "origin": "Hacker News（791 点）が共有した Better Data Center Project の記事",
+   "note": "HN の投稿は確認できたが、記事本文は開けず、試算の根拠は確認できなかった。Anthropic 自身の発表は見つかっていない。",
+   "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "【TLA+】AIにテストケースを書かせるな。ルールを書け",
+   "where": "Zenn",
+   "date": "11/21",
+   "desc": "AI が実装もテストも書くと「自作自演の満点」になる問題を、Quint で守るべきルールを書く方法で解く。サンプルを実際に動かして確認した記事。",
+   "url": "https://zenn.dev/karamage/articles/73027ee36796dc",
+   "image": ""
+  },
+  {
+   "title": "Agent Harnessを理解するために、150行ほどのPythonで自作してみた",
+   "where": "Qiita",
+   "date": "11/19",
+   "desc": "エージェントのハーネスを 150 行ほどの Python で自作し、仕組みを理解する。",
+   "url": "https://qiita.com/yamamoto_a_genee/items/76562c5c80032ad9e962",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
