@@ -1,0 +1,195 @@
+{
+ "date": "2026-11-24",
+ "weekday": "火",
+ "headline": "Claude Opus 4.5 の API 提供終了が決定、2027-01-22 まで",
+ "generatedAt": "06:57",
+ "keyPoints": [
+  [
+   "Claude Opus 4.5 は 2027-01-22 に Claude API から退役。推奨移行先は claude-opus-5-5。",
+   "claude-opus-4-5-retirement"
+  ],
+  [
+   "Enterprise Frontier Safeguards（ZDR＋顧客所有ストレージ）がベータ開始。",
+   "claude-efs-beta"
+  ],
+  [
+   "Claude Code 2.1.331 は Bedrock など 4 基盤で Code Mode に対応。",
+   "claude-code-2-1-331"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-opus-4-5-retirement",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-model-deprecations",
+   "storyTitle": "Claude モデルの提供終了スケジュール",
+   "title": "Claude Opus 4.5 の API 退役を通知",
+   "source": "Claude Platform",
+   "date": "11/23",
+   "points": [
+    "11/23 に Opus 4.5（claude-opus-4-5-20251101 と claude-opus-4-5）の廃止を開発者へ通知。API での退役は 2027-01-22。",
+    "推奨の移行先は claude-opus-5-5。移行ガイドあり。"
+   ],
+   "impact": "Opus 4.5 のモデル ID をコードや設定に固定している場合は、2027-01-22 までに claude-opus-5-5 へ切り替えて検証する。",
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/about-claude/model-deprecations?design-rev=5",
+   "deadline": {
+    "from": "2026-11-23",
+    "date": "2027-01-22",
+    "label": "Claude Opus 4.5 の Claude API 退役"
+   },
+   "figure": {
+    "type": "timeline",
+    "title": "Opus 4.5 退役までの日程",
+    "today": "2026-11-24",
+    "points": [
+     {
+      "date": "2026-11-23",
+      "label": "廃止を通知"
+     },
+     {
+      "date": "2027-01-22",
+      "label": "API で退役",
+      "emph": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-efs-beta",
+   "topic": "claude",
+   "story": "claude-enterprise-frontier-safeguards",
+   "storyTitle": "Claude の Enterprise Frontier Safeguards",
+   "title": "Enterprise Frontier Safeguards がベータ開始",
+   "source": "Claude Platform",
+   "date": "11/23",
+   "points": [
+    "最上位モデル向けの Zero Data Retention。Anthropic はプロンプトと応答を保持せず、暗号化された Sealed Safety Data が自社クラウドのバケットに入る。",
+    "Claude Platform、Claude Platform on AWS、Google Cloud 上の Claude（Anthropic 管理）が対象。Anthropic 管理ストレージのワークスペースは EFS の対象外。"
+   ],
+   "impact": "最上位モデルを ZDR 要件のある業務で使いたい場合は、自社バケットを用意して Setup guide から申請する。",
+   "url": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview",
+   "reactions": [],
+   "image": "https://platform.claude.com/web-api/og/docs/en/manage-claude/enterprise-frontier-safeguards/overview?design-rev=5",
+   "figure": null
+  },
+  {
+   "id": "claude-code-2-1-331",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.331 のリリース",
+   "source": "Claude Code",
+   "date": "最新版",
+   "points": [
+    "Amazon Bedrock、Google Cloud の Agent Platform、Microsoft Foundry、Claude Platform on AWS のターミナルセッションで Code Mode に対応。",
+    "`claude doctor` に API 接続の確認欄を追加。圧縮応答を切るプロキシ向けに `CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION` を追加。"
+   ],
+   "impact": "プロキシ越しで応答が途中で切れる環境では、新しい環境変数と `claude doctor` の接続確認を試す。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.331",
+   "reactions": [],
+   "image": "",
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "ブログ執筆を Claude Code のスキルで「AI 臭さ」を潰してから任せる",
+   "where": "Qiita",
+   "date": "11/22",
+   "heat": "LGTM 50",
+   "summary": "太字・表・図を原則使わないスキルを CLAUDE.md から読ませ、指摘を「学習しといて」でスキルに書き足して育てると、次の下書きから癖が減ったという報告。",
+   "code": "",
+   "url": "https://qiita.com/minorun365/items/faa50b7662b86e1df29c"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Claude Ship（ベータ）：PR のレビュー・修正・承認を支援",
+   "origin": "Qiita の解説記事（11/23 公開の公式発表を要約したもの）",
+   "note": "記事には PR Steward・Claude Approvals・Claude Code の /ship・Team/Enterprise 向けとあるが、一次の公式発表（claude.com）は取得できず、内容を一次情報で確認できていない。",
+   "url": "https://qiita.com/kinamocchi_tech/items/cde5399e1a83f8aedff5"
+  },
+  {
+   "title": "GLM-5.4：Z.ai 初の loop transformer を採用",
+   "origin": "Hacker News（970 pt）で共有された Z.ai のブログ",
+   "note": "HN の議論で話題だが、z.ai のブログ本文を開けず、ベンチマークや提供条件を確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50609685"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "企業はAIをどう選ぶようになった？ ChatGPT、Copilot、Geminiの勢力図",
+   "where": "ITmedia キーマンズネット",
+   "date": "11/21",
+   "desc": "AI 導入相談の集計で、社内利用 AI として名前が挙がった割合は ChatGPT が 66%→28%、Copilot と Gemini が各 35%、Claude が 27%。同社の相談に基づく数字で、日本企業全体の傾向ではない。",
+   "url": "https://kn.itmedia.co.jp/kn/article/2611/21/2000003385/",
+   "image": "https://kn.itmedia.co.jp/kn/article/ogp/2611/21/2000003385/10012728/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
