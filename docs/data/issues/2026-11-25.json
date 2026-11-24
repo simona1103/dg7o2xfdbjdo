@@ -1,0 +1,235 @@
+{
+ "date": "2026-11-25",
+ "weekday": "水",
+ "headline": "Claude Ship 公開：PR 後の対応を /ship で任せられる",
+ "generatedAt": "06:49",
+ "keyPoints": [
+  [
+   "Claude Code の /ship で、PR 作成からマージ直前までの見張りを 1 セッションで任せられる（Claude Ship は Code Review 一般提供、他 2 つはベータ）。",
+   "claude-ship"
+  ],
+  [
+   "OpenAI と Cisco が、Linux の稼働中システムを eBPF のシールドで守るオープンソース「Shirudo」を発表。",
+   "openai-cisco-shirudo"
+  ],
+  [
+   "Ternary Bonsai 2.5 27B（5.93 GB）が公開され、stock の llama.cpp で動くとされる。",
+   "ternary-bonsai-2-5-27b"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-ship",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-ship",
+   "storyTitle": "Claude Ship（PR 後の対応を任せるエージェント）",
+   "title": "Claude Ship：PR のレビューから承認までを支援",
+   "source": "claude.dev ブログ",
+   "date": "11/24",
+   "points": [
+    "Code Review（一般提供）、PR Steward（ベータ）、Claude Approvals（ベータ）の 3 エージェントで構成。",
+    "Claude Code の最新版には /ship が入り、管理者が有効化する前でも自分の PR で試せる。"
+   ],
+   "impact": "まず /code-review と /ship を自分の PR で試し、チームへ広げるなら 1 リポジトリで PR Steward を Manual、承認ポリシーを observe モードにして始める。",
+   "url": "https://claude.dev/blog/the-work-after-you-open-a-pr/",
+   "reactions": [
+    "Qiita・Zenn で解説記事が出ている"
+   ],
+   "image": "https://claude.dev/blog/the-work-after-you-open-a-pr/og.png",
+   "figure": {
+    "type": "compare",
+    "title": "Claude Ship の使い分け",
+    "cols": [
+     "/code-review",
+     "/ship",
+     "/steward"
+    ],
+    "rows": [
+     [
+      "やること",
+      "ok 手元のブランチ・変更をレビュー",
+      "ok コミット→PR 作成→レビュー→監視",
+      "ok 既にある PR の対応だけ"
+     ],
+     [
+      "実行場所",
+      "ok 自分のセッション",
+      "ok 自分のセッション",
+      "ok 自分のセッション"
+     ],
+     [
+      "マージ",
+      "no しない",
+      "no しない（人が行う）",
+      "no 承認も行わない"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "openai-cisco-shirudo",
+   "topic": "sec",
+   "story": "openai-cisco-shirudo",
+   "storyTitle": "OpenAI と Cisco の Shirudo",
+   "title": "OpenAI と Cisco が Linux 防御の Shirudo を公開",
+   "source": "OpenAI",
+   "date": "11/24",
+   "points": [
+    "eBPF で脆弱なコードパスを再起動なしで塞ぐ「シールド」を、AI エージェントが作り検証するオープンソースのランタイム。",
+    "Codex が生成したシールドで、Elasticsearch への Java4Shell 攻撃を稼働中に遮断した制御テストを紹介。"
+   ],
+   "impact": "",
+   "url": "https://openai.com/index/introducing-shirudo/",
+   "reactions": [],
+   "image": "https://images.ctfassets.net/kftzwdyauwt9/5K7gFDr3r8vgjdIcsW6RVY/aba5325ce7902e5d1499b907f8e78f0b/shirudo-partner-logos-landscape-2x.png?w=1600&h=900&fit=fill",
+   "figure": null
+  },
+  {
+   "id": "ternary-bonsai-2-5-27b",
+   "topic": "local",
+   "story": "ternary-bonsai",
+   "storyTitle": "Prism ML の Ternary Bonsai",
+   "title": "Ternary Bonsai 2.5 27B：5.93 GB のエージェント向け",
+   "source": "Prism ML（Hugging Face）",
+   "date": "11/25",
+   "points": [
+    "Qwen3.8-27B ベースの 3 値量子化で 1.76 bit/重み・5.93 GB（FP16 は 53.8 GB）。Apache-2.0。",
+    "開発元の報告では、ツール呼び出し 5 ベンチ平均が FP16 の 77.7 に対し 77.2、SWE-bench Verified は 75.6。"
+   ],
+   "impact": "",
+   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/prism-ml/Ternary-Bonsai-2.5-27B-GGUF.png",
+   "figure": {
+    "type": "stats",
+    "title": "モデルカードの主な数値",
+    "items": [
+     {
+      "value": "5.93GB",
+      "label": "重みサイズ（FP16 は 53.8GB）"
+     },
+     {
+      "value": "262K",
+      "label": "コンテキスト長"
+     },
+     {
+      "value": "1.5–1.8×",
+      "label": "MTP 版のデコード高速化（NVIDIA）"
+     }
+    ]
+   }
+  }
+ ],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Anthropic から蒸留を疑われ 24 時間で証明を求められた、という Ask HN",
+   "origin": "Hacker News の Ask HN 投稿（191 点）",
+   "note": "投稿の存在は確認できたが、投稿者の主張を裏づける Anthropic 側の資料は見つからなかった。",
+   "url": "https://news.ycombinator.com/item?id=50630809"
+  },
+  {
+   "title": "Microsoft が大規模障害を受け「Code Red」を宣言（Reuters 報道）",
+   "origin": "Hacker News で共有された Reuters 記事（170 点超）",
+   "note": "HN 上で共有されたことは確認できたが、Reuters 本文と社内メモは開けず、内容は確認できなかった。",
+   "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/"
+  },
+  {
+   "title": "Anthropic 株が IPO 価格 $83 を割り込んだ（Bloomberg 報道）",
+   "origin": "Hacker News で共有された Bloomberg 記事（262 点）",
+   "note": "HN 上で共有されたことは確認できたが、Bloomberg 本文は開けず、株価の数値は確認できなかった。",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "Claude Code の /ship を図解する",
+   "where": "Zenn",
+   "date": "11/24",
+   "desc": "実行ファイル内の /ship のプロンプトを読み、PR 作成からマージ直前までの流れと /steward との違いを図にまとめた検証記事。公式文書ではない点を著者が断っている。",
+   "url": "https://zenn.dev/peoplex_blog/articles/claude-code-ship",
+   "image": "https://res.cloudinary.com/zenn/image/upload/s--rEycQ2Lr--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25AE%2520%252Fship%2520%25E3%2582%2592%25E5%259B%25B3%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Aki%2520%2520%2520Product%2520Engi...%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzY2YjYwNDBmMmMuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:PeopleX%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzg2ZGEwZmE3MzMuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
+  },
+  {
+   "title": "DeNA、「AI社員」を外販　使い過ぎを“残業時間”で管理",
+   "where": "ITmedia AI+",
+   "date": "11/24",
+   "desc": "トークン使用量を勤務時間として管理し、残業時間の上限を設けられる「AI社員 by DeNA」。権限は最小限で、超える作業は人の承認を求める設定も可能。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003406/",
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/24/2000003406/10012810/2048"
+  },
+  {
+   "title": "「ソフトウェアファクトリー」とは結局何か",
+   "where": "＠IT（ITmedia）",
+   "date": "11/25",
+   "desc": "AI エージェントを工程としてつなぐ「ソフトウェアファクトリー」の基本構造と、OpenAI・Uber・freee の事例、検証の課題を整理した解説。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/25/news002.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/25/cover_news002.jpg"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
