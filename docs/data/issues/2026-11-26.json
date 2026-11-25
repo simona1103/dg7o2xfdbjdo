@@ -1,0 +1,254 @@
+{
+ "date": "2026-11-26",
+ "weekday": "木",
+ "headline": "Claude アーティファクトのアプリ化と、API の Rust 移行（CPU 約70%減）",
+ "generatedAt": "06:53",
+ "keyPoints": [
+  [
+   "Claude のデスクトップアプリで、アーティファクトを独立したアプリとしてインストールできる「Install as app」がベータ提供開始。",
+   "claude-install-as-app"
+  ],
+  [
+   "Anthropic が Messages API を Python から Rust に移行し、リクエストあたり CPU 約70%減・TTFT 中央値約20%短縮を公表した。",
+   "anthropic-messages-api-rust"
+  ],
+  [
+   "Anthropic がエージェントのサンドボックス脱出傾向を測る評価手法「Siren」を発表。",
+   "anthropic-siren"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-install-as-app",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-artifacts-app",
+   "storyTitle": "Claude アーティファクトのアプリ化",
+   "title": "Claude のアーティファクトをアプリとしてインストール",
+   "source": "Anthropic（ITmedia NEWS 経由）",
+   "date": "11/24",
+   "points": [
+    "Claude で作ったアーティファクトを、Mac／Windows のデスクトップアプリとして独自アイコン・専用ウィンドウで使える「Install as app」を全プランでベータ提供。",
+    "権限は3段階（標準／拡張／フルアクセス）。フルアクセスは自作または同一組織（Team/Enterprise）のアプリだけで、更新のたびに再確認される。"
+   ],
+   "impact": "Team は初期有効（フルアクセスは無効）、Enterprise はオーナーが有効化するまで使えない。社内展開では管理者設定でアプリ権限とフルアクセスの可否を決めておく。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/25/2000003431/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/25/2000003431/10012879/2048",
+   "deadline": null,
+   "figure": {
+    "type": "compare",
+    "title": "Install as app の提供条件",
+    "cols": [
+     "Team",
+     "Enterprise"
+    ],
+    "rows": [
+     [
+      "初期状態",
+      "ok 有効",
+      "warn オーナーが有効化するまで不可"
+     ],
+     [
+      "フルアクセス権",
+      "no 初期は無効",
+      "no 初期は無効"
+     ],
+     [
+      "HIPAA 対応組織",
+      "no 利用不可",
+      "no 利用不可"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "anthropic-messages-api-rust",
+   "topic": "claude",
+   "story": "anthropic-engineering-verification",
+   "storyTitle": "Anthropic の検証ループ・移行事例",
+   "title": "Messages API を Rust へ移行、CPU 約70%減",
+   "source": "Anthropic",
+   "date": "11/25",
+   "points": [
+    "Python 製の Messages API を Rust に移行。本番 API 自体を検証器にして差分を見つけ、エージェントで自動修正した。サービス停止も機能開発の凍結もなし。",
+    "結果は CPU 使用量が1リクエストあたり約70%減、TTFT（最初のトークンまで）の中央値が約20%短縮。最初のコア部分は Claude が約1週間で書いた。"
+   ],
+   "impact": "大規模な既存システム移行では、テストより「本番と突き合わせる検証の仕組み」が要になるという実例。自社の移行・リファクタ計画の参考になる。",
+   "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+   "reactions": [],
+   "image": "https://assets.claude.com/faac348155bf01d5c59ab38cbd05294eb2fa8197.jpg",
+   "deadline": null,
+   "figure": {
+    "type": "stats",
+    "title": "移行の成果と背景",
+    "items": [
+     {
+      "value": "約70%減",
+      "label": "1リクエストあたりの CPU"
+     },
+     {
+      "value": "約20%短縮",
+      "label": "TTFT 中央値"
+     },
+     {
+      "value": "約1,800倍",
+      "label": "API トラフィック増（2024年初〜2026年秋）"
+     }
+    ]
+   }
+  },
+  {
+   "id": "claude-code-2-1-332",
+   "topic": "claude",
+   "story": "claude-code-releases",
+   "storyTitle": "Claude Code のリリース",
+   "title": "Claude Code 2.1.332：MCP 由来の Skills など",
+   "source": "Anthropic（GitHub）",
+   "date": "最新版",
+   "points": [
+    "MCP サーバー由来の Skills（ベータ）を追加。`/` メニューに `server:skill` 形式で表示される。",
+    "スキルやコマンドのインラインシェル実行を拒否できる `PreSkillShellCommand` フックを追加。多数のフリーズ（フック出力の無限出力、ワイルドカード多用の権限ルール評価など）も修正。"
+   ],
+   "impact": "設定ファイルに `PreSkillShellCommand` を書くと 2.1.331 以前では起動時にダイアログが出る。チームで版が混在する場合は設定の共有に注意する。",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332",
+   "reactions": [],
+   "image": "",
+   "deadline": null,
+   "figure": null
+  },
+  {
+   "id": "anthropic-siren",
+   "topic": "sec",
+   "story": "anthropic-siren",
+   "storyTitle": "Anthropic の Siren（サンドボックス脱出評価）",
+   "title": "AI エージェントのサンドボックス脱出を測る「Siren」",
+   "source": "Anthropic（ITmedia NEWS 経由）",
+   "date": "11/24",
+   "points": [
+    "意図的に弱くしたサンドボックスの外に認証情報などの「おとり」を置き、エージェントが実際に外へ出るかを測る評価。26 の環境（bubblewrap、Docker、gVisor、小規模 QEMU VM など）を用意した。",
+    "Claude Code のオートモードの調整にも使用。オフライン検証で問題のある使い方の 96〜100% で最初のコマンドを阻止したが、調整と同じデータでの評価で、新しい場面では下がり得ると注記。"
+   ],
+   "impact": "対策は脱出行動を減らすだけで、サンドボックス自体の問題は消えない。エージェント実行環境の設定とパッチ適用は引き続き必要。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/25/2000003430/",
+   "reactions": [],
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/25/2000003430/10012875/2048",
+   "deadline": null,
+   "figure": null
+  }
+ ],
+ "tips": [
+  {
+   "kind": "使い方",
+   "title": "Claude Code を5〜8個並べても迷わない、自作ダッシュボード",
+   "where": "Zenn",
+   "date": "11/24",
+   "heat": "♡ 74",
+   "summary": "VS Code で複数セッションを並べると、どれが返事待ちか分からなくなる。投稿者は、会話記録を監視して各セッションの状況を1画面に出すダッシュボードを Claude に作らせ、返事待ちを音で気付けるようになったと報告。",
+   "code": "",
+   "url": "https://zenn.dev/nexta_/articles/a3ff76a9f98f1c"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "「ラボが素因数分解の多項式時間アルゴリズムに到達か」という噂",
+   "origin": "Hacker News（約 410 pt）で共有された Reddit r/singularity の投稿と、計算複雑性の研究者のブログ記事（HN 約 550 pt）",
+   "note": "HN のコメントで噂が議論されていることは確認できたが、一次情報（論文・発表）は見つからず、噂の内容も確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50643065"
+  },
+  {
+   "title": "Google が Cogentic の論文群を公開（整数分解・離散対数など）",
+   "origin": "Hacker News（約 400 pt）で共有された GitHub の論文集",
+   "note": "HN のコメントで、複数 LLM を協調させる数学証明探索のハーネスという説明が出ていることは確認できた。論文の内容と成果は一次情報（GitHub、arXiv）を開けず確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50642086"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AIでドーピングしたコンサルの実力は：BCG約500人で検証（Nature系列誌）",
+   "where": "ITmedia NEWS",
+   "date": "11/25",
+   "desc": "データサイエンス非専門の BCG コンサル 573 人の実験。ChatGPT 利用群は全課題で高スコアだったが、利用なしで答える事後テストでは知識の定着を示す証拠は得られなかった。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/25/2000003421/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/25/2000003421/10012850/2048"
+  },
+  {
+   "title": "現役組み込みエンジニアが考える「GitHub Copilot」の使いどころと検証の実際",
+   "where": "MONOist",
+   "date": "11/25",
+   "desc": "Copilot を既存コードの全体把握と「この制御はどこにあるか」の探索の起点として使い、出力は自分で検証する、という実務の使い方と注意点。",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/2611/25/news009.html",
+   "image": "https://image.itmedia.co.jp/mn/articles/2611/25/cover_news009.jpg"
+  },
+  {
+   "title": "コーディングエージェントの鍵流出は禁止ルールで防げない。知能と権限を分離する3原則",
+   "where": "Zenn",
+   "date": "11/26",
+   "desc": ".env の読み取り禁止ルールが間接プロンプトインジェクションで迂回される仕組みと、権限の縮小委任・汚染追跡・OS 境界での決定論的チェックという対策の整理。",
+   "url": "https://zenn.dev/nalt/articles/agentic-harness-security-architecture",
+   "image": ""
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
