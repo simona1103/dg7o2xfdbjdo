@@ -1,0 +1,235 @@
+{
+ "date": "2026-11-27",
+ "weekday": "金",
+ "headline": "Claude Duet が日本でも開始、GPT-6.2 は上限に早く到達",
+ "generatedAt": "06:57",
+ "keyPoints": [
+  [
+   "Claude Duet の研究プレビューが日本でも開始。Pro / Max / Ultra に招待が届き始めた。",
+   "claude-duet-japan"
+  ],
+  [
+   "GPT-6.2 の使用量の計算誤りが修正され、Astra は上限に 40％早く達する。",
+   "gpt-6-2-usage-correction"
+  ],
+  [
+   "Copilot code review の課金先が 12/30 に既定で組織へ。必要なら Member を選ぶ。",
+   "copilot-code-review-billing-org-default"
+  ]
+ ],
+ "news": [
+  {
+   "id": "claude-duet-japan",
+   "lead": true,
+   "topic": "claude",
+   "story": "claude-duet",
+   "storyTitle": "Claude Duet（常時稼働エージェント）の提供拡大",
+   "title": "Claude Duet の研究プレビューが日本でも開始",
+   "source": "ITmedia AI+（Anthropic 発表の報道）",
+   "date": "11/26",
+   "points": [
+    "11/26（日本時間）から、ウェイトリスト登録済みの Pro / Max / Ultra ユーザーに招待が届き始めた。Team プランも管理者が有効化できるよう順次対応する。",
+    "iOS / Android アプリと claude.ai に対応し、PC やスマートフォンの電源が切れていても仮想マシン上のブラウザで作業を続ける。研究プレビュー中の利用上限リセット権（Pro は 3 回、Max / Ultra は 1 回）は 12/15 に失効する。"
+   ],
+   "impact": "社内で Team プランを使っている場合は、管理画面で Duet が有効化できるようになったか確認し、連携アカウント（Gmail・Slack など）の扱いを WG で決めておく。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/26/2000003483/",
+   "reactions": [
+    "日本のユーザーから「招待が来た」との報告が相次ぐ（ITmedia）"
+   ],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/26/2000003483/10013044/2048",
+   "deadline": {
+    "from": "2026-11-26",
+    "date": "2026-12-15",
+    "label": "研究プレビューの利用上限リセット権の失効"
+   },
+   "figure": null
+  },
+  {
+   "id": "gpt-6-2-usage-correction",
+   "topic": "model",
+   "story": "openai-gpt-6-2",
+   "storyTitle": "OpenAI GPT-6.2 Astra / Sol",
+   "title": "GPT-6.2 の使用量計算の誤りを修正",
+   "source": "ITmedia AI+（OpenAI 担当者発言の報道）",
+   "date": "11/26",
+   "points": [
+    "OpenAI のプロダクト責任者が 11/25（現地時間）、GPT-6.2 Astra / Sol の使用量が実際より少なく計算されていたと説明した。誤りは修正済み。",
+    "修正により利用上限には Astra で 40％、Sol で 25％早く達する。お詫びとして有料プランに利用枠のリセット権を 1 回分付与する。"
+   ],
+   "impact": "GPT-6.2 を Codex などで常用している場合、これまでより早く上限に達する前提で運用を見直す。",
+   "url": "https://www.itmedia.co.jp/aiplus/article/2611/26/2000003495/",
+   "reactions": [
+    "Hacker News で議論"
+   ],
+   "image": "https://www.itmedia.co.jp/aiplus/article/ogp/2611/26/2000003495/10013071/2048",
+   "figure": {
+    "type": "compare",
+    "title": "修正後の上限到達の早さ",
+    "cols": [
+     "Astra",
+     "Sol"
+    ],
+    "rows": [
+     [
+      "上限に達するまでの時間",
+      "no 40％早い",
+      "no 25％早い"
+     ],
+     [
+      "お詫び",
+      "ok リセット権 1 回",
+      "ok リセット権 1 回"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "copilot-code-review-billing-org-default",
+   "topic": "dev",
+   "story": "copilot-code-review-billing",
+   "storyTitle": "Copilot code review の課金先",
+   "title": "Copilot code review の課金が既定で組織に",
+   "source": "GitHub Changelog",
+   "date": "11/25",
+   "points": [
+    "課金先を未設定のままだと、12/30 から Copilot ライセンスを持つメンバーのレビューも、リポジトリを所有する組織に課金される。",
+    "対象は Copilot Business / Enterprise。従来どおりメンバーの利用枠を使うには、それまでに Copilot ポリシー設定で「Member」を選ぶ。"
+   ],
+   "impact": "組織課金には AI Credits の従量課金が必要で支出が増えうる。管理者は 12/30 までに課金先を明示的に選ぶ。",
+   "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+   "reactions": [],
+   "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-improvements.jpg",
+   "deadline": {
+    "from": "2026-11-25",
+    "date": "2026-12-30",
+    "label": "課金先が既定で組織に変わる日"
+   },
+   "figure": {
+    "type": "compare",
+    "title": "12/30 前後の課金先（未設定の場合）",
+    "cols": [
+     "現在",
+     "12/30 以降"
+    ],
+    "rows": [
+     [
+      "ライセンス保有メンバーのレビュー",
+      "メンバーの Copilot 利用枠",
+      "組織に課金"
+     ],
+     [
+      "すでに Member / Organization を選択済み",
+      "ok 選択が維持される",
+      "ok 選択が維持される"
+     ]
+    ]
+   }
+  }
+ ],
+ "tips": [
+  {
+   "kind": "Skill",
+   "title": "Matt Pocock の Skills（grill-me など）を使いこなすための学び",
+   "where": "Zenn",
+   "date": "11/25",
+   "heat": "♡ 32",
+   "summary": "grill-me は質問が多く疲れる、進め方を見失うといった課題があった筆者が、作者の公式ドキュメントや発言から学んだ使い方を取り入れ、Skills に振り回されにくくなったと報告している。",
+   "code": "",
+   "url": "https://zenn.dev/mediaforce/articles/27df1f22a00546"
+  }
+ ],
+ "unverified": [
+  {
+   "title": "Notion 公式 MCP がエージェントの文脈に宣伝の指示を混入させるとの報告",
+   "origin": "Hacker News（30 pt、11/26）で共有された Reddit r/ClaudeCode の投稿",
+   "note": "HN のスレッドと投稿の存在は確認できた。Reddit の投稿本文と、Notion 側の説明・修正は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50658093"
+  },
+  {
+   "title": "Anthropic・OpenAI の社員が未公開モデルを「公開には危険すぎる」と懸念との報道",
+   "origin": "Hacker News（23 pt、11/24）で共有された Yahoo の記事",
+   "note": "HN のスレッドの存在は確認できた。記事の内容と、両社の公式見解は確認できていない。",
+   "url": "https://news.ycombinator.com/item?id=50631691"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "GitHub に潜む AI 向け隠し文字、1 億 4500 万件を調査",
+   "where": "ITmedia NEWS",
+   "date": "11/26",
+   "desc": "Radware とテクニオンの研究者が、GitHub 上の投稿や README に埋め込まれた AI 向け隠しテキストを調べた論文を紹介。エージェントに Issue やレビューを任せる際の間接プロンプトインジェクション対策の参考になる。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003460/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/26/2000003460/10012959/2048"
+  },
+  {
+   "title": "脆弱性の発見数が 1 年で 2 倍超、Microsoft は月 100 件から 1000 件超に",
+   "where": "ITmedia NEWS",
+   "date": "11/26",
+   "desc": "11 月の月例更新で Microsoft が修正した脆弱性は 1093 件。AI による発見の加速でパッチ適用側がどう対処するかを解説する。",
+   "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003446/",
+   "image": "https://www.itmedia.co.jp/news/article/ogp/2611/26/2000003446/10012927/2048"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
