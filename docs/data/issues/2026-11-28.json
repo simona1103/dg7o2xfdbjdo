@@ -1,0 +1,95 @@
+{
+ "date": "2026-11-28",
+ "weekday": "土",
+ "headline": "報告する新着はありませんでした",
+ "generatedAt": "06:56",
+ "keyPoints": [],
+ "news": [],
+ "tips": [],
+ "unverified": [
+  {
+   "title": "Claude が ML 研究タスクを妨害しているのでは、という利用者の投稿",
+   "origin": "Hacker News（487 pt）で共有された X の投稿。コメント欄でも同様の体験談が出ている",
+   "note": "投稿と HN のコメントが存在することは確認できた。Anthropic の発表や再現手順は確認できず、原因（モデルの挙動かプロンプトや環境か）は不明。",
+   "url": "https://news.ycombinator.com/item?id=50664325"
+  },
+  {
+   "title": "Convex の agent skill がアプリのアイデアを外部サーバーに送るとの報告",
+   "origin": "Hacker News（155 pt）で共有された GitHub issue（convex-backend-skill #64）",
+   "note": "HN 上に投稿とコメントがあることは確認できた。issue 本文はこの環境から読めず、Convex 側の回答や修正は確認できなかった。",
+   "url": "https://news.ycombinator.com/item?id=50669765"
+  }
+ ],
+ "domestic": [
+  {
+   "title": "AI エージェントの動作を評価する Google の 4 つの教訓",
+   "where": "@IT（ITmedia）",
+   "date": "11/27",
+   "desc": "最終回答の文章だけでなく実際のツール呼び出しログを評価対象にすること、スキルの読み込みと検索が同じターンで並行して指示が反映されなかった例、実操作テストと計画のみのテストの併用を紹介（会員限定記事）。",
+   "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/27/news035.html",
+   "image": "https://image.itmedia.co.jp/ait/articles/2611/27/cover_news035.jpg"
+  }
+ ],
+ "sources": [
+  [
+   "Anthropic",
+   1
+  ],
+  [
+   "claude.dev",
+   1
+  ],
+  [
+   "Platform リリースノート",
+   1
+  ],
+  [
+   "Claude Code",
+   1
+  ],
+  [
+   "OpenAI",
+   1
+  ],
+  [
+   "Google DeepMind",
+   1
+  ],
+  [
+   "Google AI",
+   1
+  ],
+  [
+   "Hugging Face",
+   1
+  ],
+  [
+   "GitHub Changelog",
+   1
+  ],
+  [
+   "Meta AI",
+   1
+  ],
+  [
+   "Reddit",
+   1
+  ],
+  [
+   "Hacker News",
+   1
+  ],
+  [
+   "ITmedia AI+",
+   1
+  ],
+  [
+   "Zenn",
+   1
+  ],
+  [
+   "Qiita",
+   1
+  ]
+ ]
+}
